@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Participations — Olitha Induvara</title>
+  <meta name="description" content="Participations of Olitha Induvara — EngEx 2025, Techno, PERA BOTS, solar &amp; night-sky observation camps, drone workshop and more.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237c5df8'/%3E%3Cstop offset='1' stop-color='%235b3df0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='48' fill='url(%23g)'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='54' fill='white' font-family='Verdana' font-weight='bold'%3EO%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="blob blob-1" aria-hidden="true"></div>
+  <div class="blob blob-2" aria-hidden="true"></div>
+  <div class="blob blob-3" aria-hidden="true"></div>
+  <canvas id="netCanvas" class="net-canvas" aria-hidden="true"></canvas>
+  <!-- ======================= NAVBAR ======================= -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">Olitha Induvara</a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Bio</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="achievements.html" class="nav-link">Achievements</a>
+        <a href="events.html" class="nav-link active">Participations</a>
+        <a href="skills.html" class="nav-link">Skills</a>
+        <a href="experience.html" class="nav-link">Experience</a>
+        <a href="photography.html" class="nav-link">Photography</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="searchBtn" aria-label="Search (quick navigation)" title="Quick search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+        <button class="icon-btn theme-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.3 11.3 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <span class="theme-label">Dark</span>
+        </button>
+        <button class="icon-btn burger" id="burgerBtn" aria-label="Open menu" title="Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- ======================= PAGE HEADER ======================= -->
+    <section class="page-hero">
+      <div class="container">
+        <p class="page-kicker reveal">Community &amp; Events</p>
+        <h1 class="reveal">Participations</h1>
+        <p class="page-sub reveal">Workshops, observation camps, exhibitions and events I have taken part in — grouped into Academic, Astronomical and Media work.</p>
+      </div>
+    </section>
+    <section class="section" style="padding-top: 34px;">
+      <div class="container">
+        <section class="cat-panel reveal">
+          <div class="cat-head">
+            <h2>Academic Participations</h2>
+            <p>Field visits, workshops and hands-on technical exposure.</p>
+          </div>
+        <div class="proj-summary-grid reveal">
+          <a class="proj-card" href="#event-tower">
+            <div class="pc-cover pc-grad-1">
+              <img class="pc-cover-img cover-top" src="assets/events/sliit-tower/slit-1.jpg" alt="SLIIT Tower Fest" loading="lazy">
+              <span class="pc-badge">🏗 Team Member</span>
+            </div>
+            <div class="pc-body">
+              <p class="pc-kicker">Spaghetti Tower Competition</p>
+              <h3 class="pc-title">SLIIT Tower Fest</h3>
+              <p class="pc-desc">Part of a team that designed a spaghetti tower that impressively held 40.18 kg.</p>
+              <div class="pc-foot">
+                <span class="pc-award">🏗 40.18 kg load</span>
+                <span class="pc-go">Details &#8595;</span>
+              </div>
+            </div>
+          </a>
+          <a class="proj-card" href="#event-field">
+            <div class="pc-cover pc-grad-1">
+              <img class="pc-cover-img" src="assets/events/field-visit/field-visit-1.jpg" alt="Nilambe Hydropower Visit" loading="lazy">
+              <span class="pc-badge">⚡ Academic</span>
+            </div>
+            <div class="pc-body">
+              <p class="pc-kicker">Field Visit</p>
+              <h3 class="pc-title">Nilambe Hydropower Visit</h3>
+              <p class="pc-desc">Visited the Nilambe Hydropower Station &amp; Kiribathkumbura Grid Substation — two vital sites in Sri Lanka's power network.</p>
+              <div class="pc-foot">
+                <span class="pc-award">🌿 Power &amp; energy</span>
+                <span class="pc-go">Details &#8595;</span>
+              </div>
+            </div>
+          </a>
+          <a class="proj-card" href="#event-drone">
+            <div class="pc-cover pc-grad-2">
+              <img class="pc-cover-img" src="assets/events/drone-workshop/drone-1.jpg" alt="Drone Workshop" loading="lazy">
+              <span class="pc-badge">🚁 Academic</span>
+            </div>
+            <div class="pc-body">
+              <p class="pc-kicker">Quad Game Workshop</p>
+              <h3 class="pc-title">Drone Workshop</h3>
+              <p class="pc-desc">Hands-on learning across drone theory, flight controllers, software, transmitters and applications.</p>
+              <div class="pc-foot">
+                <span class="pc-award">🛩 UAV technology</span>
+                <span class="pc-go">Details &#8595;</span>
+              </div>
+            </div>
+          </a>
+        </div>
+        </section>
+        <section class="cat-panel reveal">
+          <div class="cat-head">
+            <h2>Astronomical Participations</h2>
+            <p>Solar and night-sky observation camps and citizen-science campaigns.</p>
+          </div>
+        <div class="proj-summary-grid reveal">
+          <a class="proj-card" href="#event-solar">
+            <div class="pc-cover pc-grad-3">
+              <img class="pc-cover-img" src="assets/events/solar-observation/solar-1.jpg" alt="Solar Observation" loading="lazy">
+              <span class="pc-badge">🌞 Astronomy</span>
+            </div>
+            <div class="pc-body">
+              <p class="pc-kicker">IOSA Solar Camp</p>
+              <h3 class="pc-title">Solar Observation</h3>
+              <p class="pc-desc">Witnessed solar prominences and sunspots up close — and captured a sunspot that appeared after 11 years.</p>
+              <div class="pc-foot">
+                <span class="pc-award">🔭 Dobsonian telescope</span>
+                <span class="pc-go">Details &#8595;</span>
+              </div>
+            </div>
+          </a>
+          <a class="proj-card" href="#event-seds">
+            <div class="pc-cover pc-grad-1">
+              <img class="pc-cover-img" src="assets/events/seds-stardust/seds-1.jpg" alt="Stardust Sanctuary 2024" loading="lazy">
+              <span class="pc-badge">🌌 Astronomy</span>
+            </div>
+            <div class="pc-body">
+              <p class="pc-kicker">SEDS Sri Lanka</p>
+              <h3 class="pc-title">Stardust Sanctuary 2024</h3>
+              <p class="pc-desc">A night-sky observation camp — Moon, Orion Nebula, Saturn, Jupiter and more through telescopes.</p>
+              <div class="pc-foot">
+                <span class="pc-award">🔭 Night-sky camp</span>
+                <span class="pc-go">Details &#8595;</span>
+              </div>
+            </div>
+          </a>
+          <a class="proj-card" href="#event-nebula">
+            <div class="pc-cover pc-grad-2">
+              <img class="pc-cover-img" src="assets/events/nebula-night/nebula-1.jpg" alt="Nebula Night" loading="lazy">
+              <span class="pc-badge">✨ Astronomy</span>
+            </div>
+            <div class="pc-body">
+              <p class="pc-kicker">Observation Event</p>
+              <h3 class="pc-title">Nebula Night</h3>
+              <p class="pc-desc">A memorable night under the stars — telescopes, deep-sky objects and shared wonder.</p>
+              <div class="pc-foot">
+                <span class="pc-award">🌠 Stargazing</span>
+                <span class="pc-go">Details &#8595;</span>
+              </div>
+            </div>
+          </a>
+          <a class="proj-card" href="#event-asteroid">
+            <div class="pc-cover pc-grad-3">
+              <img class="pc-cover-img" src="assets/achievements/asteroid/asteroid-1.jpg" alt="Asteroid Search Campaigns" loading="lazy">
+              <span class="pc-badge">☄️ Astronomy</span>
+            </div>
+            <div class="pc-body">
+              <p class="pc-kicker">Citizen Science</p>
+              <h3 class="pc-title">Asteroid Search Campaigns</h3>
+              <p class="pc-desc">Analysed real Pan-STARRS telescope data with Astrometrica to hunt for new asteroids.</p>
+              <div class="pc-foot">
+                <span class="pc-award">🔭 SEDS Sri Lanka</span>
+                <span class="pc-go">Details &#8595;</span>
+              </div>
+            </div>
+          </a>
+        </div>
+        </section>
+        <section class="cat-panel reveal">
+          <div class="cat-head">
+            <h2>Media &amp; Event Participations</h2>
+            <p>Photography, videography, live streaming and media production for major events.</p>
+          </div>
+        <div class="proj-summary-grid reveal">
+          <a class="proj-card" href="#event-engex">
+            <div class="pc-cover pc-grad-1">
+              <img class="pc-cover-img" src="assets/events/engex-2025/engex-1.jpg" alt="EngEx 2025" loading="lazy">
+              <span class="pc-badge">🎬 Media</span>
+            </div>
+            <div class="pc-body">
+              <p class="pc-kicker">Media Production</p>
+              <h3 class="pc-title">EngEx 2025</h3>
+              <p class="pc-desc">Media production for Sri Lanka's largest engineering exhibition — and the first-ever university drone show.</p>
+              <div class="pc-foot">
+                <span class="pc-award">🚁 140+ LED walls</span>
+                <span class="pc-go">Details &#8595;</span>
+              </div>
+            </div>
+          </a>
+          <a class="proj-card" href="#event-techno25">
+            <div class="pc-cover pc-grad-2">
+              <img class="pc-cover-img" src="assets/events/techno-2025/techno2025-1.jpg" alt="Techno 2025" loading="lazy">
+              <span class="pc-badge">🏗 Media</span>
+            </div>
+            <div class="pc-body">
+              <p class="pc-kicker">UoP Stall Media</p>
+              <h3 class="pc-title">Techno 2025</h3>
+              <p class="pc-desc">Promotion, photography &amp; videography for the UoP stall and competitions at Sri Lanka's biggest engineering exhibition.</p>
+              <div class="pc-foot">
+                <span class="pc-award">📸 BridgeQuest '25</span>
+                <span class="pc-go">Details &#8595;</span>
+              </div>
+            </div>
+          </a>
+          <a class="proj-card" href="#event-techno24">
+            <div class="pc-cover pc-grad-3">
+              <img class="pc-cover-img" src="assets/events/techno-2024/techno2024-1.jpg" alt="Techno 2024" loading="lazy">
+              <span class="pc-badge">🏗 Media</span>
+            </div>
+            <div class="pc-body">
+              <p class="pc-kicker">Organising &amp; Gauge Crew</p>
+              <h3 class="pc-title">Techno 2024</h3>
+              <p class="pc-desc">Part of the organising committee and Gauge media crew for the UoP stalls at Sri Lanka's largest tech exhibition.</p>
+              <div class="pc-foot">
+                <span class="pc-award">🎟 Organising committee</span>
+                <span class="pc-go">Details &#8595;</span>
+              </div>
+            </div>
+          </a>
+          <a class="proj-card" href="#event-perabots">
+            <div class="pc-cover pc-grad-1">
+              <img class="pc-cover-img cover-top" src="assets/events/perabots/perabots-1.jpg" alt="PERA BOTS Live" loading="lazy">
+              <span class="pc-badge">🤖 Live Stream</span>
+            </div>
+            <div class="pc-body">
+              <p class="pc-kicker">PERA BOTS 2025</p>
+              <h3 class="pc-title">PERA BOTS Live</h3>
+              <p class="pc-desc">Live-streamed robots on track to LED walls using Blackmagic &amp; ProPresenter.</p>
+              <div class="pc-foot">
+                <span class="pc-award">📺 Live coverage</span>
+                <span class="pc-go">Details &#8595;</span>
+              </div>
+            </div>
+          </a>
+          <a class="proj-card" href="#event-sandhwani">
+            <div class="pc-cover pc-grad-2">
+              <img class="pc-cover-img" src="assets/events/vibhawa-sandhwani/vibhawa-event-1.jpg" alt="Sandhwani Show" loading="lazy">
+              <span class="pc-badge">🎥 Videography</span>
+            </div>
+            <div class="pc-body">
+              <p class="pc-kicker">Vibhawa Society</p>
+              <h3 class="pc-title">Sandhwani Show</h3>
+              <p class="pc-desc">Videography for the 'Sandhwani' cultural show at the Sarachchandra Open-Air Theatre.</p>
+              <div class="pc-foot">
+                <span class="pc-award">🎬 Panasonic HC-X2000</span>
+                <span class="pc-go">Details &#8595;</span>
+              </div>
+            </div>
+          </a>
+          <a class="proj-card" href="#event-wa2024">
+            <div class="pc-cover pc-grad-3">
+              <img class="pc-cover-img" src="assets/events/wasanthaye-aga-2024/wa2024-1.jpg" alt="Wasanthaye Aga 2024" loading="lazy">
+              <span class="pc-badge">🎥 Videography</span>
+            </div>
+            <div class="pc-body">
+              <p class="pc-kicker">Wasanthaye Aga 2024</p>
+              <h3 class="pc-title">Wasanthaye Aga 2024</h3>
+              <p class="pc-desc">Videographer on gimbal &amp; side camera — and the first-ever portrait-mode live LED wall at the UoP gym.</p>
+              <div class="pc-foot">
+                <span class="pc-award">💡 Resolume Arena</span>
+                <span class="pc-go">Details &#8595;</span>
+              </div>
+            </div>
+          </a>
+          <a class="proj-card" href="#event-wa2025">
+            <div class="pc-cover pc-grad-1">
+              <img class="pc-cover-img" src="assets/events/wasanthaye-aga-2025/wa2025-1.jpg" alt="Wasanthaye Aga 2025" loading="lazy">
+              <span class="pc-badge">🎥 Videography</span>
+            </div>
+            <div class="pc-body">
+              <p class="pc-kicker">Wasanthaye Aga 2025</p>
+              <h3 class="pc-title">Wasanthaye Aga 2025</h3>
+              <p class="pc-desc">Back on the media crew — once again capturing the music and energy of one of UoP's biggest shows.</p>
+              <div class="pc-foot">
+                <span class="pc-award">🎤 Live event</span>
+                <span class="pc-go">Details &#8595;</span>
+              </div>
+            </div>
+          </a>
+          <a class="proj-card" href="#event-linequest">
+            <div class="pc-cover pc-grad-2">
+              <img class="pc-cover-img" src="assets/events/linequest/linequest-1.jpg" alt="Linequest / Nanthambara" loading="lazy">
+              <span class="pc-badge">📸 Photography</span>
+            </div>
+            <div class="pc-body">
+              <p class="pc-kicker">ACES &middot; GAUGE Crew</p>
+              <h3 class="pc-title">Linequest / Nanthambara</h3>
+              <p class="pc-desc">Event photography for Project Nanthambara, a line-following robot competition, as a GAUGE crew member.</p>
+              <div class="pc-foot">
+                <span class="pc-award">🤖 Robotics event</span>
+                <span class="pc-go">Details &#8595;</span>
+              </div>
+            </div>
+          </a>
+        </div>
+        </section>
+        <article class="project-feature reveal" id="event-tower">
+          <div class="badges">
+            <span class="badge-accent">Academic</span>
+            <span class="badge-soft">🏗 Team Member</span>
+            <span class="badge-soft">40.18 kg Load</span>
+          </div>
+          <h2>Spaghetti Tower Competition — SLIIT Tower Fest</h2>
+          <div class="info-row">
+            <span class="info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              Structural design challenge
+            </span>
+            <span class="info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              SLIIT Campus
+            </span>
+          </div>
+          <p class="lead-desc">Part of a team that designed a spaghetti tower that impressively supported 40.18 kg at the SLIIT Tower Fest.</p>
+          <div class="details-collapse">
+          <p class="body">
+            Excited to share our achievement at the Spaghetti Tower Competition during the <strong>SLIIT Tower Fest</strong>! Our tower impressively supported <strong>40.18&nbsp;kg</strong>, showcasing a design that combined strength, stability and creativity.
+          </p>
+          <h3 class="section-subhead">Key Highlights</h3>
+          <div class="features-grid">
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Twisted spaghetti strands to enhance lateral stiffness and delay failure, adding resilience under load</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Internal bracing to minimise buckling and deflection while ensuring even load distribution</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Staged construction techniques to prevent premature buckling during assembly</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Thicker column sections to improve overall stiffness and structural stability</div>
+          </div>
+          <div class="tags">
+            <span class="tag">Spaghetti Tower</span>
+            <span class="tag">SLIIT Tower Fest</span>
+            <span class="tag">Structural Design</span>
+            <span class="tag">Teamwork</span>
+            <span class="tag">40.18 kg</span>
+          </div>
+          </div>
+          <button class="read-more-btn" type="button" aria-expanded="false">
+            <span class="rm-text">Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <h3 class="section-subhead">Moments</h3>
+          <div class="gallery plain">
+            <figure class="gallery-item">
+              <img src="assets/events/sliit-tower/slit-1.jpg" alt="Our team with the finished spaghetti tower — SLIIT Tower Fest" loading="lazy">
+              <figcaption class="g-cap">Our team with the finished spaghetti tower — SLIIT Tower Fest</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/sliit-tower/slit-2.jpg" alt="Staged construction — assembling twist-braced members" loading="lazy">
+              <figcaption class="g-cap">Staged construction — assembling twist-braced members</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/sliit-tower/slit-3.jpg" alt="Twisted strands &amp; internal bracing — held 40.18 kg" loading="lazy">
+              <figcaption class="g-cap">Twisted strands &amp; internal bracing — held 40.18 kg</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/sliit-tower/slit-4.jpg" alt="Final checks &amp; teamwork before the load test" loading="lazy">
+              <figcaption class="g-cap">Final checks &amp; teamwork before the load test</figcaption>
+            </figure>
+          </div>
+          <p class="gallery-hint">Click any photo to view it full size.</p>
+        </article>
+        <article class="project-feature reveal" id="event-field" style="margin-top: 26px;">
+          <div class="badges">
+            <span class="badge-accent">Academic</span>
+            <span class="badge-soft">⚡ Power &amp; Energy</span>
+            <span class="badge-soft">Field Visit</span>
+          </div>
+          <h2>Nilambe Hydropower &amp; Kiribathkumbura Grid Substation — Field Visit</h2>
+          <p class="lead-desc">Visited the Nilambe Hydropower Station and Kiribathkumbura Grid Substation — two vital sites in Sri Lanka's power network.</p>
+          <div class="details-collapse">
+          <p class="body">
+            As students of the Department of Electrical &amp; Electronic Engineering, we visited the <strong>Nilambe Hydropower Station</strong> and the <strong>Kiribathkumbura Grid Substation</strong>. At Nilambe we explored the operations of the 3.2&nbsp;MW hydropower plant, gaining valuable exposure to renewable energy generation, while Kiribathkumbura offered insights into power transmission and distribution and grid operations.
+          </p>
+          <div class="tags">
+            <span class="tag">Hydropower</span>
+            <span class="tag">Grid Operations</span>
+            <span class="tag">Power Generation</span>
+            <span class="tag">Renewable Energy</span>
+            <span class="tag">Field Visit</span>
+          </div>
+          </div>
+          <button class="read-more-btn" type="button" aria-expanded="false">
+            <span class="rm-text">Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <h3 class="section-subhead">Moment</h3>
+          <div class="gallery plain">
+            <figure class="gallery-item">
+              <img src="assets/events/field-visit/field-visit-1.jpg" alt="Nilambe Hydropower Station &amp; Kiribathkumbura Grid Substation field visit" loading="lazy">
+              <figcaption class="g-cap">Nilambe Hydropower Station &amp; Kiribathkumbura Grid Substation field visit</figcaption>
+            </figure>
+          </div>
+          <p class="gallery-hint">Click any photo to view it full size.</p>
+        </article>
+        <article class="project-feature reveal" id="event-drone" style="margin-top: 26px;">
+          <div class="badges">
+            <span class="badge-accent">Academic</span>
+            <span class="badge-soft">🚁 Drone Workshop</span>
+            <span class="badge-soft">Faculty of Engineering, UoP</span>
+          </div>
+          <h2>Quad Game Drone Workshop</h2>
+          <p class="lead-desc">Participated in the Quad Game Drone Workshop — hands-on learning across drone theory, flight controllers, software, transmitters and applications.</p>
+          <div class="details-collapse">
+          <p class="body">
+            A great opportunity to dive into the world of drones: drone theory and the principles behind stable flight, flight controllers and how they manage operations, software for drone programming and control, transmitters and communication systems, and the many real-world applications of drone technology. An amazing hands-on learning experience.
+          </p>
+          <div class="tags">
+            <span class="tag">Drone Technology</span>
+            <span class="tag">Flight Controllers</span>
+            <span class="tag">UAV</span>
+            <span class="tag">Drone Programming</span>
+            <span class="tag">Hands-on</span>
+          </div>
+          </div>
+          <button class="read-more-btn" type="button" aria-expanded="false">
+            <span class="rm-text">Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <h3 class="section-subhead">Moments</h3>
+          <div class="gallery plain">
+            <figure class="gallery-item">
+              <img src="assets/events/drone-workshop/drone-1.jpg" alt="Quad Game Drone Workshop" loading="lazy">
+              <figcaption class="g-cap">Quad Game Drone Workshop</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/drone-workshop/drone-2.jpg" alt="Drone theory and flight principles" loading="lazy">
+              <figcaption class="g-cap">Drone theory and flight principles</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/drone-workshop/drone-3.jpg" alt="Flight controllers and operations" loading="lazy">
+              <figcaption class="g-cap">Flight controllers and operations</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/drone-workshop/drone-4.jpg" alt="Drone programming software" loading="lazy">
+              <figcaption class="g-cap">Drone programming software</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/drone-workshop/drone-5.jpg" alt="Transmitters and communication systems" loading="lazy">
+              <figcaption class="g-cap">Transmitters and communication systems</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/drone-workshop/drone-6.jpg" alt="Hands-on drone assembly" loading="lazy">
+              <figcaption class="g-cap">Hands-on drone assembly</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/drone-workshop/drone-7.jpg" alt="Real-world drone applications" loading="lazy">
+              <figcaption class="g-cap">Real-world drone applications</figcaption>
+            </figure>
+          </div>
+          <p class="gallery-hint">Click any photo to view it full size.</p>
+        </article>
+        <article class="project-feature reveal" id="event-solar">
+          <div class="badges">
+            <span class="badge-accent">Astronomical</span>
+            <span class="badge-soft">🌞 Solar Observation</span>
+            <span class="badge-soft">IOSA</span>
+          </div>
+          <h2>Solar Observation Camp — IOSA</h2>
+          <div class="info-row">
+            <span class="info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>
+              Dobsonian telescope &middot; 160mm aperture &middot; 1300mm focal length
+            </span>
+            <span class="info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Institute of Astronomy, Sri Lanka
+            </span>
+          </div>
+          <p class="lead-desc">Witnessed solar prominences and sunspots up close at the Solar Observation Camp — and captured a sunspot that appeared after 11 years.</p>
+          <div class="details-collapse">
+          <p class="body">
+            Thrilled to have participated in the Solar Observation Camp organised by <strong>IOSA — the Institute of Astronomy, Sri Lanka</strong>. Witnessing solar prominences and sunspots up close was breathtaking, and the camp was a fantastic learning journey into astronomy and the wonders of our universe.
+          </p>
+          <p class="body">
+            I was fortunate to capture a sunspot that appeared after 11 years, using a Dobsonian telescope. A huge thank you to IOSA for this inspiring opportunity to explore the cosmos.
+          </p>
+          <div class="tags">
+            <span class="tag">Solar Observation</span>
+            <span class="tag">Sunspots</span>
+            <span class="tag">Solar Prominence</span>
+            <span class="tag">IOSA</span>
+            <span class="tag">Astronomy</span>
+            <span class="tag">Dobsonian</span>
+          </div>
+          </div>
+          <button class="read-more-btn" type="button" aria-expanded="false">
+            <span class="rm-text">Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <h3 class="section-subhead">Moments</h3>
+          <div class="gallery plain">
+            <figure class="gallery-item">
+              <img src="assets/events/solar-observation/solar-1.jpg" alt="Solar Observation Camp — IOSA" loading="lazy">
+              <figcaption class="g-cap">Solar Observation Camp — IOSA</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/solar-observation/solar-2.jpg" alt="Observing solar prominences" loading="lazy">
+              <figcaption class="g-cap">Observing solar prominences</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/solar-observation/solar-3.jpg" alt="Sunspots up close" loading="lazy">
+              <figcaption class="g-cap">Sunspots up close</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/solar-observation/solar-4.jpg" alt="Dobsonian telescope setup" loading="lazy">
+              <figcaption class="g-cap">Dobsonian telescope setup</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/solar-observation/solar-5.jpg" alt="Solar filter and observation" loading="lazy">
+              <figcaption class="g-cap">Solar filter and observation</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/solar-observation/solar-6.jpg" alt="Capturing a sunspot (appeared after 11 years)" loading="lazy">
+              <figcaption class="g-cap">Capturing a sunspot (appeared after 11 years)</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/solar-observation/solar-7.jpg" alt="Astronomy learning in progress" loading="lazy">
+              <figcaption class="g-cap">Astronomy learning in progress</figcaption>
+            </figure>
+          </div>
+          <p class="gallery-hint">Click any photo to view it full size.</p>
+        </article>
+        <article class="project-feature reveal" id="event-seds" style="margin-top: 26px;">
+          <div class="badges">
+            <span class="badge-accent">Astronomical</span>
+            <span class="badge-soft">🌌 Night Sky Observation</span>
+            <span class="badge-soft">SEDS Sri Lanka</span>
+          </div>
+          <h2>Stardust Sanctuary 2024 — Night-Sky Observation Camp</h2>
+          <p class="lead-desc">A night-sky observation camp at South Eastern University — observing the Moon, Orion Nebula, Saturn, Jupiter and more through telescopes.</p>
+          <div class="details-collapse">
+          <p class="body">
+            Had the incredible opportunity to participate in <strong>Stardust Sanctuary 2024</strong>, a night-sky observation camp organised by SEDS Sri Lanka at the South Eastern University. We observed stunning celestial objects like the Moon, Orion Nebula, Saturn and Jupiter through telescopes, and safely observed the Sun using a solar observation telescope.
+          </p>
+          <p class="body">
+            An inspiring experience to connect with the night sky, deepen my understanding of astronomy, and share the passion with fellow enthusiasts.
+          </p>
+          <div class="tags">
+            <span class="tag">Night Sky</span>
+            <span class="tag">Telescope Observation</span>
+            <span class="tag">SEDS</span>
+            <span class="tag">Stardust Sanctuary</span>
+            <span class="tag">Astronomy</span>
+          </div>
+          </div>
+          <button class="read-more-btn" type="button" aria-expanded="false">
+            <span class="rm-text">Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <h3 class="section-subhead">Moments</h3>
+          <div class="gallery plain">
+            <figure class="gallery-item">
+              <img src="assets/events/seds-stardust/seds-1.jpg" alt="Stardust Sanctuary 2024 — SEDS Sri Lanka" loading="lazy">
+              <figcaption class="g-cap">Stardust Sanctuary 2024 — SEDS Sri Lanka</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/seds-stardust/seds-2.jpg" alt="Night-sky observation through telescopes" loading="lazy">
+              <figcaption class="g-cap">Night-sky observation through telescopes</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/seds-stardust/seds-3.jpg" alt="Observing the Moon" loading="lazy">
+              <figcaption class="g-cap">Observing the Moon</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/seds-stardust/seds-4.jpg" alt="Saturn and Jupiter in view" loading="lazy">
+              <figcaption class="g-cap">Saturn and Jupiter in view</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/seds-stardust/seds-5.jpg" alt="Orion Nebula" loading="lazy">
+              <figcaption class="g-cap">Orion Nebula</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/seds-stardust/seds-6.jpg" alt="Solar observation telescope" loading="lazy">
+              <figcaption class="g-cap">Solar observation telescope</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/seds-stardust/seds-7.jpg" alt="Fellow astronomy enthusiasts" loading="lazy">
+              <figcaption class="g-cap">Fellow astronomy enthusiasts</figcaption>
+            </figure>
+          </div>
+          <p class="gallery-hint">Click any photo to view it full size.</p>
+        </article>
+        <article class="project-feature reveal" id="event-nebula" style="margin-top: 26px;">
+          <div class="badges">
+            <span class="badge-accent">Astronomical</span>
+            <span class="badge-soft">✨ Night Sky</span>
+            <span class="badge-soft">Observation Event</span>
+          </div>
+          <h2>Nebula Night — Stargazing Event</h2>
+          <p class="lead-desc">A memorable night under the stars at the Nebula Night observation event — telescopes, deep-sky objects and shared wonder.</p>
+          <div class="details-collapse">
+          <p class="body">
+            An unforgettable evening of stargazing at the <strong>Nebula Night</strong> observation event, spent exploring the night sky with fellow astronomy enthusiasts. From constellation tours to deep-sky observation through telescopes, it was a beautiful reminder of why I love astronomy.
+          </p>
+          <div class="tags">
+            <span class="tag">Night Sky</span>
+            <span class="tag">Stargazing</span>
+            <span class="tag">Telescopes</span>
+            <span class="tag">Astronomy</span>
+            <span class="tag">Deep Sky</span>
+          </div>
+          </div>
+          <button class="read-more-btn" type="button" aria-expanded="false">
+            <span class="rm-text">Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <h3 class="section-subhead">Moments</h3>
+          <div class="gallery plain">
+            <figure class="gallery-item">
+              <img src="assets/events/nebula-night/nebula-1.jpg" alt="Nebula Night — stargazing event" loading="lazy">
+              <figcaption class="g-cap">Nebula Night — stargazing event</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/nebula-night/nebula-2.jpg" alt="Setting up telescopes" loading="lazy">
+              <figcaption class="g-cap">Setting up telescopes</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/nebula-night/nebula-3.jpg" alt="Constellation tours" loading="lazy">
+              <figcaption class="g-cap">Constellation tours</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/nebula-night/nebula-4.jpg" alt="Deep-sky observation" loading="lazy">
+              <figcaption class="g-cap">Deep-sky observation</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/nebula-night/nebula-5.jpg" alt="Night under the stars" loading="lazy">
+              <figcaption class="g-cap">Night under the stars</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/nebula-night/nebula-6.jpg" alt="Shared wonder of the cosmos" loading="lazy">
+              <figcaption class="g-cap">Shared wonder of the cosmos</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/nebula-night/nebula-7.jpg" alt="Astronomy community" loading="lazy">
+              <figcaption class="g-cap">Astronomy community</figcaption>
+            </figure>
+          </div>
+          <p class="gallery-hint">Click any photo to view it full size.</p>
+        </article>
+        <article class="project-feature reveal" id="event-asteroid" style="margin-top: 26px;">
+          <div class="badges">
+            <span class="badge-accent">Astronomical</span>
+            <span class="badge-soft">🌌 Citizen Science</span>
+            <span class="badge-soft">SEDS Sri Lanka</span>
+          </div>
+          <h2>International Asteroid Search Campaigns</h2>
+          <p class="lead-desc">Took part in multiple International Asteroid Search Campaigns, analysing real telescope data with Astrometrica to hunt for new asteroids.</p>
+          <div class="details-collapse">
+          <p class="body">
+            As part of my astronomy journey, I took part in several <strong>International Asteroid Search Campaigns</strong> organised by SEDS Sri Lanka — analysing real Pan-STARRS telescope images with <strong>Astrometrica</strong> to detect and verify potential new asteroids. A full write-up of this citizen-science achievement (five campaigns, four preliminary asteroids) is on the <a href="achievements.html#ach-asteroid" style="color:var(--accent);font-weight:600">Achievements</a> page.
+          </p>
+          <div class="tags">
+            <span class="tag">Citizen Science</span>
+            <span class="tag">Asteroid Search</span>
+            <span class="tag">Astrometrica</span>
+            <span class="tag">SEDS Sri Lanka</span>
+          </div>
+          </div>
+          <button class="read-more-btn" type="button" aria-expanded="false">
+            <span class="rm-text">Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <h3 class="section-subhead">Moments</h3>
+          <div class="gallery plain">
+            <figure class="gallery-item">
+              <img src="assets/achievements/asteroid/asteroid-1.jpg" alt="Analysing Pan-STARRS images with Astrometrica" loading="lazy">
+              <figcaption class="g-cap">Analysing Pan-STARRS images with Astrometrica</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/achievements/asteroid/asteroid-2.jpg" alt="Asteroid detection and verification" loading="lazy">
+              <figcaption class="g-cap">Asteroid detection and verification</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/achievements/asteroid/asteroid-3.jpg" alt="International Asteroid Search Campaign — SEDS Sri Lanka" loading="lazy">
+              <figcaption class="g-cap">International Asteroid Search Campaign — SEDS Sri Lanka</figcaption>
+            </figure>
+          </div>
+          <p class="gallery-hint">Click any photo to view it full size.</p>
+        </article>
+        <article class="project-feature reveal" id="event-engex">
+          <div class="badges">
+            <span class="badge-accent">Media</span>
+            <span class="badge-soft">🎬 Media Production</span>
+            <span class="badge-soft">EngEx 2025</span>
+          </div>
+          <h2>EngEx 2025 — Media Production &amp; the First University Drone Show</h2>
+          <p class="lead-desc">Handled media production for EngEx 2025 — Sri Lanka's largest engineering exhibition — with content shown across 140+ LED walls and the first-ever university drone show.</p>
+          <div class="details-collapse">
+          <p class="body">
+            Proud to have handled the media production for <strong>EngEx 2025</strong>. My videos were showcased across 140+ LED walls throughout Sri Lanka and shared widely on social media, and I had the privilege of capturing the drone show — the first ever in university history — through aerial cinematography.
+          </p>
+          <p class="body">
+            The media team powered the story of the exhibition: 10,000+ shutters capturing milestones, 25+ interviews giving engineers a voice, more than two hours of drone flight time, and rapid edits, live coverage and end-of-day recap reels so EngEx could shine brighter. It was unforgettable to see creativity and technology come together on such a grand scale.
+          </p>
+          <div class="tags">
+            <span class="tag">Media Production</span>
+            <span class="tag">EngEx 2025</span>
+            <span class="tag">Aerial Cinematography</span>
+            <span class="tag">Drone Show</span>
+            <span class="tag">Live Coverage</span>
+            <span class="tag">Recap Reels</span>
+          </div>
+          </div>
+          <button class="read-more-btn" type="button" aria-expanded="false">
+            <span class="rm-text">Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <h3 class="section-subhead">Moments</h3>
+          <div class="gallery plain">
+            <figure class="gallery-item">
+              <img src="assets/events/engex-2025/engex-1.jpg" alt="EngEx 2025 — Sri Lanka's largest engineering exhibition" loading="lazy">
+              <figcaption class="g-cap">EngEx 2025 — Sri Lanka's largest engineering exhibition</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/engex-2025/engex-2.jpg" alt="Media production for EngEx 2025" loading="lazy">
+              <figcaption class="g-cap">Media production for EngEx 2025</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/engex-2025/engex-3.jpg" alt="Content shown across 140+ LED walls" loading="lazy">
+              <figcaption class="g-cap">Content shown across 140+ LED walls</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/engex-2025/engex-4.jpg" alt="Capturing the first-ever university drone show" loading="lazy">
+              <figcaption class="g-cap">Capturing the first-ever university drone show</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/engex-2025/engex-5.jpg" alt="10,000+ shutters capturing milestones" loading="lazy">
+              <figcaption class="g-cap">10,000+ shutters capturing milestones</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/engex-2025/engex-6.jpg" alt="25+ interviews with engineers" loading="lazy">
+              <figcaption class="g-cap">25+ interviews with engineers</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/engex-2025/engex-7.jpg" alt="Two+ hours of drone flight time" loading="lazy">
+              <figcaption class="g-cap">Two+ hours of drone flight time</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/engex-2025/engex-8.jpg" alt="The heart behind EngEx — the media team" loading="lazy">
+              <figcaption class="g-cap">The heart behind EngEx — the media team</figcaption>
+            </figure>
+          </div>
+          <p class="gallery-hint">Click any photo to view it full size.</p>
+        </article>
+        <article class="project-feature reveal" id="event-techno25" style="margin-top: 26px;">
+          <div class="badges">
+            <span class="badge-accent">Media</span>
+            <span class="badge-soft">🏗 Techno 2025</span>
+            <span class="badge-soft">UoP Stall Media</span>
+          </div>
+          <h2>Techno 2025 — UoP Stall Media</h2>
+          <p class="lead-desc">Part of Techno 2025 — Sri Lanka's largest engineering exhibition — handling promotion, photography and videography for the UoP stall and linked competitions.</p>
+          <div class="details-collapse">
+          <p class="body">
+            Representing the University of Peradeniya at Sri Lanka's biggest engineering exhibition, I contributed by handling promotion, photography and videography for the UoP stall and the competitions linked with the event — including <strong>BridgeQuest '25</strong> and the <strong>Spaghetti Bridge Competition</strong>. From capturing the energy of the exhibition to creating promotional content, it was an incredible experience in creative media and visual storytelling.
+          </p>
+          <div class="tags">
+            <span class="tag">Techno 2025</span>
+            <span class="tag">Photography</span>
+            <span class="tag">Videography</span>
+            <span class="tag">Promotion</span>
+            <span class="tag">BridgeQuest</span>
+          </div>
+          </div>
+          <button class="read-more-btn" type="button" aria-expanded="false">
+            <span class="rm-text">Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <h3 class="section-subhead">Moments</h3>
+          <div class="gallery plain">
+            <figure class="gallery-item">
+              <img src="assets/events/techno-2025/techno2025-1.jpg" alt="Techno 2025 — Sri Lanka's largest engineering exhibition" loading="lazy">
+              <figcaption class="g-cap">Techno 2025 — Sri Lanka's largest engineering exhibition</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/techno-2025/techno2025-2.jpg" alt="UoP stall — promotion, photography &amp; videography" loading="lazy">
+              <figcaption class="g-cap">UoP stall — promotion, photography &amp; videography</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/techno-2025/techno2025-3.jpg" alt="BridgeQuest '25 coverage" loading="lazy">
+              <figcaption class="g-cap">BridgeQuest '25 coverage</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/techno-2025/techno2025-4.jpg" alt="Spaghetti Bridge Competition" loading="lazy">
+              <figcaption class="g-cap">Spaghetti Bridge Competition</figcaption>
+            </figure>
+          </div>
+          <p class="gallery-hint">Click any photo to view it full size.</p>
+        </article>
+        <article class="project-feature reveal" id="event-techno24" style="margin-top: 26px;">
+          <div class="badges">
+            <span class="badge-accent">Media</span>
+            <span class="badge-soft">🏗 Techno 2024</span>
+            <span class="badge-soft">Organising &amp; Gauge Media Crew</span>
+          </div>
+          <h2>Techno 2024 — Organising &amp; Gauge Media Crew</h2>
+          <p class="lead-desc">Part of the organising committee and Gauge media crew for the UoP stalls at Techno 2024 — Sri Lanka's largest tech exhibition.</p>
+          <div class="details-collapse">
+          <p class="body">
+            Proud to have been part of the organising committee and the <strong>Gauge media crew</strong> for the UoP stalls at <strong>Techno 2024</strong>, Sri Lanka's largest tech exhibition. A great experience in teamwork, event media and representing the faculty on a national stage.
+          </p>
+          <div class="tags">
+            <span class="tag">Techno 2024</span>
+            <span class="tag">Organising Committee</span>
+            <span class="tag">Gauge Media</span>
+            <span class="tag">Event Media</span>
+          </div>
+          </div>
+          <button class="read-more-btn" type="button" aria-expanded="false">
+            <span class="rm-text">Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <h3 class="section-subhead">Moments</h3>
+          <div class="gallery plain">
+            <figure class="gallery-item">
+              <img src="assets/events/techno-2024/techno2024-1.jpg" alt="Techno 2024 — UoP stalls organising committee" loading="lazy">
+              <figcaption class="g-cap">Techno 2024 — UoP stalls organising committee</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/techno-2024/techno2024-2.jpg" alt="Gauge media crew at Techno 2024" loading="lazy">
+              <figcaption class="g-cap">Gauge media crew at Techno 2024</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/techno-2024/techno2024-3.jpg" alt="On the exhibition floor" loading="lazy">
+              <figcaption class="g-cap">On the exhibition floor</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/techno-2024/techno2024-4.jpg" alt="Representing the Faculty of Engineering" loading="lazy">
+              <figcaption class="g-cap">Representing the Faculty of Engineering</figcaption>
+            </figure>
+          </div>
+          <p class="gallery-hint">Click any photo to view it full size.</p>
+        </article>
+        <article class="project-feature reveal" id="event-perabots" style="margin-top: 26px;">
+          <div class="badges">
+            <span class="badge-accent">Media</span>
+            <span class="badge-soft">🤖 Live Streaming</span>
+            <span class="badge-soft">PERA BOTS 2025</span>
+          </div>
+          <h2>PERA BOTS 2025 — Media &amp; Live Streaming</h2>
+          <p class="lead-desc">Contributed to the media and live coverage of PERA BOTS 2025 — live-streaming the robots on track to LED walls and displays.</p>
+          <div class="details-collapse">
+          <p class="body">
+            Contributed to <strong>PERA BOTS 2025</strong>, organised by the Faculty of Engineering, with my main contribution towards media and live coverage. I handled live streaming to LED walls and TV displays for a closer view of the robots on track, using <strong>Blackmagic</strong> and <strong>ProPresenter</strong> to manage real-time live feeds and a seamless viewing experience. An amazing blend of technology and creativity.
+          </p>
+          <div class="tags">
+            <span class="tag">Live Streaming</span>
+            <span class="tag">Blackmagic</span>
+            <span class="tag">ProPresenter</span>
+            <span class="tag">PERA BOTS</span>
+            <span class="tag">Media Crew</span>
+          </div>
+          </div>
+          <button class="read-more-btn" type="button" aria-expanded="false">
+            <span class="rm-text">Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <h3 class="section-subhead">Moments</h3>
+          <div class="gallery plain">
+            <figure class="gallery-item">
+              <img src="assets/events/perabots/perabots-1.jpg" alt="PERA BOTS 2025 — media &amp; live streaming" loading="lazy">
+              <figcaption class="g-cap">PERA BOTS 2025 — media &amp; live streaming</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/perabots/perabots-2.jpg" alt="Live streaming to LED walls" loading="lazy">
+              <figcaption class="g-cap">Live streaming to LED walls</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/perabots/perabots-3.jpg" alt="Robots on track" loading="lazy">
+              <figcaption class="g-cap">Robots on track</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/perabots/perabots-4.jpg" alt="Real-time live feeds with Blackmagic &amp; ProPresenter" loading="lazy">
+              <figcaption class="g-cap">Real-time live feeds with Blackmagic &amp; ProPresenter</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/perabots/perabots-5.jpg" alt="Bringing PERA BOTS to life" loading="lazy">
+              <figcaption class="g-cap">Bringing PERA BOTS to life</figcaption>
+            </figure>
+          </div>
+          <p class="gallery-hint">Click any photo to view it full size.</p>
+        </article>
+        <article class="project-feature reveal" id="event-sandhwani" style="margin-top: 26px;">
+          <div class="badges">
+            <span class="badge-accent">Media</span>
+            <span class="badge-soft">🎥 Videography</span>
+            <span class="badge-soft">Vibhawa Literary Society</span>
+          </div>
+          <h2>Sandhwani — Vibhawa Literary Society Videography</h2>
+          <p class="lead-desc">Covered the 'Sandhwani' show organised by the Vibhawa Literary Society, recording the evening's vibrant performances.</p>
+          <div class="details-collapse">
+          <p class="body">
+            Had the incredible opportunity to cover the <strong>&lsquo;Sandhwani&rsquo;</strong> show, organised by the Vibhawa Literary Society of the University of Peradeniya. Held at the iconic Professor Ediriweera Sarachchandra Open-Air Theatre, I used the <strong>Panasonic HC-X2000</strong> camcorder to professionally record the vibrant moments of the evening — combining my passion for videography with a beautiful cultural celebration.
+          </p>
+          <div class="tags">
+            <span class="tag">Videography</span>
+            <span class="tag">Event Coverage</span>
+            <span class="tag">Sandhwani</span>
+            <span class="tag">Panasonic HC-X2000</span>
+            <span class="tag">Cultural Events</span>
+          </div>
+          </div>
+          <button class="read-more-btn" type="button" aria-expanded="false">
+            <span class="rm-text">Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <h3 class="section-subhead">Moments</h3>
+          <div class="gallery plain">
+            <figure class="gallery-item">
+              <img src="assets/events/vibhawa-sandhwani/vibhawa-event-1.jpg" alt="Sandhwani — Vibhawa Literary Society" loading="lazy">
+              <figcaption class="g-cap">Sandhwani — Vibhawa Literary Society</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/vibhawa-sandhwani/vibhawa-event-2.jpg" alt="Prof. Ediriweera Sarachchandra Open-Air Theatre" loading="lazy">
+              <figcaption class="g-cap">Prof. Ediriweera Sarachchandra Open-Air Theatre</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/vibhawa-sandhwani/vibhawa-event-3.jpg" alt="Recording the evening's performances" loading="lazy">
+              <figcaption class="g-cap">Recording the evening's performances</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/vibhawa-sandhwani/vibhawa-event-4.jpg" alt="Panasonic HC-X2000 camcorder in action" loading="lazy">
+              <figcaption class="g-cap">Panasonic HC-X2000 camcorder in action</figcaption>
+            </figure>
+          </div>
+          <p class="gallery-hint">Click any photo to view it full size.</p>
+        </article>
+        <article class="project-feature reveal" id="event-wa2024" style="margin-top: 26px;">
+          <div class="badges">
+            <span class="badge-accent">Media</span>
+            <span class="badge-soft">🎥 Videography</span>
+            <span class="badge-soft">Wasanthaye Aga 2024</span>
+          </div>
+          <h2>Wasanthaye Aga 2024 — Videography &amp; LED Wall Mapping</h2>
+          <p class="lead-desc">Videographer for the musical show 'Wasanthaye Aga' — gimbal and side-camera work, and the first-ever portrait-mode live LED wall at the UoP gym.</p>
+          <div class="details-collapse">
+          <p class="body">
+            Proud to have been part of the media crew for the unforgettable musical show <strong>&lsquo;Wasanthaye Aga&rsquo;</strong> at the University of Peradeniya Gymnasium. As a videographer I worked both on the gimbal and as a side-camera operator.
+          </p>
+          <p class="body">
+            This show was extra special: for the first time ever at the UoP gym we introduced a <strong>portrait-mode live LED wall</strong>, mapping it through <strong>Resolume Arena</strong> — pushing technical boundaries and opening a new creative chapter for events at UoP.
+          </p>
+          <div class="tags">
+            <span class="tag">Videography</span>
+            <span class="tag">Gimbal</span>
+            <span class="tag">Resolume Arena</span>
+            <span class="tag">LED Wall Mapping</span>
+            <span class="tag">Live Events</span>
+          </div>
+          </div>
+          <button class="read-more-btn" type="button" aria-expanded="false">
+            <span class="rm-text">Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <h3 class="section-subhead">Moments</h3>
+          <div class="gallery plain">
+            <figure class="gallery-item">
+              <img src="assets/events/wasanthaye-aga-2024/wa2024-1.jpg" alt="Wasanthaye Aga 2024 — musical show" loading="lazy">
+              <figcaption class="g-cap">Wasanthaye Aga 2024 — musical show</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/wasanthaye-aga-2024/wa2024-2.jpg" alt="Videographer on the gimbal" loading="lazy">
+              <figcaption class="g-cap">Videographer on the gimbal</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/wasanthaye-aga-2024/wa2024-3.jpg" alt="Side-camera operation" loading="lazy">
+              <figcaption class="g-cap">Side-camera operation</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/wasanthaye-aga-2024/wa2024-4.jpg" alt="First-ever portrait-mode live LED wall at UoP gym" loading="lazy">
+              <figcaption class="g-cap">First-ever portrait-mode live LED wall at UoP gym</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/wasanthaye-aga-2024/wa2024-5.jpg" alt="LED wall mapping with Resolume Arena" loading="lazy">
+              <figcaption class="g-cap">LED wall mapping with Resolume Arena</figcaption>
+            </figure>
+          </div>
+          <p class="gallery-hint">Click any photo to view it full size.</p>
+        </article>
+        <article class="project-feature reveal" id="event-wa2025" style="margin-top: 26px;">
+          <div class="badges">
+            <span class="badge-accent">Media</span>
+            <span class="badge-soft">🎥 Videography</span>
+            <span class="badge-soft">Wasanthaye Aga 2025</span>
+          </div>
+          <h2>Wasanthaye Aga 2025 — Videography</h2>
+          <p class="lead-desc">Back on the media crew for Wasanthaye Aga 2025 — once again capturing the music and energy of one of UoP's biggest shows.</p>
+          <div class="details-collapse">
+          <p class="body">
+            Returned to the media crew for <strong>Wasanthaye Aga 2025</strong>, continuing to build on the live-event videography experience from the previous year. Capturing the performances, the crowd and the atmosphere of the night was another rewarding chapter in live event coverage.
+          </p>
+          <div class="tags">
+            <span class="tag">Videography</span>
+            <span class="tag">Live Events</span>
+            <span class="tag">Wasanthaye Aga</span>
+            <span class="tag">Media Crew</span>
+          </div>
+          </div>
+          <button class="read-more-btn" type="button" aria-expanded="false">
+            <span class="rm-text">Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <h3 class="section-subhead">Moments</h3>
+          <div class="gallery plain">
+            <figure class="gallery-item">
+              <img src="assets/events/wasanthaye-aga-2025/wa2025-1.jpg" alt="Wasanthaye Aga 2025 — musical show" loading="lazy">
+              <figcaption class="g-cap">Wasanthaye Aga 2025 — musical show</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/wasanthaye-aga-2025/wa2025-2.jpg" alt="Back on the media crew" loading="lazy">
+              <figcaption class="g-cap">Back on the media crew</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/wasanthaye-aga-2025/wa2025-3.jpg" alt="Live-event videography" loading="lazy">
+              <figcaption class="g-cap">Live-event videography</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/wasanthaye-aga-2025/wa2025-4.jpg" alt="Capturing the performances" loading="lazy">
+              <figcaption class="g-cap">Capturing the performances</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/events/wasanthaye-aga-2025/wa2025-5.jpg" alt="The energy of the night" loading="lazy">
+              <figcaption class="g-cap">The energy of the night</figcaption>
+            </figure>
+          </div>
+          <p class="gallery-hint">Click any photo to view it full size.</p>
+        </article>
+        <article class="project-feature reveal" id="event-linequest" style="margin-top: 26px;">
+          <div class="badges">
+            <span class="badge-accent">Media</span>
+            <span class="badge-soft">📸 Photography</span>
+            <span class="badge-soft">ACES &middot; GAUGE Crew</span>
+          </div>
+          <h2>Project Nanthambara / Linequest — Event Photography</h2>
+          <p class="lead-desc">Covered Project Nanthambara — a line-following robot competition by ACES — as a proud GAUGE crew member.</p>
+          <div class="details-collapse">
+          <p class="body">
+            Had the opportunity to cover <strong>Project Nanthambara</strong>, a line-following robot competition organised by ACES at the Faculty of Engineering. Participating as a proud &lsquo;GAUGE&rsquo; crew member, I captured the energy, innovation and teamwork of all the participants through my lens — an inspiring experience documenting young engineers bringing their ideas to life.
+          </p>
+          <div class="tags">
+            <span class="tag">Photography</span>
+            <span class="tag">Event Photography</span>
+            <span class="tag">Project Nanthambara</span>
+            <span class="tag">ACES</span>
+            <span class="tag">GAUGE</span>
+            <span class="tag">Robotics</span>
+          </div>
+          </div>
+          <button class="read-more-btn" type="button" aria-expanded="false">
+            <span class="rm-text">Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <h3 class="section-subhead">Moment</h3>
+          <div class="gallery plain">
+            <figure class="gallery-item">
+              <img src="assets/events/linequest/linequest-1.jpg" alt="Project Nanthambara / Linequest — photography as a GAUGE crew member" loading="lazy">
+              <figcaption class="g-cap">Project Nanthambara / Linequest — photography as a GAUGE crew member</figcaption>
+            </figure>
+          </div>
+          <p class="gallery-hint">Click any photo to view it full size.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+  <!-- ======================= FOOTER / CONTACT ======================= -->
+  <footer class="footer" id="contact">
+    <div class="container footer-inner reveal">
+      <div class="footer-actions">
+        <a class="btn-primary" href="mailto:olithainduvara@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          Email me
+        </a>
+        <a class="btn-outline" href="https://www.linkedin.com/in/olitha-induvara-16329733b/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+          Connect on LinkedIn
+        </a>
+      </div>
+      <p class="copyright">&copy; <span id="year">2026</span> Olitha Induvara, University of Peradeniya</p>
+    </div>
+  </footer>
+  <!-- ======================= QUICK SEARCH OVERLAY ======================= -->
+  <div class="search-overlay" id="searchOverlay" hidden>
+    <div class="search-panel">
+      <input type="text" id="searchInput" placeholder="Search this portfolio… (e.g. engex)" autocomplete="off">
+      <ul class="search-results" id="searchResults"></ul>
+      <p class="search-hint">Press <kbd>Esc</kbd> to close</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

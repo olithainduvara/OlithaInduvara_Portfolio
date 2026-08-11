@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Featured Projects — Olitha Induvara</title>
+  <meta name="description" content="Projects by Olitha Induvara — FloodLink LoRa flood monitoring, SkyAQ air-quality drone, voice-based attendance, projector mapping and more.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237c5df8'/%3E%3Cstop offset='1' stop-color='%235b3df0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='48' fill='url(%23g)'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='54' fill='white' font-family='Verdana' font-weight='bold'%3EO%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="blob blob-1" aria-hidden="true"></div>
+  <div class="blob blob-2" aria-hidden="true"></div>
+  <div class="blob blob-3" aria-hidden="true"></div>
+  <canvas id="netCanvas" class="net-canvas" aria-hidden="true"></canvas>
+  <!-- ======================= NAVBAR ======================= -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">Olitha Induvara</a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Bio</a>
+        <a href="projects.html" class="nav-link active">Projects</a>
+        <a href="achievements.html" class="nav-link">Achievements</a>
+        <a href="events.html" class="nav-link">Participations</a>
+        <a href="skills.html" class="nav-link">Skills</a>
+        <a href="experience.html" class="nav-link">Experience</a>
+        <a href="photography.html" class="nav-link">Photography</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="searchBtn" aria-label="Search (quick navigation)" title="Quick search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+        <button class="icon-btn theme-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.3 11.3 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <span class="theme-label">Dark</span>
+        </button>
+        <button class="icon-btn burger" id="burgerBtn" aria-label="Open menu" title="Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- ======================= PAGE HEADER ======================= -->
+    <section class="page-hero">
+      <div class="container">
+        <p class="page-kicker reveal">Engineering in Action</p>
+        <h1 class="reveal">Featured Projects</h1>
+        <p class="page-sub reveal">From LoRa flood-monitoring hardware and ESP32 drones to projector mapping and speech recognition — a selection of projects where ideas became working engineering solutions.</p>
+      </div>
+    </section>
+    <section class="section" style="padding-top: 34px;">
+      <div class="container">
+        <div class="proj-summary-grid reveal">
+          <a class="proj-card" href="#project-floodlink">
+            <div class="pc-cover pc-grad-1">
+              <img class="pc-cover-img" src="assets/projects/floodlink/floodlink-1.jpg" alt="FloodLink" loading="lazy">
+              <span class="pc-badge">LoRa &middot; IoT &middot; ML</span>
+            </div>
+            <div class="pc-body">
+              <p class="pc-kicker">Team Project</p>
+              <h3 class="pc-title">FloodLink</h3>
+              <p class="pc-desc">A low-cost, LoRa-based real-time river monitoring and flood prediction system that warns vulnerable communities before floods strike.</p>
+              <div class="pc-foot">
+                <span class="pc-award">🏆 2nd Place &middot; I-to-I 2025</span>
+                <span class="pc-go">Details &#8595;</span>
+              </div>
+            </div>
+          </a>
+          <a class="proj-card" href="#project-bottlemate">
+            <div class="pc-cover pc-grad-2">
+              <img class="pc-cover-img" src="assets/projects/bottlemate/bottlemate-1.jpg" alt="Bottle Mate" loading="lazy">
+              <span class="pc-badge">ATmega328P &middot; Assembly</span>
+            </div>
+            <div class="pc-body">
+              <p class="pc-kicker">3rd-Year Embedded Systems</p>
+              <h3 class="pc-title">Bottle Mate</h3>
+              <p class="pc-desc">A smart hydration-reminder device built from scratch on a custom ATmega328P circuit, programmed entirely in Assembly.</p>
+              <div class="pc-foot">
+                <span class="pc-award">💧 Hardware design lead</span>
+                <span class="pc-go">Details &#8595;</span>
+              </div>
+            </div>
+          </a>
+          <a class="proj-card" href="#project-skyaq">
+            <div class="pc-cover pc-grad-2">
+              <img class="pc-cover-img" src="assets/projects/skyaq/skyaq-1.jpg" alt="SkyAQ Air-Quality Drone" loading="lazy">
+              <span class="pc-badge">Drone &middot; ESP32</span>
+            </div>
+            <div class="pc-body">
+              <p class="pc-kicker">EngEx 2025</p>
+              <h3 class="pc-title">SkyAQ Air-Quality Drone</h3>
+              <p class="pc-desc">A hexacopter drone that monitors air quality, humidity and temperature in real time, built around an ESP32 board.</p>
+              <div class="pc-foot">
+                <span class="pc-award">🚁 Environmental monitoring</span>
+                <span class="pc-go">Details &#8595;</span>
+              </div>
+            </div>
+          </a>
+          <a class="proj-card" href="#project-voice">
+            <div class="pc-cover pc-grad-3">
+              <img class="pc-cover-img" src="assets/projects/voice-attendance/voice-1.jpg" alt="Voice-Based Attendance System" loading="lazy">
+              <span class="pc-badge">Speech Recognition</span>
+            </div>
+            <div class="pc-body">
+              <p class="pc-kicker">Team Project</p>
+              <h3 class="pc-title">Voice-Based Attendance System</h3>
+              <p class="pc-desc">An attendance system using MFCC &amp; GMM voice models, extended to Sinhala and Tamil.</p>
+              <div class="pc-foot">
+                <span class="pc-award">🎙️ MFCC &amp; GMM</span>
+                <span class="pc-go">Details &#8595;</span>
+              </div>
+            </div>
+          </a>
+          <a class="proj-card" href="#project-projmap">
+            <div class="pc-cover pc-grad-1">
+              <img class="pc-cover-img" src="assets/projects/projector-mapping/projmap-1.jpg" alt="First Projector Mapping at FoE" loading="lazy">
+              <span class="pc-badge">Creative Tech</span>
+            </div>
+            <div class="pc-body">
+              <p class="pc-kicker">Resolume Arena</p>
+              <h3 class="pc-title">First Projector Mapping at FoE</h3>
+              <p class="pc-desc">The first-ever projector mapping at the Faculty of Engineering, blending visuals with architecture.</p>
+              <div class="pc-foot">
+                <span class="pc-award">✨ Visual engineering</span>
+                <span class="pc-go">Details &#8595;</span>
+              </div>
+            </div>
+          </a>
+          <a class="proj-card" href="#project-line">
+            <div class="pc-cover pc-grad-2">
+              <img class="pc-cover-img" src="assets/projects/line-following/line-1.jpg" alt="Line Following Robot" loading="lazy">
+              <span class="pc-badge">Logic Gates</span>
+            </div>
+            <div class="pc-body">
+              <p class="pc-kicker">Group Project</p>
+              <h3 class="pc-title">Line Following Robot</h3>
+              <p class="pc-desc">A line-following robot built without any microcontroller, using logic gates and JK flip-flops.</p>
+              <div class="pc-foot">
+                <span class="pc-award">🤖 100% line following</span>
+                <span class="pc-go">Details &#8595;</span>
+              </div>
+            </div>
+          </a>
+          <a class="proj-card" href="#project-rpm">
+            <div class="pc-cover pc-grad-1">
+              <img class="pc-cover-img" src="assets/projects/rpm-sensor/rpm-1.jpg" alt="RPM-to-Voltage Sensor" loading="lazy">
+              <span class="pc-badge">Sensor Design</span>
+            </div>
+            <div class="pc-body">
+              <p class="pc-kicker">Group Project</p>
+              <h3 class="pc-title">RPM-to-Voltage Sensor</h3>
+              <p class="pc-desc">An RPM meter that converts RPM into voltage outputs, calibrated with a lathe machine.</p>
+              <div class="pc-foot">
+                <span class="pc-award">📈 Sensor calibration</span>
+                <span class="pc-go">Details &#8595;</span>
+              </div>
+            </div>
+          </a>
+          <a class="proj-card" href="#project-rpsls">
+            <div class="pc-cover pc-grad-3">
+              <img class="pc-cover-img" src="assets/projects/rpsls-game/game-1.jpg" alt="Hardware + Python Game Development" loading="lazy">
+              <span class="pc-badge">Arduino &middot; Python</span>
+            </div>
+            <div class="pc-body">
+              <p class="pc-kicker">Group Project</p>
+              <h3 class="pc-title">Hardware + Python Game Development</h3>
+              <p class="pc-desc">Rock, Paper, Scissors, Lizard, Spock — a hardware + GUI game built with Arduino and Python.</p>
+              <div class="pc-foot">
+                <span class="pc-award">🎮 Hardware + software</span>
+                <span class="pc-go">Details &#8595;</span>
+              </div>
+            </div>
+          </a>
+          <a class="proj-card" href="#project-ml">
+            <div class="pc-cover pc-grad-1">
+              <img class="pc-cover-img" src="assets/projects/ml-flood/cover-ml.jpg" alt="ML Flood Prediction" loading="lazy">
+              <span class="pc-badge">🔬 Ongoing</span>
+            </div>
+            <div class="pc-body">
+              <p class="pc-kicker">Machine Learning Research</p>
+              <h3 class="pc-title">ML Flood Prediction</h3>
+              <p class="pc-desc">An hourly rainfall–discharge flood forecasting model using ML and extreme value analysis — aimed at connecting to FloodLink.</p>
+              <div class="pc-foot">
+                <span class="pc-award">🧮 FloodLink 2.0</span>
+                <span class="pc-go">Details &#8595;</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <article class="project-feature reveal" id="project-floodlink">
+          <div class="badges">
+            <span class="badge-accent">Featured Project</span>
+            <span class="badge-soft">Team Project</span>
+            <span class="badge-soft">Idea to Invention (I-to-I) 2025</span>
+          </div>
+          <div class="award-link">
+            <span class="award-emoji">🏆</span>
+            <span><strong>2nd Place Winner</strong> — Idea to Invention 2025, UPAA&ndash;USA Innovation Award</span>
+            <span class="award-go">View award &rarr;</span>
+          </div>
+          <h2>FloodLink — Real-Time River Monitoring &amp; Flood Prediction System</h2>
+          <p class="project-meta">Role: Project Team Member &middot; Department of Electrical &amp; Electronic Engineering, UoP</p>
+          <p class="lead-desc">A low-cost, LoRa-based, real-time river-monitoring and flood-prediction system built to give vulnerable communities earlier warnings — proudly winning 2nd Place at the Idea to Invention 2025 competition.</p>
+          <div class="details-collapse">
+          <p class="body">
+            Sri Lanka faces recurring challenges with flash floods and seasonal droughts that often impact vulnerable communities and cost precious lives. <strong>FloodLink</strong> is a low-cost, LoRa-based, real-time river-monitoring and flood-prediction system designed to support early decision-making and improve community safety.
+          </p>
+          <p class="body">
+            FloodLink uses waterproof ultrasonic sensor nodes connected through a long-range LoRa network, transmitting continuous river-level data to a central platform. Our machine-learning models predict the time to reach Alert, Minor or Major flood levels, enabling earlier evacuation and preparedness — and the system keeps working reliably even during internet outages, while also supporting drought monitoring.
+          </p>
+          <h3 class="section-subhead">Key Highlights</h3>
+          <div class="features-grid">
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Real-time river-level monitoring</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>ML-based time-to-threshold flood prediction</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Long-range, low-power LoRa communication</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Telegram alerts + local siren warnings during emergencies</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Works reliably even during internet outages</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Supports both flood and drought monitoring</div>
+          </div>
+          <h3 class="section-subhead">Team</h3>
+          <div class="team">
+            <span class="team-member me" title="That's me!">Olitha Induvara</span>
+            <span class="team-member">Yeshini Illagolla</span>
+            <span class="team-member">Sithum Sathsara</span>
+            <span class="team-member">Nanduni Rathnayake</span>
+          </div>
+          <div class="tags">
+            <span class="tag">LoRa</span>
+            <span class="tag">ESP32</span>
+            <span class="tag">Ultrasonic Sensors</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Telegram Alerts</span>
+            <span class="tag">Flood Early Warning</span>
+            <span class="tag">GUI Dashboard</span>
+          </div>
+          </div>
+          <button class="read-more-btn" type="button" aria-expanded="false">
+            <span class="rm-text">Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <h3 class="section-subhead">Project Gallery</h3>
+          <div class="gallery">
+            <figure class="gallery-item">
+              <img src="assets/projects/floodlink/floodlink-1.jpg" alt="Team FloodLink at the Idea to Invention 2025 exhibition" loading="lazy">
+              <figcaption class="g-cap">Team FloodLink at the Idea to Invention 2025 exhibition</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/floodlink/floodlink-2.jpg" alt="FloodLink project poster and live demonstration" loading="lazy">
+              <figcaption class="g-cap">FloodLink project poster and live demonstration</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/floodlink/floodlink-3.jpg" alt="The LoRa sensor node hardware setup" loading="lazy">
+              <figcaption class="g-cap">The LoRa sensor node hardware setup</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/floodlink/floodlink-4.jpg" alt="Field-deployable ultrasonic sensor station" loading="lazy">
+              <figcaption class="g-cap">Field-deployable ultrasonic sensor station</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/floodlink/floodlink-5.jpg" alt="FloodLink GUI dashboard on display" loading="lazy">
+              <figcaption class="g-cap">FloodLink GUI dashboard on display</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/floodlink/floodlink-6.jpg" alt="Real-time water-level monitoring interface" loading="lazy">
+              <figcaption class="g-cap">Real-time water-level monitoring interface</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/floodlink/floodlink-7.jpg" alt="Receiver unit showing live river-level data" loading="lazy">
+              <figcaption class="g-cap">Receiver unit showing live river-level data</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/floodlink/floodlink-8.jpg" alt="Solar-powered field sensor node" loading="lazy">
+              <figcaption class="g-cap">Solar-powered field sensor node</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/floodlink/floodlink-9.jpg" alt="Team FloodLink presenting to the judges" loading="lazy">
+              <figcaption class="g-cap">Team FloodLink presenting to the judges</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/floodlink/floodlink-10.jpg" alt="Award-winning FloodLink demonstration" loading="lazy">
+              <figcaption class="g-cap">Award-winning FloodLink demonstration</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/floodlink/floodlink-11.jpg" alt="Team FloodLink at the exhibition venue" loading="lazy">
+              <figcaption class="g-cap">Team FloodLink at the exhibition venue</figcaption>
+            </figure>
+          </div>
+          <p class="gallery-hint">Click any photo to view it full size.</p>
+        </article>
+        <article class="project-feature reveal" id="project-bottlemate" style="margin-top: 26px;">
+          <div class="badges">
+            <span class="badge-accent">3rd-Year Project</span>
+            <span class="badge-soft">Embedded Systems</span>
+            <span class="badge-soft">ATmega328P &middot; Assembly</span>
+          </div>
+          <h2>Bottle Mate — Smart Hydration Reminder</h2>
+          <p class="project-meta">Hardware Design Lead &middot; Custom ATmega328P circuit, programmed in Assembly &middot; University of Peradeniya</p>
+          <p class="lead-desc">A smart hydration-reminder device built completely from scratch around a custom ATmega328P circuit — no Arduino boards — and programmed entirely in Assembly language.</p>
+          <div class="details-collapse">
+          <p class="body">
+            Introducing <strong>Bottle Mate</strong> — our 3rd-year Embedded Systems project designed to tackle a common, everyday problem: dehydration among busy office professionals. To solve this, our team engineered a smart hydration-reminder device.
+          </p>
+          <p class="body">
+            Rather than taking the easy route, we built this completely from scratch — no Arduino boards were used. Instead, we designed a custom circuit centered around an <strong>ATmega328P</strong> microcontroller, and I had the privilege of <strong>leading the hardware design</strong> and bringing this custom circuitry to life.
+          </p>
+          <p class="body">
+            The real challenge: per our course requirements, the <strong>entire system was programmed strictly in Assembly language</strong>. A weight sensor continuously monitors the water level in the bottle, the system calculates exactly how much you drank and dynamically adjusts the next hydration alert time, and all data is displayed on an <strong>I2C OLED screen</strong> — which we also successfully interfaced using pure Assembly. Incredibly proud of this hands-on engineering experience and the complex problem-solving it required.
+          </p>
+          <h3 class="section-subhead">Key Highlights</h3>
+          <div class="features-grid">
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Custom ATmega328P circuit designed from scratch (no Arduino)</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Entire firmware written in Assembly language</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Weight sensor for continuous water-level monitoring</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Dynamic hydration-alert time based on intake</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>I2C OLED display interfaced in pure Assembly</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Hardware design led by me</div>
+          </div>
+          <div class="tags">
+            <span class="tag">Embedded Systems</span>
+            <span class="tag">ATmega328P</span>
+            <span class="tag">Assembly</span>
+            <span class="tag">I2C OLED</span>
+            <span class="tag">Weight Sensor</span>
+            <span class="tag">Hardware Design</span>
+            <span class="tag">Custom Circuit</span>
+          </div>
+          </div>
+          <button class="read-more-btn" type="button" aria-expanded="false">
+            <span class="rm-text">Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <h3 class="section-subhead">Project Gallery</h3>
+          <div class="gallery">
+            <figure class="gallery-item">
+              <img src="assets/projects/bottlemate/bottlemate-1.jpg" alt="Bottle Mate — smart hydration reminder device" loading="lazy">
+              <figcaption class="g-cap">Bottle Mate — smart hydration reminder device</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/bottlemate/bottlemate-2.jpg" alt="Custom ATmega328P circuit built from scratch" loading="lazy">
+              <figcaption class="g-cap">Custom ATmega328P circuit built from scratch</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/bottlemate/bottlemate-3.jpg" alt="Weight sensor monitoring the water level" loading="lazy">
+              <figcaption class="g-cap">Weight sensor monitoring the water level</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/bottlemate/bottlemate-4.jpg" alt="I2C OLED display interfaced in Assembly" loading="lazy">
+              <figcaption class="g-cap">I2C OLED display interfaced in Assembly</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/bottlemate/bottlemate-5.jpg" alt="Hardware design close-up" loading="lazy">
+              <figcaption class="g-cap">Hardware design close-up</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/bottlemate/bottlemate-6.jpg" alt="The assembled Bottle Mate device" loading="lazy">
+              <figcaption class="g-cap">The assembled Bottle Mate device</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/bottlemate/bottlemate-7.jpg" alt="Team Bottle Mate with the finished project" loading="lazy">
+              <figcaption class="g-cap">Team Bottle Mate with the finished project</figcaption>
+            </figure>
+          </div>
+          <p class="gallery-hint">Click any photo to view it full size.</p>
+        </article>
+        <article class="project-feature reveal" id="project-skyaq" style="margin-top: 26px;">
+          <div class="badges">
+            <span class="badge-accent">Team Project</span>
+            <span class="badge-soft">ESP32 &middot; Sensors</span>
+            <span class="badge-soft">EngEx 2025</span>
+          </div>
+          <h2>SkyAQ — Real-Time Air Quality Measurement Drone</h2>
+          <p class="project-meta">Hexacopter drone &middot; ESP32 &middot; Designed for EngEx 2025</p>
+          <p class="lead-desc">A hexacopter drone we developed to monitor air quality, humidity and temperature in real time — a mobile, efficient and safe solution for environmental monitoring, especially in areas unsafe or inaccessible for humans.</p>
+          <div class="details-collapse">
+          <p class="body">
+            <strong>SkyAQ</strong> is a hexacopter drone built around an <strong>ESP32</strong> board, integrating a PM2.5 sensor, DHT22 sensor, GPS module and SD card reader for accurate environmental data collection.
+          </p>
+          <p class="body">
+            It runs on a Li-Po battery, is controlled using DJI NAZA flight control, and features a Python-based GUI for real-time data visualisation. Designed for <strong>EngEx 2025</strong>, SkyAQ provides a mobile, efficient and safe way to monitor the environment where people cannot easily go.
+          </p>
+          <h3 class="section-subhead">Key Highlights</h3>
+          <div class="features-grid">
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>ESP32-based hexacopter platform</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>PM2.5, DHT22, GPS &amp; SD-card integration</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Real-time environmental data logging</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>DJI NAZA flight control</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Python GUI for live data visualisation</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Safe monitoring of hazardous / inaccessible areas</div>
+          </div>
+          <h3 class="section-subhead">Team</h3>
+          <div class="team">
+            <span class="team-member me" title="That's me!">Olitha Induvara</span>
+            <span class="team-member">Tanusha Manuranga</span>
+            <span class="team-member">Damindu Gamage</span>
+            <span class="team-member">Madhuka Lakshan</span>
+          </div>
+          <div class="tags">
+            <span class="tag">ESP32</span>
+            <span class="tag">Hexacopter</span>
+            <span class="tag">PM2.5 Sensor</span>
+            <span class="tag">DHT22</span>
+            <span class="tag">GPS</span>
+            <span class="tag">Air Quality</span>
+            <span class="tag">Environmental Monitoring</span>
+            <span class="tag">EngEx 2025</span>
+          </div>
+          </div>
+          <button class="read-more-btn" type="button" aria-expanded="false">
+            <span class="rm-text">Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <h3 class="section-subhead">Project Gallery</h3>
+          <div class="gallery plain">
+            <figure class="gallery-item">
+              <img src="assets/projects/skyaq/skyaq-1.jpg" alt="SkyAQ hexacopter drone — overview" loading="lazy">
+              <figcaption class="g-cap">SkyAQ hexacopter drone — overview</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/skyaq/skyaq-2.jpg" alt="Sensor and electronics integration" loading="lazy">
+              <figcaption class="g-cap">Sensor and electronics integration</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/skyaq/skyaq-3.jpg" alt="ESP32 and sensor stack" loading="lazy">
+              <figcaption class="g-cap">ESP32 and sensor stack</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/skyaq/skyaq-4.jpg" alt="Drone frame and wiring" loading="lazy">
+              <figcaption class="g-cap">Drone frame and wiring</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/skyaq/skyaq-5.jpg" alt="Field assembly and testing" loading="lazy">
+              <figcaption class="g-cap">Field assembly and testing</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/skyaq/skyaq-6.jpg" alt="SkyAQ ready for flight" loading="lazy">
+              <figcaption class="g-cap">SkyAQ ready for flight</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/skyaq/skyaq-7.jpg" alt="Real-time visualisation dashboard" loading="lazy">
+              <figcaption class="g-cap">Real-time visualisation dashboard</figcaption>
+            </figure>
+          </div>
+          <p class="gallery-hint">Click any photo to view it full size.</p>
+        </article>
+        <article class="project-feature reveal" id="project-voice" style="margin-top: 26px;">
+          <div class="badges">
+            <span class="badge-accent">Team Project</span>
+            <span class="badge-soft">Speech Recognition</span>
+            <span class="badge-soft">MFCC &amp; GMM</span>
+          </div>
+          <h2>Smart Voice-Based Attendance System</h2>
+          <p class="project-meta">Group Project &middot; University of Peradeniya</p>
+          <p class="lead-desc">An innovative attendance system powered by voice-recognition technology, built and tested as two parallel models — and successfully extended to Sinhala and Tamil inputs.</p>
+          <div class="details-collapse">
+          <p class="body">
+            Our team developed an attendance system powered by voice recognition, building and testing two parallel systems — an <strong>MFCC</strong> (Mel-Frequency Cepstral Coefficients) based model and a <strong>GMM</strong> (Gaussian Mixture Model) based model.
+          </p>
+          <p class="body">
+            Each speaker's voice was recorded using the phrase &ldquo;The quick brown fox jumps over the lazy dog&rdquo;, after which the system could identify individuals and automatically mark their attendance. It tested accurately across multiple sentences and was successfully extended to Sinhala and Tamil inputs, demonstrating real potential for speech recognition in education and beyond.
+          </p>
+          <h3 class="section-subhead">Key Highlights</h3>
+          <div class="features-grid">
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>MFCC-based voice model</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>GMM-based voice model</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Automatic speaker identification</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Multi-language support (English, Sinhala, Tamil)</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Automated attendance marking</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Accurate across multiple test sentences</div>
+          </div>
+          <h3 class="section-subhead">Team</h3>
+          <div class="team">
+            <span class="team-member me" title="That's me!">Olitha Induvara</span>
+            <span class="team-member">Shanan Adams</span>
+            <span class="team-member">Sithum Sathsara</span>
+            <span class="team-member">Buwaneka Thilakarathna</span>
+          </div>
+          <div class="tags">
+            <span class="tag">Speech Recognition</span>
+            <span class="tag">MFCC</span>
+            <span class="tag">GMM</span>
+            <span class="tag">Voice Biometrics</span>
+            <span class="tag">Python</span>
+            <span class="tag">Attendance System</span>
+          </div>
+          </div>
+          <button class="read-more-btn" type="button" aria-expanded="false">
+            <span class="rm-text">Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <h3 class="section-subhead">Project Gallery</h3>
+          <div class="gallery plain">
+            <figure class="gallery-item">
+              <img src="assets/projects/voice-attendance/voice-1.jpg" alt="MFCC &amp; GMM voice-based attendance system" loading="lazy">
+              <figcaption class="g-cap">MFCC &amp; GMM voice-based attendance system</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/voice-attendance/voice-2.jpg" alt="Speaker recording setup" loading="lazy">
+              <figcaption class="g-cap">Speaker recording setup</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/voice-attendance/voice-3.jpg" alt="Voice-recognition workflow" loading="lazy">
+              <figcaption class="g-cap">Voice-recognition workflow</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/voice-attendance/voice-4.jpg" alt="Automated attendance marking in action" loading="lazy">
+              <figcaption class="g-cap">Automated attendance marking in action</figcaption>
+            </figure>
+          </div>
+          <p class="gallery-hint">Click any photo to view it full size.</p>
+        </article>
+        <article class="project-feature reveal" id="project-projmap" style="margin-top: 26px;">
+          <div class="badges">
+            <span class="badge-accent">Creative Technology</span>
+            <span class="badge-soft">Resolume Arena</span>
+            <span class="badge-soft">First at FoE UoP</span>
+          </div>
+          <h2>First Projector Mapping at the Faculty of Engineering</h2>
+          <p class="project-meta">Visual engineering &middot; Resolume Arena &middot; Faculty of Engineering, UoP</p>
+          <p class="lead-desc">Proud to have carried out the first-ever projector mapping at the Faculty of Engineering, University of Peradeniya — where architecture and visuals blended seamlessly.</p>
+          <div class="details-collapse">
+          <p class="body">
+            I carried out the <strong>first-ever projector mapping</strong> at the Faculty of Engineering, University of Peradeniya, using <strong>Resolume Arena</strong>. Watching the visuals blend seamlessly with the structure of the AR Building was a truly rewarding moment — a meeting of creative technology and visual engineering.
+          </p>
+          <p class="body">
+            I also had the opportunity to guide the E24 batch, providing technical support and software training to help them map the projectors onto the structure themselves. Excited to keep exploring where creative technology and engineering intersect.
+          </p>
+          <div class="tags">
+            <span class="tag">Projection Mapping</span>
+            <span class="tag">Resolume Arena</span>
+            <span class="tag">Creative Technology</span>
+            <span class="tag">Visual Engineering</span>
+            <span class="tag">Media Production</span>
+          </div>
+          </div>
+          <button class="read-more-btn" type="button" aria-expanded="false">
+            <span class="rm-text">Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <h3 class="section-subhead">Gallery</h3>
+          <div class="gallery plain">
+            <figure class="gallery-item">
+              <img src="assets/projects/projector-mapping/projmap-1.jpg" alt="First projector mapping at the Faculty of Engineering" loading="lazy">
+              <figcaption class="g-cap">First projector mapping at the Faculty of Engineering</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/projector-mapping/projmap-2.jpg" alt="Visuals mapped onto the AR Building" loading="lazy">
+              <figcaption class="g-cap">Visuals mapped onto the AR Building</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/projector-mapping/projmap-3.jpg" alt="Resolume Arena projection setup" loading="lazy">
+              <figcaption class="g-cap">Resolume Arena projection setup</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/projector-mapping/projmap-4.jpg" alt="Architecture and visuals blending" loading="lazy">
+              <figcaption class="g-cap">Architecture and visuals blending</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/projector-mapping/projmap-5.jpg" alt="Guiding the E24 batch through the mapping" loading="lazy">
+              <figcaption class="g-cap">Guiding the E24 batch through the mapping</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/projector-mapping/projmap-6.jpg" alt="Seamless projection across the structure" loading="lazy">
+              <figcaption class="g-cap">Seamless projection across the structure</figcaption>
+            </figure>
+          </div>
+          <p class="gallery-hint">Click any photo to view it full size.</p>
+        </article>
+        <article class="project-feature reveal" id="project-line" style="margin-top: 26px;">
+          <div class="badges">
+            <span class="badge-accent">Group Project</span>
+            <span class="badge-soft">Logic Gates &middot; JK Flip-Flops</span>
+            <span class="badge-soft">No Microcontroller</span>
+          </div>
+          <h2>Microcontroller-Free Line Following Robot</h2>
+          <p class="project-meta">Group Project &middot; Digital Electronics</p>
+          <p class="lead-desc">A Line Following Robot designed and built entirely without a microcontroller — the whole control system runs on logic gates and JK flip-flops.</p>
+          <div class="details-collapse">
+          <p class="body">
+            We designed and built a Line Following Robot <strong>without using any microcontrollers</strong> — the entire control system was developed using <strong>logic gates and JK flip-flops</strong>.
+          </p>
+          <p class="body">
+            The robot achieved 100% successful line following with high accuracy and good speed on the track. Thanks to the JK flip-flop design, if it ever went off the line it could remember the direction and correct itself, returning smoothly to the track — a great example of how fundamental electronics can create intelligent behaviour without any programming.
+          </p>
+          <div class="tags">
+            <span class="tag">Robotics</span>
+            <span class="tag">Logic Gates</span>
+            <span class="tag">JK Flip-Flop</span>
+            <span class="tag">Embedded Electronics</span>
+            <span class="tag">No Microcontroller</span>
+            <span class="tag">Line Following</span>
+          </div>
+          </div>
+          <button class="read-more-btn" type="button" aria-expanded="false">
+            <span class="rm-text">Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <h3 class="section-subhead">Gallery</h3>
+          <div class="gallery plain">
+            <figure class="gallery-item">
+              <img src="assets/projects/line-following/line-1.jpg" alt="Microcontroller-free line following robot" loading="lazy">
+              <figcaption class="g-cap">Microcontroller-free line following robot</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/line-following/line-2.jpg" alt="Logic-gate and JK flip-flop control circuit" loading="lazy">
+              <figcaption class="g-cap">Logic-gate and JK flip-flop control circuit</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/line-following/line-3.jpg" alt="On the test track" loading="lazy">
+              <figcaption class="g-cap">On the test track</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/line-following/line-4.jpg" alt="Smooth line following in action" loading="lazy">
+              <figcaption class="g-cap">Smooth line following in action</figcaption>
+            </figure>
+          </div>
+          <p class="gallery-hint">Click any photo to view it full size.</p>
+        </article>
+        <article class="project-feature reveal" id="project-rpm" style="margin-top: 26px;">
+          <div class="badges">
+            <span class="badge-accent">Group Project</span>
+            <span class="badge-soft">Sensor Design</span>
+            <span class="badge-soft">Calibration</span>
+          </div>
+          <h2>RPM-to-Voltage Sensor (RPM Meter)</h2>
+          <p class="project-meta">Group Project &middot; Sensor Systems</p>
+          <p class="lead-desc">An RPM Meter — a sensor system that converts RPM (Revolutions Per Minute) values into corresponding voltage outputs, calibrated using a lathe machine.</p>
+          <div class="details-collapse">
+          <p class="body">
+            We developed an <strong>RPM Meter</strong> — a sensor system that converts RPM (Revolutions Per Minute) values into corresponding voltage outputs.
+          </p>
+          <p class="body">
+            For calibration we used a lathe machine, since it provides a known, stable RPM, and measured the corresponding voltage outputs. By graphing the results we established a clear relationship between the input RPM and the output voltage, validating the sensor's performance and deepening our understanding of sensor calibration.
+          </p>
+          <div class="tags">
+            <span class="tag">Sensor Design</span>
+            <span class="tag">RPM Meter</span>
+            <span class="tag">Calibration</span>
+            <span class="tag">Electronics</span>
+            <span class="tag">Group Project</span>
+          </div>
+          </div>
+          <button class="read-more-btn" type="button" aria-expanded="false">
+            <span class="rm-text">Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <h3 class="section-subhead">Gallery</h3>
+          <div class="gallery plain">
+            <figure class="gallery-item">
+              <img src="assets/projects/rpm-sensor/rpm-1.jpg" alt="RPM-to-voltage sensor (RPM Meter)" loading="lazy">
+              <figcaption class="g-cap">RPM-to-voltage sensor (RPM Meter)</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/rpm-sensor/rpm-2.jpg" alt="Sensor and calibration setup" loading="lazy">
+              <figcaption class="g-cap">Sensor and calibration setup</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/rpm-sensor/rpm-3.jpg" alt="Calibration with the lathe machine" loading="lazy">
+              <figcaption class="g-cap">Calibration with the lathe machine</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/rpm-sensor/rpm-4.jpg" alt="Voltage output measurement" loading="lazy">
+              <figcaption class="g-cap">Voltage output measurement</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/rpm-sensor/rpm-5.jpg" alt="RPM vs voltage graphing" loading="lazy">
+              <figcaption class="g-cap">RPM vs voltage graphing</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/rpm-sensor/rpm-6.jpg" alt="Sensor housing and wiring" loading="lazy">
+              <figcaption class="g-cap">Sensor housing and wiring</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/rpm-sensor/rpm-7.jpg" alt="Completed RPM meter project" loading="lazy">
+              <figcaption class="g-cap">Completed RPM meter project</figcaption>
+            </figure>
+          </div>
+          <p class="gallery-hint">Click any photo to view it full size.</p>
+        </article>
+        <article class="project-feature reveal" id="project-rpsls" style="margin-top: 26px;">
+          <div class="badges">
+            <span class="badge-accent">Group Project</span>
+            <span class="badge-soft">Arduino &amp; Python</span>
+            <span class="badge-soft">GP106</span>
+          </div>
+          <h2>Rock, Paper, Scissors, Lizard, Spock — Arduino + Python Game</h2>
+          <p class="project-meta">Group Project &middot; Hardware + Software</p>
+          <p class="lead-desc">A Rock, Paper, Scissors, Lizard, Spock game built with Arduino and Python — combining hardware inputs with an interactive GUI.</p>
+          <div class="details-collapse">
+          <p class="body">
+            We built a <strong>Rock, Paper, Scissors, Lizard, Spock</strong> game using <strong>Arduino and Python</strong>. The group designed both the hardware system and a GUI interface for the game.
+          </p>
+          <p class="body">
+            The hardware lets players make selections using physical buttons, while the Python GUI displays player scores, choices, number of rounds and the computer's choice for a smooth, interactive experience. Players can use the physical buttons or simply click the on-screen GUI — this project combined hardware design, software development and creative thinking, and was great fun to bring together.
+          </p>
+          <div class="tags">
+            <span class="tag">Arduino</span>
+            <span class="tag">Python</span>
+            <span class="tag">GUI Development</span>
+            <span class="tag">Embedded Systems</span>
+            <span class="tag">Game Development</span>
+            <span class="tag">Hardware + Software</span>
+          </div>
+          </div>
+          <button class="read-more-btn" type="button" aria-expanded="false">
+            <span class="rm-text">Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <h3 class="section-subhead">Game in Action</h3>
+          <div class="gallery plain">
+            <figure class="gallery-item">
+              <img src="assets/projects/rpsls-game/game-1.jpg" alt="Rock, Paper, Scissors, Lizard, Spock — game GUI &amp; hardware" loading="lazy">
+              <figcaption class="g-cap">Rock, Paper, Scissors, Lizard, Spock — game GUI &amp; hardware</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/rpsls-game/game-2.jpg" alt="Physical button inputs with LED feedback" loading="lazy">
+              <figcaption class="g-cap">Physical button inputs with LED feedback</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/rpsls-game/game-3.jpg" alt="Custom-built Arduino control board" loading="lazy">
+              <figcaption class="g-cap">Custom-built Arduino control board</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/rpsls-game/game-4.jpg" alt="Interactive gameplay on screen" loading="lazy">
+              <figcaption class="g-cap">Interactive gameplay on screen</figcaption>
+            </figure>
+          </div>
+          <p class="gallery-hint">Click any photo to view it full size.</p>
+        </article>
+        <article class="project-feature reveal" id="project-ml" style="margin-top: 26px;">
+          <div class="badges">
+            <span class="badge-accent">🔬 Ongoing Research</span>
+            <span class="badge-soft">Machine Learning</span>
+            <span class="badge-soft">Hydrology</span>
+          </div>
+          <h2>Machine Learning-Based Flood Prediction System for a Tropical River Basin</h2>
+          <p class="project-meta">Ongoing research &middot; Department of Electrical &amp; Electronic Engineering, UoP</p>
+          <p class="lead-desc">An ongoing research project developing an hourly rainfall&ndash;discharge flood forecasting model for a monsoon-influenced tropical river basin, using machine learning and extreme value analysis — aimed at connecting it to the FloodLink device.</p>
+          <div class="details-collapse">
+          <p class="body">
+            Developing an <strong>hourly rainfall&ndash;discharge flood forecasting model</strong> across a multi-gauge tributary network in a monsoon-influenced catchment, using <strong>machine learning</strong> and <strong>extreme value analysis</strong> to derive empirical flood-severity thresholds from historical discharge data.
+          </p>
+          <p class="body">
+            Our target is an advanced machine-learning algorithm that connects to the <strong>FloodLink</strong> device — essentially FloodLink 2.0 — turning real-time river-level data into accurate, actionable flood predictions.
+          </p>
+          <div class="tags">
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Flood Forecasting</span>
+            <span class="tag">Rainfall–Discharge Modelling</span>
+            <span class="tag">Extreme Value Analysis</span>
+            <span class="tag">Hydrology</span>
+            <span class="tag">FloodLink 2.0</span>
+          </div>
+          </div>
+          <button class="read-more-btn" type="button" aria-expanded="false">
+            <span class="rm-text">Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+        </article>
+      </div>
+    </section>
+  </main>
+  <!-- ======================= FOOTER / CONTACT ======================= -->
+  <footer class="footer" id="contact">
+    <div class="container footer-inner reveal">
+      <div class="footer-actions">
+        <a class="btn-primary" href="mailto:olithainduvara@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          Email me
+        </a>
+        <a class="btn-outline" href="https://www.linkedin.com/in/olitha-induvara-16329733b/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+          Connect on LinkedIn
+        </a>
+      </div>
+      <p class="copyright">&copy; <span id="year">2026</span> Olitha Induvara, University of Peradeniya</p>
+    </div>
+  </footer>
+  <!-- ======================= QUICK SEARCH OVERLAY ======================= -->
+  <div class="search-overlay" id="searchOverlay" hidden>
+    <div class="search-panel">
+      <input type="text" id="searchInput" placeholder="Search this portfolio… (e.g. floodlink)" autocomplete="off">
+      <ul class="search-results" id="searchResults"></ul>
+      <p class="search-hint">Press <kbd>Esc</kbd> to close</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

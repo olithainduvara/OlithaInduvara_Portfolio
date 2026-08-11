@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Achievements &amp; Awards — Olitha Induvara</title>
+  <meta name="description" content="Achievements of Olitha Induvara — 2nd Place UPAA-USA Innovation Award (FloodLink), International Asteroid Search Campaign and more.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237c5df8'/%3E%3Cstop offset='1' stop-color='%235b3df0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='48' fill='url(%23g)'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='54' fill='white' font-family='Verdana' font-weight='bold'%3EO%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="blob blob-1" aria-hidden="true"></div>
+  <div class="blob blob-2" aria-hidden="true"></div>
+  <div class="blob blob-3" aria-hidden="true"></div>
+  <canvas id="netCanvas" class="net-canvas" aria-hidden="true"></canvas>
+  <!-- ======================= NAVBAR ======================= -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">Olitha Induvara</a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Bio</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="achievements.html" class="nav-link active">Achievements</a>
+        <a href="events.html" class="nav-link">Participations</a>
+        <a href="skills.html" class="nav-link">Skills</a>
+        <a href="experience.html" class="nav-link">Experience</a>
+        <a href="photography.html" class="nav-link">Photography</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="searchBtn" aria-label="Search (quick navigation)" title="Quick search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+        <button class="icon-btn theme-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.3 11.3 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <span class="theme-label">Dark</span>
+        </button>
+        <button class="icon-btn burger" id="burgerBtn" aria-label="Open menu" title="Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- ======================= PAGE HEADER ======================= -->
+    <section class="page-hero">
+      <div class="container">
+        <p class="page-kicker reveal">Milestones &amp; Recognition</p>
+        <h1 class="reveal">Achievements &amp; Awards</h1>
+        <p class="page-sub reveal">Awards, competitions and milestones earned through innovation, teamwork and dedication.</p>
+      </div>
+    </section>
+    <section class="section" style="padding-top: 34px;">
+      <div class="container">
+        <div class="proj-summary-grid reveal">
+          <a class="proj-card" href="#ach-floodlink">
+            <div class="pc-cover pc-grad-1">
+              <img class="pc-cover-img" src="assets/achievements/floodlink-award/floodlink-award-1.jpg" alt="Idea to Invention 2025" loading="lazy">
+              <span class="pc-badge">🏆 2nd Place</span>
+            </div>
+            <div class="pc-body">
+              <p class="pc-kicker">UPAA&ndash;USA Innovation Award</p>
+              <h3 class="pc-title">Idea to Invention 2025</h3>
+              <p class="pc-desc">Team FloodLink proudly secured 2nd place at the inaugural Idea to Invention (I-TO-I) Competition.</p>
+              <div class="pc-foot">
+                <span class="pc-award">🏆 17 Jan 2026 &middot; Kandy</span>
+                <span class="pc-go">Details &#8595;</span>
+              </div>
+            </div>
+          </a>
+          <a class="proj-card" href="#ach-asteroid">
+            <div class="pc-cover pc-grad-2">
+              <img class="pc-cover-img" src="assets/achievements/asteroid/asteroid-1.jpg" alt="5 campaigns - 4 primarily asteroids" loading="lazy">
+              <span class="pc-badge">🌌 Citizen Science</span>
+            </div>
+            <div class="pc-body">
+              <p class="pc-kicker">International Asteroid Search Campaign</p>
+              <h3 class="pc-title">5 campaigns - 4 primarily asteroids</h3>
+              <p class="pc-desc">Analysed real Pan-STARRS telescope data with Astrometrica to identify new asteroids.</p>
+              <div class="pc-foot">
+                <span class="pc-award">🔭 SEDS Sri Lanka</span>
+                <span class="pc-go">Details &#8595;</span>
+              </div>
+            </div>
+          </a>
+          <a class="proj-card" href="#ach-meeting">
+            <div class="pc-cover pc-grad-3">
+              <img class="pc-cover-img" src="assets/achievements/floodlink-meeting/meeting-1.jpg" alt="FloodLink Winner Meeting" loading="lazy">
+              <span class="pc-badge">🤝 Networking</span>
+            </div>
+            <div class="pc-body">
+              <p class="pc-kicker">Post-competition meeting</p>
+              <h3 class="pc-title">FloodLink Winner Meeting</h3>
+              <p class="pc-desc">Met Dr. Upul Aththanayaka &amp; Dr. Vijitha Herath to discuss FloodLink and the teams' projects.</p>
+              <div class="pc-foot">
+                <span class="pc-award">🏛 Department of EEE, UoP</span>
+                <span class="pc-go">Details &#8595;</span>
+              </div>
+            </div>
+          </a>
+          <a class="proj-card" href="#ach-perabeat">
+            <div class="pc-cover pc-grad-1">
+              <img class="pc-cover-img" src="assets/achievements/perabeat/perabeat-1.jpg" alt="Hidden Shutterbugs of Pera" loading="lazy">
+              <span class="pc-badge">📸 Feature</span>
+            </div>
+            <div class="pc-body">
+              <p class="pc-kicker">Pera Beats — Hidden Shutterbugs of Pera</p>
+              <h3 class="pc-title">Hidden Shutterbugs of Pera</h3>
+              <p class="pc-desc">Featured by Pera Beats for balancing electrical &amp; electronic engineering with a passion for aerial cinematography.</p>
+              <div class="pc-foot">
+                <span class="pc-award">✨ UoP media society</span>
+                <span class="pc-go">Details &#8595;</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <article class="project-feature reveal" id="ach-floodlink">
+          <div class="badges">
+            <span class="badge-accent">🏆 2nd Place</span>
+            <span class="badge-soft">UPAA&ndash;USA Innovation Award</span>
+            <span class="badge-soft">Idea to Invention (I-TO-I) 2025</span>
+          </div>
+          <h2>Second Place — Idea to Invention Competition 2025</h2>
+          <div class="info-row">
+            <span class="info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              17 January 2026
+            </span>
+            <span class="info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Oak Ray Resort, Kandy
+            </span>
+            <span class="info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v2c0 5.5 3.8 10.4 9 13 5.2-2.6 9-7.5 9-13V7l-9-5Z"/></svg>
+              UPAA&ndash;USA &amp; Faculty of Engineering, UoP
+            </span>
+          </div>
+          <p class="lead-desc">Team FloodLink proudly secured 2nd Place at the inaugural Idea to Invention (I-TO-I) Competition under the UPAA&ndash;USA Innovation Award.</p>
+          <div class="details-collapse">
+          <p class="body">
+            <strong>FloodLink</strong> — a real-time flood-monitoring and prediction system powered by LoRa networks — proudly secured <strong>Second Place</strong> at the inaugural <em>Idea to Invention (I-TO-I) Competition</em> under the UPAA&ndash;USA Innovation Award.
+          </p>
+          <p class="body">
+            The certificate awarding ceremony was organised by the University of Peradeniya Alumni Association &ndash; USA (UPAA&ndash;USA) and the Faculty of Engineering, University of Peradeniya — a milestone moment in a journey driven by innovation and impact.
+          </p>
+          <div class="tags">
+            <span class="tag">FloodLink</span>
+            <span class="tag">LoRa</span>
+            <span class="tag">Innovation Award</span>
+            <span class="tag">2nd Place</span>
+            <span class="tag">UPAA-USA</span>
+          </div>
+          </div>
+          <button class="read-more-btn" type="button" aria-expanded="false">
+            <span class="rm-text">Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <h3 class="section-subhead">Moments from the Ceremony</h3>
+          <div class="gallery plain">
+            <figure class="gallery-item">
+              <img src="assets/achievements/floodlink-award/floodlink-award-1.jpg" alt="Team FloodLink receiving certificates at the awarding ceremony" loading="lazy">
+              <figcaption class="g-cap">Team FloodLink receiving certificates at the awarding ceremony</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/achievements/floodlink-award/floodlink-award-2.jpg" alt="Award-winning teams with organisers at the I-TO-I ceremony" loading="lazy">
+              <figcaption class="g-cap">Award-winning teams with organisers at the I-TO-I ceremony</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/achievements/floodlink-award/floodlink-award-3.jpg" alt="UPAA-USA Innovation Award — 2nd Place certificate for FloodLink" loading="lazy">
+              <figcaption class="g-cap">UPAA-USA Innovation Award — 2nd Place certificate for FloodLink</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/achievements/floodlink-award/floodlink-award-4.jpg" alt="At the certificate awarding ceremony — Oak Ray Resort, Kandy" loading="lazy">
+              <figcaption class="g-cap">At the certificate awarding ceremony — Oak Ray Resort, Kandy</figcaption>
+            </figure>
+          </div>
+          <p class="gallery-hint">Click any photo to view it full size.</p>
+        </article>
+        <article class="project-feature reveal" id="ach-meeting" style="margin-top: 26px;">
+          <div class="badges">
+            <span class="badge-accent">🤝 Networking</span>
+            <span class="badge-soft">Department of EEE, UoP</span>
+            <span class="badge-soft">Post-competition insight</span>
+          </div>
+          <h2>FloodLink Winner Meeting with the Judges</h2>
+          <div class="info-row">
+            <span class="info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v2c0 5.5 3.8 10.4 9 13 5.2-2.6 9-7.5 9-13V7l-9-5Z"/></svg>
+              Department of Electrical &amp; Electronic Engineering, UoP
+            </span>
+          </div>
+          <p class="lead-desc">After winning, the team met Dr. Upul Aththanayaka and Dr. Vijitha Herath to discuss FloodLink and the innovative projects from all participating teams.</p>
+          <div class="details-collapse">
+          <p class="body">
+            A proud moment for the team as FloodLink secured Second Place at the I-to-I (Idea to Innovation) Competition. Following the competition, we had the valuable opportunity to meet <strong>Dr. Upul Aththanayaka</strong> and <strong>Dr. Vijitha Herath</strong>, where we discussed FloodLink and the innovative projects presented by all participating teams.
+          </p>
+          <p class="body">
+            The session offered insightful technical and practical perspectives that will greatly support the future development of our solution. This photograph was taken in front of the Department of Electrical and Electronic Engineering — an important milestone in our innovation journey.
+          </p>
+          <div class="tags">
+            <span class="tag">FloodLink</span>
+            <span class="tag">Innovation</span>
+            <span class="tag">Networking</span>
+            <span class="tag">UoP</span>
+          </div>
+          </div>
+          <button class="read-more-btn" type="button" aria-expanded="false">
+            <span class="rm-text">Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <h3 class="section-subhead">Moment</h3>
+          <div class="gallery plain">
+            <figure class="gallery-item">
+              <img src="assets/achievements/floodlink-meeting/meeting-1.jpg" alt="With Dr. Upul Aththanayaka &amp; Dr. Vijitha Herath — Department of EEE, UoP" loading="lazy">
+              <figcaption class="g-cap">With Dr. Upul Aththanayaka &amp; Dr. Vijitha Herath — Department of EEE, UoP</figcaption>
+            </figure>
+          </div>
+          <p class="gallery-hint">Click any photo to view it full size.</p>
+        </article>
+        <article class="project-feature reveal" id="ach-asteroid" style="margin-top: 26px;">
+          <div class="badges">
+            <span class="badge-accent">🌌 Citizen Science</span>
+            <span class="badge-soft">SEDS Sri Lanka</span>
+            <span class="badge-soft">Astrometrica</span>
+          </div>
+          <h2>International Asteroid Search Campaign</h2>
+          <div class="info-row">
+            <span class="info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>
+              Astrometrica &middot; Pan-STARRS telescope data
+            </span>
+            <span class="info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v2c0 5.5 3.8 10.4 9 13 5.2-2.6 9-7.5 9-13V7l-9-5Z"/></svg>
+              5 campaigns &middot; 4 preliminary asteroids
+            </span>
+          </div>
+          <p class="lead-desc">Across five International Asteroid Search Campaigns organised by SEDS Sri Lanka, our team analysed real Pan-STARRS telescope data to identify potential new asteroids — discovering four preliminary asteroids.</p>
+          <div class="details-collapse">
+          <p class="body">
+            Had the amazing opportunity to participate in the International Asteroid Search Campaign, where we analysed telescope data using <strong>Astrometrica</strong> software to identify potential new asteroids.
+          </p>
+          <p class="body">
+            The campaigns involved analysing high-quality sky-survey images captured by the <strong>Pan-STARRS telescope</strong> in Hawaii. Using Astrometrica, our team carefully examined each frame to identify potential <strong>Near-Earth Objects (NEOs)</strong> and main-belt asteroids — performing precise detection and verification, analysing datasets with high accuracy, and contributing to global efforts in tracking potentially hazardous objects and planetary defense.
+          </p>
+          <h3 class="section-subhead">Team</h3>
+          <div class="team">
+            <span class="team-member me" title="That's me!">Olitha Induvara</span>
+            <span class="team-member">Yeshini Illagolla</span>
+            <span class="team-member">Oshada Samarakoon</span>
+            <span class="team-member">Shanan Adams</span>
+            <span class="team-member">Vihnaga Himantha</span>
+          </div>
+          <div class="tags">
+            <span class="tag">Citizen Science</span>
+            <span class="tag">Asteroid Search</span>
+            <span class="tag">Astrometrica</span>
+            <span class="tag">Pan-STARRS</span>
+            <span class="tag">NEO</span>
+            <span class="tag">SEDS Sri Lanka</span>
+          </div>
+          </div>
+          <button class="read-more-btn" type="button" aria-expanded="false">
+            <span class="rm-text">Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <h3 class="section-subhead">Campaign Moments</h3>
+          <div class="gallery plain">
+            <figure class="gallery-item">
+              <img src="assets/achievements/asteroid/asteroid-1.jpg" alt="Analysing Pan-STARRS images with Astrometrica" loading="lazy">
+              <figcaption class="g-cap">Analysing Pan-STARRS images with Astrometrica</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/achievements/asteroid/asteroid-2.jpg" alt="Asteroid detection and verification" loading="lazy">
+              <figcaption class="g-cap">Asteroid detection and verification</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/achievements/asteroid/asteroid-3.jpg" alt="International Asteroid Search Campaign — SEDS Sri Lanka" loading="lazy">
+              <figcaption class="g-cap">International Asteroid Search Campaign — SEDS Sri Lanka</figcaption>
+            </figure>
+          </div>
+          <p class="gallery-hint">Click any photo to view it full size.</p>
+        </article>
+        <article class="project-feature reveal" id="ach-perabeat" style="margin-top: 26px;">
+          <div class="badges">
+            <span class="badge-accent">📸 Feature</span>
+            <span class="badge-soft">Pera Beats</span>
+            <span class="badge-soft">Hidden Shutterbugs of Pera</span>
+          </div>
+          <h2>Featured in ‘Hidden Shutterbugs of Pera’ — Pera Beats</h2>
+          <p class="lead-desc">Featured in the ‘Hidden Shutterbugs of Pera’ program by Pera Beats — the University of Peradeniya’s official media society.</p>
+          <div class="details-collapse">
+          <p class="body">
+            I am thrilled to share that I&rsquo;ve been featured in the &ldquo;Hidden Shutterbugs of Pera&rdquo; program by <strong>Pera Beats</strong>! Balancing my studies in electrical and electronic engineering and my deep passion for aerial cinematography takes dedication, but moments of recognition like this make it all worth it.
+          </p>
+          <p class="body">
+            A huge thank you to the University of Peradeniya&rsquo;s official media society for capturing my story in their latest mini-article.
+          </p>
+          <div class="tags">
+            <span class="tag">Pera Beats</span>
+            <span class="tag">Hidden Shutterbugs of Pera</span>
+            <span class="tag">Aerial Cinematography</span>
+            <span class="tag">Feature</span>
+            <span class="tag">UoP Media Society</span>
+          </div>
+          </div>
+          <button class="read-more-btn" type="button" aria-expanded="false">
+            <span class="rm-text">Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <h3 class="section-subhead">The Feature</h3>
+          <div class="gallery plain">
+            <figure class="gallery-item">
+              <img src="assets/achievements/perabeat/perabeat-1.jpg" alt="Featured in the &lsquo;Hidden Shutterbugs of Pera&rsquo; mini-article by Pera Beats" loading="lazy">
+              <figcaption class="g-cap">Featured in the &lsquo;Hidden Shutterbugs of Pera&rsquo; mini-article by Pera Beats</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/achievements/perabeat/perabeat-2.jpg" alt="Balancing engineering studies with a passion for aerial cinematography" loading="lazy">
+              <figcaption class="g-cap">Balancing engineering studies with a passion for aerial cinematography</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/achievements/perabeat/perabeat-3.jpg" alt="Behind the lens — my story captured by the UoP media society" loading="lazy">
+              <figcaption class="g-cap">Behind the lens — my story captured by the UoP media society</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/achievements/perabeat/perabeat-4.jpg" alt="Recognition by the University of Peradeniya’s official media society" loading="lazy">
+              <figcaption class="g-cap">Recognition by the University of Peradeniya’s official media society</figcaption>
+            </figure>
+          </div>
+          <p class="gallery-hint">Click any photo to view it full size.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+  <!-- ======================= FOOTER / CONTACT ======================= -->
+  <footer class="footer" id="contact">
+    <div class="container footer-inner reveal">
+      <div class="footer-actions">
+        <a class="btn-primary" href="mailto:olithainduvara@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          Email me
+        </a>
+        <a class="btn-outline" href="https://www.linkedin.com/in/olitha-induvara-16329733b/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+          Connect on LinkedIn
+        </a>
+      </div>
+      <p class="copyright">&copy; <span id="year">2026</span> Olitha Induvara, University of Peradeniya</p>
+    </div>
+  </footer>
+  <!-- ======================= QUICK SEARCH OVERLAY ======================= -->
+  <div class="search-overlay" id="searchOverlay" hidden>
+    <div class="search-panel">
+      <input type="text" id="searchInput" placeholder="Search this portfolio… (e.g. award)" autocomplete="off">
+      <ul class="search-results" id="searchResults"></ul>
+      <p class="search-hint">Press <kbd>Esc</kbd> to close</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
