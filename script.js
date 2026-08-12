@@ -399,6 +399,114 @@
     statNums.forEach((el) => statObs.observe(el));
   }
 
+
+  /* ---------------- My Work — 3D coverflow carousel ---------------- */
+  (function () {
+    const wcCards = document.querySelectorAll('.wc-card');
+    if (!wcCards.length) return;
+    const wcDots = document.querySelectorAll('.wc-dot');
+    const wcName = document.querySelector('.wc-name');
+    const wcRole = document.querySelector('.wc-role');
+    const wcLeft = document.querySelector('.wc-arrow.left');
+    const wcRight = document.querySelector('.wc-arrow.right');
+    const wcStage = document.querySelector('.wc-stage');
+    const slides = [
+      { title: 'Event & Portrait', sub: 'Photography' },
+      { title: 'Behind the Lens', sub: 'Photography' },
+      { title: 'Candid Moments', sub: 'Photography' },
+      { title: 'On Location', sub: 'Field Work' },
+      { title: 'Detail & Composition', sub: 'Photography' },
+      { title: 'Creative Frames', sub: 'Photography' },
+    ];
+    let cur = 0, animating = false;
+
+    function update(n) {
+      if (animating) return;
+      animating = true;
+      cur = ((n % wcCards.length) + wcCards.length) % wcCards.length;
+      wcCards.forEach((card, i) => {
+        const off = (i - cur + wcCards.length) % wcCards.length;
+        card.classList.remove('center', 'left-1', 'left-2', 'right-1', 'right-2', 'hidden');
+        if (off === 0) card.classList.add('center');
+        else if (off === 1) card.classList.add('right-1');
+        else if (off === 2) card.classList.add('right-2');
+        else if (off === wcCards.length - 1) card.classList.add('left-1');
+        else if (off === wcCards.length - 2) card.classList.add('left-2');
+        else card.classList.add('hidden');
+      });
+      wcDots.forEach((d, i) => d.classList.toggle('active', i === cur));
+      if (wcName) {
+        wcName.style.opacity = '0';
+        wcRole.style.opacity = '0';
+        setTimeout(() => {
+          wcName.textContent = slides[cur].title;
+          wcRole.textContent = slides[cur].sub;
+          wcName.style.opacity = '1';
+          wcRole.style.opacity = '1';
+        }, 280);
+      }
+      setTimeout(() => { animating = false; }, 760);
+    }
+
+    wcLeft.addEventListener('click', () => update(cur - 1));
+    wcRight.addEventListener('click', () => update(cur + 1));
+    wcDots.forEach((d, i) => d.addEventListener('click', () => update(i)));
+    // enlarge overlay for the center card
+    const overlay = document.createElement('div');
+    overlay.className = 'wc-zoom';
+    overlay.innerHTML = '<button class="wc-zoom-close" type="button" aria-label="Close">&times;</button><img alt="">';
+    document.body.appendChild(overlay);
+    const zImg = overlay.querySelector('img');
+    function openZoom(src, alt) {
+      zImg.src = src; zImg.alt = alt || '';
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeZoom() {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+      window.setTimeout(() => { if (!overlay.classList.contains('open')) zImg.src = ''; }, 350);
+    }
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay || (e.target.classList && e.target.classList.contains('wc-zoom-close'))) closeZoom();
+    });
+
+    wcCards.forEach((c, i) => c.addEventListener('click', () => {
+      if (i === cur) {
+        const img = c.querySelector('img');
+        openZoom(img.src, img.alt);
+      } else {
+        update(i);
+      }
+    }));
+
+    function onKey(e) {
+      if (overlay.classList.contains('open')) { if (e.key === 'Escape') closeZoom(); return; }
+      if (document.querySelector('.lightbox.open')) return;
+      if (e.key === 'ArrowLeft') update(cur - 1);
+      if (e.key === 'ArrowRight') update(cur + 1);
+    }
+    if (wcStage) {
+      const wcObs = new IntersectionObserver((entries) => {
+        entries.forEach((en) => {
+          if (en.isIntersecting) window.addEventListener('keydown', onKey);
+          else window.removeEventListener('keydown', onKey);
+        });
+      }, { threshold: 0.3 });
+      wcObs.observe(wcStage);
+
+      let tsx = 0, tracking = false;
+      wcStage.addEventListener('touchstart', (e) => { tsx = e.changedTouches[0].screenX; tracking = true; }, { passive: true });
+      wcStage.addEventListener('touchend', (e) => {
+        if (!tracking) return;
+        const dx = tsx - e.changedTouches[0].screenX;
+        if (Math.abs(dx) > 45) update(cur + (dx > 0 ? 1 : -1));
+        tracking = false;
+      }, { passive: true });
+    }
+
+    update(0);
+  })();
   /* ---------------- Footer year ---------------- */
   document.getElementById('year').textContent = new Date().getFullYear();
 })();
