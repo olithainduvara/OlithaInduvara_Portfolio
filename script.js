@@ -507,6 +507,29 @@
 
     update(0);
   })();
+
+  /* ---------------- Mobile bottom navigation (glass) ---------------- */
+  (function () {
+    const items = [
+      { label: 'Bio', href: 'index.html', svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg>' },
+      { label: 'Projects', href: 'projects.html', svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg>' },
+      { label: 'Awards', href: 'achievements.html', svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3"/></svg>' },
+      { label: 'Events', href: 'events.html', svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>' },
+      { label: 'Skills', href: 'skills.html', svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6L20 9.3l-4 4 1 5.7-5-2.7-5 2.7 1-5.7-4-4 5.4-.7L12 3z"/></svg>' },
+      { label: 'Exp', href: 'experience.html', svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>' },
+      { label: 'Photos', href: 'photography.html', svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>' },
+    ];
+    let path = location.pathname.split('/').pop();
+    if (!path) path = 'index.html';
+    const bn = document.createElement('nav');
+    bn.className = 'bottom-nav';
+    bn.setAttribute('aria-label', 'Mobile navigation');
+    bn.innerHTML = '<div class="g-bar-filter" aria-hidden="true"></div><div class="g-bar-overlay" aria-hidden="true"></div><div class="g-bar-spec" aria-hidden="true"></div>' + items.map(function (it) {
+      return '<a class="bn-item' + (it.href === path ? ' active' : '') + '" href="' + it.href + '">' + it.svg + '<span>' + it.label + '</span></a>';
+    }).join('');
+    document.body.appendChild(bn);
+  })();
+
   /* ---------------- Footer year ---------------- */
   document.getElementById('year').textContent = new Date().getFullYear();
 })();

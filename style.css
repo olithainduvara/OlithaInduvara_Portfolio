@@ -1912,3 +1912,340 @@ textarea.gi-field:not(:placeholder-shown) ~ .gi-label-area {
 .gi-note { text-align: center; color: rgba(255, 255, 255, 0.6); font-size: 0.78rem; margin-top: 14px; }
 
 @media (max-width: 564px) { .gmsg-card { padding: 4.4em 1.4em 2em; } .gmsg-header { width: 150px; } }
+
+/* ============================================================
+   Glass + glossy treatment for all content blocks (both themes)
+   Matches the summary-card frosted-glass look.
+   ============================================================ */
+.project-feature,
+.skill-cat,
+.service-card,
+.edu-card,
+.timeline-card,
+.club-news {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.70) 0%, rgba(255, 255, 255, 0.36) 100%);
+  backdrop-filter: blur(14px) saturate(165%);
+  -webkit-backdrop-filter: blur(14px) saturate(165%);
+  border: 1px solid rgba(255, 255, 255, 0.60);
+  box-shadow: var(--shadow-card), inset 0 1px 1px rgba(255, 255, 255, 0.55);
+}
+
+[data-theme="dark"] .project-feature,
+[data-theme="dark"] .skill-cat,
+[data-theme="dark"] .service-card,
+[data-theme="dark"] .edu-card,
+[data-theme="dark"] .timeline-card,
+[data-theme="dark"] .club-news {
+  background: linear-gradient(135deg, rgba(48, 44, 92, 0.62) 0%, rgba(24, 22, 54, 0.40) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: var(--shadow-card), inset 0 1px 1px rgba(255, 255, 255, 0.10);
+}
+
+/* glossy top sheen on hover for the block cards */
+.project-feature::before,
+.skill-cat::before,
+.service-card::before,
+.edu-card::before,
+.timeline-card::before,
+.club-news::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(120% 80% at 10% 0%, rgba(255, 255, 255, 0.40), transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+}
+[data-theme="dark"] .project-feature::before,
+[data-theme="dark"] .skill-cat::before,
+[data-theme="dark"] .service-card::before,
+[data-theme="dark"] .edu-card::before,
+[data-theme="dark"] .timeline-card::before,
+[data-theme="dark"] .club-news::before {
+  background: radial-gradient(120% 80% at 10% 0%, rgba(255, 255, 255, 0.10), transparent 55%);
+}
+/* keep inner content above the sheen */
+.project-feature > *, .skill-cat > *, .service-card > *, .edu-card > *, .timeline-card > *, .club-news > * { position: relative; z-index: 1; }
+
+/* softer accent-tinted glass for the highlight callouts */
+.callout, .role-note {
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+}
+
+/* ============================================================
+   Mobile / tablet optimization (glass fallback + layout)
+   backdrop-filter is unreliable on many mobile browsers, so
+   cards become more solid on smaller screens for readability.
+   ============================================================ */
+
+/* Tablet — more opaque glass, lighter blur */
+@media (max-width: 900px) {
+  .proj-card,
+  .project-feature,
+  .skill-cat,
+  .service-card,
+  .edu-card,
+  .timeline-card,
+  .club-news,
+  .cat-panel,
+  .stat {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.93) 0%, rgba(255, 255, 255, 0.82) 100%);
+    backdrop-filter: blur(10px) saturate(150%);
+    -webkit-backdrop-filter: blur(10px) saturate(150%);
+  }
+  [data-theme="dark"] .proj-card,
+  [data-theme="dark"] .project-feature,
+  [data-theme="dark"] .skill-cat,
+  [data-theme="dark"] .service-card,
+  [data-theme="dark"] .edu-card,
+  [data-theme="dark"] .timeline-card,
+  [data-theme="dark"] .club-news,
+  [data-theme="dark"] .cat-panel,
+  [data-theme="dark"] .stat {
+    background: linear-gradient(135deg, rgba(42, 38, 80, 0.93) 0%, rgba(26, 24, 54, 0.88) 100%);
+  }
+  .pc-body { padding: 16px 17px; }
+  .project-feature { padding: 22px 18px; }
+}
+
+/* Phone — near-solid cards (safe fallback), subtle blur only */
+@media (max-width: 560px) {
+  .proj-card,
+  .project-feature,
+  .skill-cat,
+  .service-card,
+  .edu-card,
+  .timeline-card,
+  .club-news,
+  .cat-panel,
+  .stat {
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-color: var(--line);
+  }
+  [data-theme="dark"] .proj-card,
+  [data-theme="dark"] .project-feature,
+  [data-theme="dark"] .skill-cat,
+  [data-theme="dark"] .service-card,
+  [data-theme="dark"] .edu-card,
+  [data-theme="dark"] .timeline-card,
+  [data-theme="dark"] .club-news,
+  [data-theme="dark"] .cat-panel,
+  [data-theme="dark"] .stat {
+    background: rgba(30, 28, 58, 0.96);
+  }
+  .pc-title { font-size: 1.05rem; }
+  .pc-body { padding: 15px 15px; }
+  .project-feature { padding: 18px 14px; }
+  .pc-cover { height: 150px; }
+  .gmsg-card { background: rgba(255, 255, 255, 0.22); }
+  .glass-stage { padding: 30px 12px; }
+}
+
+/* Small phones — shrink coverflow so it never overflows */
+@media (max-width: 420px) {
+  .wc-stage { height: 308px; }
+  .wc-card { width: 162px; height: 226px; border-radius: 16px; }
+  .wc-card.left-1 { transform: translateX(-96px) scale(0.9) translateZ(-100px); }
+  .wc-card.right-1 { transform: translateX(96px) scale(0.9) translateZ(-100px); }
+  .wc-card.left-2 { transform: translateX(-186px) scale(0.8) translateZ(-300px); }
+  .wc-card.right-2 { transform: translateX(186px) scale(0.8) translateZ(-300px); }
+  .wc-arrow { width: 38px; height: 38px; font-size: 1.4rem; }
+  .wc-name::before, .wc-name::after { width: 34px; }
+  .wc-name::before { left: -46px; }
+  .wc-name::after { right: -46px; }
+}
+
+/* Larger touch targets & breathing room on touch devices */
+@media (max-width: 560px) {
+  .btn-primary, .btn-outline, .wa-cta, .wa-btn, .gi-submit, .club-fb { min-height: 46px; }
+  .nav-link { padding: 12px 4px; }
+  .section { padding: 30px 0; }
+  .page-hero h1 { font-size: clamp(1.8rem, 8vw, 2.4rem); }
+}
+
+/* ============================================================
+   Mobile top bar — solid (backdrop-filter is unreliable),
+   so the navbar reads as a full bar reaching the corners.
+   ============================================================ */
+@media (max-width: 820px) {
+  .topbar {
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .nav-links {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 14px 30px -18px rgba(0, 0, 0, 0.25);
+  }
+  [data-theme="dark"] .topbar { background: rgba(18, 16, 33, 0.96); }
+  [data-theme="dark"] .nav-links { background: rgba(18, 16, 33, 0.98); }
+  .topbar-inner { width: min(1180px, 92%); height: 64px; }
+  .nav-links { top: 64px; }
+  .brand { font-size: 1rem; }
+}
+
+/* ============================================================
+   Mobile bottom navigation bar (glass) — mobile only
+   ============================================================ */
+.bottom-nav { display: none; }
+@media (max-width: 820px) {
+  .bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 60;
+    justify-content: space-around;
+    align-items: stretch;
+    padding: 7px 4px calc(7px + env(safe-area-inset-bottom, 0px));
+    background: rgba(255, 255, 255, 0.80);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    border-top: 1px solid var(--line);
+    box-shadow: 0 -10px 30px -14px rgba(0, 0, 0, 0.20);
+  }
+  [data-theme="dark"] .bottom-nav { background: rgba(18, 16, 33, 0.82); }
+  .bn-item {
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+    flex: 1; padding: 6px 2px; color: var(--muted); text-decoration: none;
+    font-size: 0.6rem; font-weight: 600; border-radius: 12px;
+    transition: color 0.2s ease, background 0.2s ease;
+  }
+  .bn-item svg { width: 21px; height: 21px; }
+  .bn-item.active { color: var(--accent); background: var(--accent-soft); }
+  body { padding-bottom: 72px; }
+}
+@media (max-width: 360px) {
+  .bn-item { font-size: 0.54rem; }
+  .bn-item svg { width: 19px; height: 19px; }
+}
+
+/* ============================================================
+   Photography page — fix coverflow horizontal overflow
+   (side cards were spilling out, causing horizontal scroll
+   that hid the bottom nav). Clip to the stage.
+   ============================================================ */
+.wc-stage { overflow: hidden; }
+#work { overflow-x: hidden; }
+
+/* keep bottom nav above everything (except fullscreen overlays) */
+.bottom-nav { z-index: 100; }
+
+/* ============================================================
+   Mobile bars — fully solid (no translucent seam / blur line)
+   Glass is kept for desktop; mobile gets a clean opaque bar
+   that clearly extends edge-to-edge.
+   ============================================================ */
+@media (max-width: 820px) {
+  .topbar,
+  .nav-links,
+  .bottom-nav {
+    background: var(--card-solid);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .topbar { border-bottom: 1px solid var(--line); }
+  .bottom-nav { border-top: 1px solid var(--line); box-shadow: none; }
+}
+
+/* ============================================================
+   Mobile bars — liquid-glass (professional frosted look)
+   Glossy highlight + gradient depth + light glass edge + frost.
+   ============================================================ */
+@media (max-width: 820px) {
+  .topbar,
+  .bottom-nav,
+  .nav-links {
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+  }
+  .topbar {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.85) 0%, rgba(244, 242, 255, 0.70) 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.9), 0 8px 22px -12px rgba(80, 60, 180, 0.30);
+  }
+  .bottom-nav {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.85) 0%, rgba(244, 242, 255, 0.70) 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.65);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.9), 0 -8px 22px -14px rgba(80, 60, 180, 0.22);
+  }
+  .nav-links {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(244, 242, 255, 0.82) 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.9), 0 14px 30px -16px rgba(80, 60, 180, 0.30);
+  }
+
+  [data-theme="dark"] .topbar {
+    background: linear-gradient(180deg, rgba(48, 44, 90, 0.72) 0%, rgba(20, 18, 44, 0.60) 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.16), 0 8px 22px -12px rgba(0, 0, 0, 0.55);
+  }
+  [data-theme="dark"] .bottom-nav {
+    background: linear-gradient(0deg, rgba(48, 44, 90, 0.72) 0%, rgba(20, 18, 44, 0.60) 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.16), 0 -8px 22px -14px rgba(0, 0, 0, 0.50);
+  }
+  [data-theme="dark"] .nav-links {
+    background: linear-gradient(180deg, rgba(42, 38, 80, 0.86) 0%, rgba(20, 18, 44, 0.80) 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.16), 0 14px 30px -16px rgba(0, 0, 0, 0.55);
+  }
+}
+
+/* ============================================================
+   Mobile bars — layered LIQUID GLASS (ref: glass reference)
+   Layers: blur+saturate+brightness filter, tint overlay,
+   specular inset highlight. (feDisplacementMap skipped for
+   scroll performance on mobile.)
+   ============================================================ */
+.g-bar-filter, .g-bar-overlay, .g-bar-spec { display: none; }
+
+@media (max-width: 820px) {
+  .topbar, .bottom-nav {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: none !important;
+  }
+  .topbar { border-bottom: 1px solid rgba(255, 255, 255, 0.45); }
+  .bottom-nav { border-top: 1px solid rgba(255, 255, 255, 0.45); }
+
+  .g-bar-filter, .g-bar-overlay, .g-bar-spec {
+    display: block;
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+  }
+  .g-bar-filter {
+    z-index: 0;
+    backdrop-filter: blur(10px) saturate(170%) brightness(1.12);
+    -webkit-backdrop-filter: blur(10px) saturate(170%) brightness(1.12);
+  }
+  .g-bar-overlay { z-index: 1; background: rgba(255, 255, 255, 0.45); }
+  .g-bar-spec {
+    z-index: 2;
+    box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.85), inset 0 -1px 1px rgba(255, 255, 255, 0.25);
+  }
+
+  [data-theme="dark"] .topbar { border-bottom-color: rgba(255, 255, 255, 0.12); }
+  [data-theme="dark"] .bottom-nav { border-top-color: rgba(255, 255, 255, 0.12); }
+  [data-theme="dark"] .g-bar-overlay { background: rgba(22, 19, 48, 0.52); }
+  [data-theme="dark"] .g-bar-spec {
+    box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.18), inset 0 -1px 1px rgba(255, 255, 255, 0.06);
+  }
+
+  /* keep content above the glass layers */
+  .topbar-inner, .bn-item { position: relative; z-index: 3; }
+
+  /* theme toggle: icon only + move to last position */
+  .theme-label { display: none; }
+  .nav-actions #searchBtn { order: 1; }
+  .nav-actions .burger { order: 2; }
+  .nav-actions .theme-btn { order: 3; }
+}
