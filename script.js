@@ -12,11 +12,9 @@
   const themeToggle = document.getElementById('themeToggle');
   const storedTheme = localStorage.getItem('portfolio-theme');
 
-  if (storedTheme) {
-    root.dataset.theme = storedTheme;
-  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    root.dataset.theme = 'dark';
-  }
+  /* Dark is always the default, regardless of OS setting — only an explicit
+     toggle (saved below) switches a visitor to light. */
+  root.dataset.theme = storedTheme || 'dark';
 
   /* Label next to the icon shows the mode you switch TO (matches the icon) */
   const themeLabel = themeToggle.querySelector('.theme-label');
@@ -80,6 +78,8 @@
     { label: 'Achievements — FloodLink winner meeting with Dr. Upul Aththanayaka & Dr. Vijitha Herath', href: 'achievements.html#ach-meeting' },
     { label: 'Achievements — International Asteroid Search Campaign (SEDS Sri Lanka)', href: 'achievements.html#ach-asteroid' },
     { label: 'Achievements — Pera Beat media coverage (Gauge crew)', href: 'achievements.html#ach-perabeat' },
+    { label: 'Skills — Electronics & hardware soldering (FloodLink, SkyAQ, EMG front-end)', href: 'skills.html#skill-electronics' },
+    { label: 'Skills — Public speaking & presenting (Lions Club of Puttalam AI/robotics talk)', href: 'skills.html#skill-speaking' },
     { label: 'Skills — Photography', href: 'skills.html#skill-photo' },
     { label: 'Skills — Videography (gimbal & live events)', href: 'skills.html#skill-video' },
     { label: 'Skills — Aerial cinematography (drone)', href: 'skills.html#skill-aerial' },
@@ -142,35 +142,65 @@
     });
   }
 
-  /* ---------------- Photo gallery lightbox (projects page) ---------------- */
-  const galleryImages = Array.from(document.querySelectorAll('.gallery-item img'));
-  if (galleryImages.length) {
+  /* ---------------- Photo & video gallery lightbox ---------------- */
+  const galleryItems = Array.from(document.querySelectorAll('.gallery-item')).map((item) => {
+    const video = item.querySelector('video');
+    if (video) {
+      const source = video.querySelector('source');
+      return { el: item, type: 'video', src: (source && source.src) || video.src, poster: video.poster };
+    }
+    const img = item.querySelector('img');
+    return { el: item, type: 'img', src: img ? img.src : '', alt: img ? img.alt : '' };
+  });
+
+  if (galleryItems.length) {
     const lightbox = document.createElement('div');
     lightbox.className = 'lightbox';
     lightbox.setAttribute('role', 'dialog');
-    lightbox.setAttribute('aria-label', 'Photo viewer');
+    lightbox.setAttribute('aria-label', 'Media viewer');
     lightbox.innerHTML = `
       <button class="lb-btn lb-close" aria-label="Close">&times;</button>
-      <button class="lb-btn lb-prev" aria-label="Previous photo">&#8249;</button>
+      <button class="lb-btn lb-prev" aria-label="Previous">&#8249;</button>
       <figure class="lb-figure">
         <img class="lb-img" src="" alt="">
+        <video class="lb-video" controls playsinline></video>
         <figcaption class="lb-cap"></figcaption>
       </figure>
-      <button class="lb-btn lb-next" aria-label="Next photo">&#8250;</button>
+      <button class="lb-btn lb-next" aria-label="Next">&#8250;</button>
     `;
     document.body.appendChild(lightbox);
 
     const lbImg = lightbox.querySelector('.lb-img');
+    const lbVideo = lightbox.querySelector('.lb-video');
     const lbCap = lightbox.querySelector('.lb-cap');
     let current = 0;
 
     function show(index) {
-      current = (index + galleryImages.length) % galleryImages.length;
-      const img = galleryImages[current];
-      lbImg.src = img.src;
-      lbImg.alt = img.alt;
-      const cap = img.closest('figure').querySelector('.g-cap');
-      lbCap.textContent = cap ? cap.textContent : img.alt;
+      current = (index + galleryItems.length) % galleryItems.length;
+      const it = galleryItems[current];
+      const cap = it.el.querySelector('.g-cap');
+      lbCap.textContent = cap ? cap.textContent : (it.alt || '');
+
+      lbVideo.pause();
+      if (it.type === 'video') {
+        lbImg.hidden = true;
+        lbVideo.hidden = false;
+        lbVideo.poster = it.poster || '';
+        lbVideo.src = it.src;
+        lbVideo.muted = false;
+        lbVideo.play().catch(() => {
+          // some browsers only allow autoplay when muted — fall back to that
+          // rather than leaving the video frozen on its poster frame
+          lbVideo.muted = true;
+          lbVideo.play().catch(() => {});
+        });
+      } else {
+        lbVideo.hidden = true;
+        lbVideo.removeAttribute('src');
+        lbImg.hidden = false;
+        lbImg.src = it.src;
+        lbImg.alt = it.alt || '';
+      }
     }
     function openLightbox(index) {
       show(index);
@@ -181,10 +211,13 @@
       lightbox.classList.remove('open');
       document.body.style.overflow = '';
       lbImg.src = '';
+      lbVideo.pause();
+      lbVideo.removeAttribute('src');
+      lbVideo.load();
     }
 
-    galleryImages.forEach((img, i) => {
-      img.closest('.gallery-item').addEventListener('click', () => openLightbox(i));
+    galleryItems.forEach((it, i) => {
+      it.el.addEventListener('click', () => openLightbox(i));
     });
 
     lightbox.querySelector('.lb-close').addEventListener('click', closeLightbox);
@@ -199,6 +232,14 @@
       if (e.key === 'ArrowLeft') show(current - 1);
       if (e.key === 'ArrowRight') show(current + 1);
     });
+
+    /* only one video ever plays at a time, across every gallery + the lightbox */
+    document.addEventListener('play', (e) => {
+      if (e.target.tagName !== 'VIDEO') return;
+      document.querySelectorAll('video').forEach((v) => {
+        if (v !== e.target) v.pause();
+      });
+    }, true);
   }
 
   /* ---------------- Interactive particle network (Bio page only) ----------------
@@ -529,6 +570,42 @@
     }).join('');
     document.body.appendChild(bn);
   })();
+
+
+  /* ---------------- Bio hero background slideshow ---------------- */
+  (function () {
+    const slides = document.querySelectorAll('.bio-hero-slide');
+    const dots = document.querySelectorAll('.bh-dot');
+    if (slides.length < 2) return;
+
+    let current = 0;
+    let timer = null;
+
+    function show(index) {
+      current = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => slide.classList.toggle('is-active', i === current));
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('is-active', i === current);
+        dot.setAttribute('aria-selected', String(i === current));
+      });
+    }
+
+    function startAutoplay() {
+      if (reduceMotion) return;
+      clearInterval(timer);
+      timer = setInterval(() => show(current + 1), 5000);
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        show(i);
+        startAutoplay();
+      });
+    });
+
+    startAutoplay();
+  })();
+
 
   /* ---------------- Footer year ---------------- */
   document.getElementById('year').textContent = new Date().getFullYear();
