@@ -40,7 +40,7 @@ Everything else (LinkedIn, school name, club Facebook links, WhatsApp number, ph
 
 - 7 pages with shared navbar, active-tab highlighting and mobile menu
 - Gradient animated page titles, **"Read more ▾" collapsible cards**, interactive particle background
-- Photo galleries with full-screen lightbox, glass-style summary cards (every page shows all items as a gallery)
+- Photo galleries with full screen lightbox, glass-style summary cards (every page shows all items as a gallery)
 - **Glass category panels** on the Participations page (Academic → Astronomical → Media)
 - Creative **Photography** page: logo hero, services grid, masonry portfolio, WhatsApp contact form
 - Light / dark mode, scroll animations, floating avatar, responsive design, Google Fonts (Poppins + Inter)
