@@ -1,4 +1,4 @@
-# Olitha Induvara — Portfolio Website
+# Olitha Induvara Portfolio Website
 
 A personal portfolio + media-business site built with plain HTML, CSS and JavaScript  perfect for **GitHub Pages**.
 No build tools or frameworks required. The theme, animations and layout are reused from the original template.
