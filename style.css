@@ -9,6 +9,7 @@
   --card-solid: #ffffff;
   --line: #ebe7fb;
   --accent: #6a4df6;
+  --accent-rgb: 106,77,246;
   --accent-2: #8b5cf6;
   --accent-soft: #f1edfe;
   --btn-grad: linear-gradient(135deg, #7c5df8 0%, #5b3df0 100%);
@@ -1488,7 +1489,7 @@ a.team-member:hover {
 .cat-panel::before {
   content: "";
   position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(124,93,248,0.12), rgba(43,63,229,0.04));
+  background: linear-gradient(135deg, rgba(var(--accent-rgb),0.12), rgba(43,63,229,0.04));
   pointer-events: none;
 }
 .cat-head { position: relative; margin-bottom: 18px; }
@@ -1572,7 +1573,7 @@ a.team-member:hover {
 }
 .hire-form textarea { min-height: 110px; resize: vertical; }
 .hire-form input:focus, .hire-form select:focus, .hire-form textarea:focus {
-  outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(106,77,246,.16);
+  outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(var(--accent-rgb),.16);
 }
 .hire-form .form-actions { margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
 .form-note { color: var(--muted); font-size: .82rem; margin-top: 12px; }
@@ -2368,14 +2369,15 @@ textarea.gi-field:not(:placeholder-shown) ~ .gi-label-area {
   --card-solid: #131317;
   --line: rgba(255,255,255,0.10);
   --accent: #8f7df2;
+  --accent-rgb: 143,125,242;
   --accent-2: #ab99f7;
-  --accent-soft: rgba(143,125,242,0.13);
+  --accent-soft: rgba(var(--accent-rgb),0.13);
   --btn-grad: linear-gradient(135deg, #8574ef 0%, #6a55d9 100%);
   --shadow-soft: 0 26px 64px -22px rgba(0,0,0,0.80);
   --shadow-card: 0 16px 44px -20px rgba(0,0,0,0.66);
   --bg-base: #0a0a0c;
   --navbar: rgba(9,9,11,0.55);
-  --chip-bg: rgba(143,125,242,0.15);
+  --chip-bg: rgba(var(--accent-rgb),0.15);
   --chip-ink: #cabefb;
   --btn-ghost-bg: rgba(255,255,255,0.055);
 
@@ -2419,7 +2421,7 @@ textarea.gi-field:not(:placeholder-shown) ~ .gi-label-area {
 [data-theme="dark"] .page-hero h1::after,
 [data-theme="dark"] .section-subhead::before,
 [data-theme="dark"] .page-kicker::before {
-  box-shadow: 0 4px 16px -4px rgba(143,125,242,0.55);
+  box-shadow: 0 4px 16px -4px rgba(var(--accent-rgb),0.55);
 }
 
 /* ============================================================
@@ -2488,18 +2490,18 @@ textarea.gi-field:not(:placeholder-shown) ~ .gi-label-area {
 [data-theme="dark"] .club-news:hover,
 [data-theme="dark"] .proj-card:hover,
 [data-theme="dark"] .stat:hover {
-  border-color: rgba(143,125,242,0.42);
+  border-color: rgba(var(--accent-rgb),0.42);
   box-shadow:
     0 30px 72px -22px rgba(0,0,0,0.88),
-    0 0 0 1px rgba(143,125,242,0.12);
+    0 0 0 1px rgba(var(--accent-rgb),0.12);
 }
 
 /* ---- accent-tinted info strips ---- */
 [data-theme="dark"] .callout,
 [data-theme="dark"] .award-link,
 [data-theme="dark"] .role-note {
-  background: linear-gradient(155deg, rgba(143,125,242,0.15), rgba(143,125,242,0.045));
-  border-color: rgba(143,125,242,0.22);
+  background: linear-gradient(155deg, rgba(var(--accent-rgb),0.15), rgba(var(--accent-rgb),0.045));
+  border-color: rgba(var(--accent-rgb),0.22);
   -webkit-backdrop-filter: blur(14px) saturate(150%);
   backdrop-filter: blur(14px) saturate(150%);
 }
@@ -2515,8 +2517,8 @@ textarea.gi-field:not(:placeholder-shown) ~ .gi-label-area {
   backdrop-filter: blur(12px);
 }
 [data-theme="dark"] .read-more-btn {
-  background: rgba(143,125,242,0.13);
-  border-color: rgba(143,125,242,0.26);
+  background: rgba(var(--accent-rgb),0.13);
+  border-color: rgba(var(--accent-rgb),0.26);
 }
 [data-theme="dark"] .feature {
   background: rgba(255,255,255,0.045);
@@ -2524,7 +2526,7 @@ textarea.gi-field:not(:placeholder-shown) ~ .gi-label-area {
 }
 [data-theme="dark"] .tag { border-color: var(--line); }
 [data-theme="dark"] .gallery-item { background: #0c0c0f; border-color: var(--line); }
-[data-theme="dark"] .quote { background: linear-gradient(155deg, rgba(143,125,242,0.13), transparent 85%); }
+[data-theme="dark"] .quote { background: linear-gradient(155deg, rgba(var(--accent-rgb),0.13), transparent 85%); }
 
 /* ---- navbar: desktop liquid glass ---- */
 [data-theme="dark"] .topbar {
@@ -2534,7 +2536,7 @@ textarea.gi-field:not(:placeholder-shown) ~ .gi-label-area {
   backdrop-filter: blur(20px) saturate(160%);
 }
 [data-theme="dark"] .nav-link:hover { background: rgba(255,255,255,0.06); color: var(--ink); }
-[data-theme="dark"] .nav-link.active { box-shadow: 0 8px 22px -8px rgba(143,125,242,0.60); }
+[data-theme="dark"] .nav-link.active { box-shadow: 0 8px 22px -8px rgba(var(--accent-rgb),0.60); }
 
 /* ---- search overlay ---- */
 [data-theme="dark"] .search-overlay { background: rgba(4,4,6,0.62); }
@@ -2550,7 +2552,7 @@ textarea.gi-field:not(:placeholder-shown) ~ .gi-label-area {
   color: var(--ink);
 }
 [data-theme="dark"] #searchInput:focus { border-color: var(--accent); }
-[data-theme="dark"] .search-results a:hover { background: rgba(143,125,242,0.15); color: var(--ink); }
+[data-theme="dark"] .search-results a:hover { background: rgba(var(--accent-rgb),0.15); color: var(--ink); }
 [data-theme="dark"] kbd { background: rgba(255,255,255,0.05); border-color: var(--line); }
 
 /* ---- footer ---- */
@@ -2568,7 +2570,7 @@ textarea.gi-field:not(:placeholder-shown) ~ .gi-label-area {
   }
   [data-theme="dark"] .topbar { border-bottom-color: rgba(255,255,255,0.09); }
   [data-theme="dark"] .bottom-nav { border-top-color: rgba(255,255,255,0.09); }
-  [data-theme="dark"] .bn-item.active { background: rgba(143,125,242,0.16); }
+  [data-theme="dark"] .bn-item.active { background: rgba(var(--accent-rgb),0.16); }
 }
 
 /* ============================================================
@@ -2939,4 +2941,625 @@ textarea.gi-field:not(:placeholder-shown) ~ .gi-label-area {
   .bh-hello, .bio-hero-text .name, .bh-title, .bh-desc, .bh-cta, .bh-trust {
     text-shadow: none;
   }
+}
+
+
+/* ============================================================
+   ✦  SUMMARY CARDS — framed media + proximity spotlight border ✦
+   The photo sits inset inside the card like a frame, the text
+   block below is kicker → title → description → footnote, and a
+   gradient border lights up wherever the pointer is on the grid.
+   ============================================================ */
+
+.proj-card{
+  --mx: 50%;
+  --my: 50%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 20px;
+  overflow: visible;                 /* let the glow border sit on the edge */
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(255,255,255,0.09);
+  box-shadow: 0 18px 46px -22px rgba(0,0,0,0.75);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  backdrop-filter: blur(18px) saturate(140%);
+  transition: transform .3s cubic-bezier(.2,.8,.25,1),
+              background .3s ease, border-color .3s ease;
+}
+:root:not([data-theme="dark"]) .proj-card{
+  background: rgba(255,255,255,0.72);
+  border-color: rgba(23,22,48,0.09);
+  box-shadow: 0 18px 44px -24px rgba(78,60,170,0.28);
+}
+.proj-card:hover{ transform: translateY(-5px); }
+[data-theme="dark"] .proj-card:hover{ background: rgba(255,255,255,0.055); }
+
+/* the framed photo */
+.pc-media{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 13px;
+  overflow: hidden;
+  background: #0c0c0f;
+}
+.pc-media .pc-cover-img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s cubic-bezier(.2,.8,.25,1);
+}
+.proj-card:hover .pc-media .pc-cover-img{ transform: scale(1.06); }
+
+/* text block */
+.pc-body{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 16px 8px 8px;
+}
+.pc-kicker{
+  font-size: .70rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 9px;
+  line-height: 1.35;
+}
+.pc-title{
+  font-family: 'Poppins','Inter',sans-serif;
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.34;
+  letter-spacing: -.01em;
+  color: var(--ink);
+  margin: 0;
+}
+.pc-desc{
+  margin-top: 10px;
+  font-size: .86rem;
+  line-height: 1.65;
+  color: var(--muted);
+  flex: 1;
+}
+.pc-foot{
+  display: block;
+  margin-top: 16px;
+  padding-top: 13px;
+  border-top: 1px solid var(--line);
+  font-size: .76rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  color: var(--muted);
+}
+
+/* ---- proximity spotlight border ----
+   A gradient ring is painted only in the 1.5px border area (the two
+   masks cancel out everything inside), centred on the pointer. Cards
+   far from the cursor get a fully transparent gradient, so the glow
+   naturally falls off across the grid. */
+.proj-card::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: radial-gradient(260px circle at var(--mx) var(--my),
+              var(--accent) 0%, rgba(var(--accent-rgb),.45) 38%, transparent 72%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+          mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0;
+  transition: opacity .35s ease;
+  pointer-events: none;
+  z-index: 3;
+}
+.proj-summary-grid:hover .proj-card::after{ opacity: 1; }
+
+/* a soft bloom just inside the lit edge */
+.proj-card::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(220px circle at var(--mx) var(--my),
+              rgba(var(--accent-rgb),.13), transparent 70%);
+  opacity: 0;
+  transition: opacity .35s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+.proj-summary-grid:hover .proj-card::before{ opacity: 1; }
+.pc-media, .pc-body{ position: relative; z-index: 1; }
+
+@media (hover: none){
+  .proj-card::after, .proj-card::before{ display: none; }
+}
+
+/* mobile: keep the cards readable without heavy translucency */
+@media (max-width: 900px){
+  .proj-card{ background: rgba(255,255,255,0.93); }
+  [data-theme="dark"] .proj-card{ background: rgba(19,19,23,0.93); }
+  .pc-body{ padding: 14px 6px 6px; }
+  .pc-title{ font-size: 1.02rem; }
+}
+
+/* ============================================================
+   ✦  BIO — "About Me" reveals line by line on first view  ✦
+   Words are grouped by their rendered line, so each visual line
+   fades up together, one after another.
+   ============================================================ */
+.summary .ln-w{
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(15px);
+  filter: blur(7px);
+  will-change: opacity, transform, filter;
+}
+.summary.lines-in .ln-w{
+  animation: lnIn .75s cubic-bezier(.2,.8,.25,1) both;
+}
+@keyframes lnIn{
+  to{ opacity: 1; transform: none; filter: blur(0); }
+}
+@media (prefers-reduced-motion: reduce){
+  .summary .ln-w{ opacity: 1; transform: none; filter: none; }
+  .summary.lines-in .ln-w{ animation: none; }
+}
+
+/* ============================================================
+   CARD REFINEMENT — smaller description + "Read more" action
+   ============================================================ */
+.pc-desc{
+  margin-top: 9px;
+  font-size: .795rem;
+  line-height: 1.62;
+  color: var(--muted);
+}
+.pc-foot{
+  margin-top: 13px;
+  padding-top: 0;
+  border-top: 0;
+  font-size: .695rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  opacity: .72;
+}
+.pc-more{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .01em;
+  color: var(--accent);
+}
+.pc-more svg{
+  width: 16px;
+  height: 16px;
+  flex: none;
+  transition: transform .35s cubic-bezier(.2,.8,.25,1);
+}
+.proj-card:hover .pc-more svg{ transform: translateX(6px); }
+
+@media (max-width: 900px){
+  .pc-desc{ font-size: .8rem; }
+}
+
+/* ============================================================
+   HERO — smaller role line, line-by-line description,
+   letter-by-letter name reveal
+   ============================================================ */
+.bh-title{
+  font-size: clamp(1.02rem, 1.85vw, 1.32rem);
+  font-weight: 600;
+  letter-spacing: .005em;
+  line-height: 1.4;
+  margin-top: 12px;
+}
+
+/* description reveals line by line, same treatment as About Me */
+.bh-desc .ln-w{
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(14px);
+  filter: blur(6px);
+  will-change: opacity, transform, filter;
+}
+.bh-desc.lines-in .ln-w{
+  animation: lnIn .72s cubic-bezier(.2,.8,.25,1) both;
+}
+
+/* name: each letter rises out from behind a clipping mask */
+.bio-hero-text .name{ animation: none; }
+.bio-hero-text .name .nm-l{
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: .06em;
+  margin-bottom: -.06em;
+}
+.bio-hero-text .name .nm-i{
+  display: inline-block;
+  transform: translateY(105%) rotate(4deg);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+.bio-hero-text .name.letters-in .nm-i{
+  animation: nmRise .82s cubic-bezier(.16,.84,.28,1) both;
+}
+@keyframes nmRise{
+  to{ transform: translateY(0) rotate(0); opacity: 1; }
+}
+.bio-hero-text .name .nm-space{ display: inline-block; width: .28em; }
+
+@media (prefers-reduced-motion: reduce){
+  .bh-desc .ln-w,
+  .bio-hero-text .name .nm-i{ opacity: 1; transform: none; filter: none; }
+  .bh-desc.lines-in .ln-w,
+  .bio-hero-text .name.letters-in .nm-i{ animation: none; }
+}
+
+/* the name and description run their own reveal, so skip the generic
+   block-level fade that would otherwise double up on them */
+.bio-hero-text .name.reveal,
+.bio-hero-text .bh-desc.reveal{
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+/* ============================================================
+   ✦  AMBER / GOLD ACCENT  ✦
+   Site-wide warm accent. The bio hero is deliberately excluded
+   below — it keeps the original violet, so the two areas read as
+   separate moments rather than one flat palette.
+   ============================================================ */
+:root{
+  --accent: #c2860c;
+  --accent-2: #e0a428;
+  --accent-rgb: 214,154,26;
+  --accent-soft: rgba(214,154,26,0.12);
+  --btn-grad: linear-gradient(135deg, #efb03a 0%, #d18c0b 100%);
+  --chip-bg: rgba(214,154,26,0.14);
+  --chip-ink: #9a6a06;
+  --shadow-soft: 0 18px 40px -18px rgba(160,110,20,0.26);
+  --shadow-card: 0 10px 30px -12px rgba(160,110,20,0.18);
+}
+[data-theme="dark"]{
+  --accent: #f0b429;
+  --accent-2: #ffcf63;
+  --accent-rgb: 240,180,41;
+  --accent-soft: rgba(240,180,41,0.13);
+  --btn-grad: linear-gradient(135deg, #f7c249 0%, #e09b18 100%);
+  --chip-bg: rgba(240,180,41,0.15);
+  --chip-ink: #f7d78d;
+}
+
+/* gradient fills that were mixed violet by hand */
+.pc-grad-1{ background: linear-gradient(135deg, #d18c0b 0%, #f0b429 55%, #ffd479 100%); }
+.pc-grad-3{ background: linear-gradient(135deg, #b3620a 0%, #f0b429 60%, #ffdd93 100%); }
+
+/* the warm ambient wash behind the page, matching the accent */
+[data-theme="dark"] body::before{
+  background:
+    radial-gradient(1200px 700px at 82% -6%, rgba(240,180,41,0.085), transparent 62%),
+    radial-gradient(900px 520px at 6% 14%, rgba(200,120,20,0.055), transparent 60%),
+    radial-gradient(1500px 950px at 50% -22%, rgba(26,20,14,0.55), transparent 72%),
+    linear-gradient(rgba(7,6,5,0.88), rgba(6,5,5,0.95)),
+    url("assets/bg/dark-bg.jpg") center / cover no-repeat;
+}
+[data-theme="dark"] .blob-1{ background: #b8801a; }
+[data-theme="dark"] .blob-2{ background: #6b4a12; }
+[data-theme="dark"] .blob-3{ background: #8a5f10; }
+
+/* ---- the bio hero keeps the original violet ----
+   Re-declaring the tokens on .bio-hero means every descendant
+   (role line, buttons, dots, glow) inherits violet again. */
+.bio-hero{
+  --accent: #8f7df2;
+  --accent-2: #ab99f7;
+  --accent-rgb: 143,125,242;
+  --accent-soft: rgba(143,125,242,0.13);
+  --btn-grad: linear-gradient(135deg, #8574ef 0%, #6a55d9 100%);
+  --chip-bg: rgba(143,125,242,0.15);
+  --chip-ink: #cabefb;
+}
+:root:not([data-theme="dark"]) .bio-hero{
+  --accent: #6a4df6;
+  --accent-2: #8b5cf6;
+  --accent-rgb: 106,77,246;
+  --btn-grad: linear-gradient(135deg, #7c5df8 0%, #5b3df0 100%);
+}
+
+/* ============================================================
+   ✦  ACCENT RESTRAINT  ✦
+   Gold now behaves like a real accent: it marks the one active
+   thing on screen (nav pill, the card you're pointing at, a
+   link you can follow) and nothing else. Eyebrows, kickers and
+   metadata — the text that repeated nine times per page — drop
+   back to neutral, which is what makes the gold read as
+   deliberate instead of decorative.
+   ============================================================ */
+:root{ --accent-text: #9a6f16; }
+[data-theme="dark"]{ --accent-text: #cfab6b; }
+
+/* eyebrows / kickers / small caps labels → neutral */
+.pc-kicker,
+.page-kicker,
+.studio-eyebrow,
+.section-kicker,
+.studio-tag,
+.timeline-date{
+  color: var(--muted);
+}
+.pc-kicker{ opacity: .82; }
+.page-kicker{ opacity: .9; }
+
+/* inline links keep a warm tint, but a calm, desaturated one */
+.timeline-card a,
+.timeline-org a,
+.pc-more{
+  color: var(--accent-text);
+}
+.pc-more{ font-weight: 600; }
+.pc-more svg{ opacity: .85; }
+.proj-card:hover .pc-more{ color: var(--accent); }
+
+/* chips read as quiet metadata rather than nine gold badges */
+[data-theme="dark"] .chip{
+  background: rgba(255,255,255,0.055);
+  color: var(--muted);
+  border-color: rgba(255,255,255,0.09);
+}
+:root:not([data-theme="dark"]) .chip{
+  background: rgba(23,22,48,0.045);
+  color: var(--muted);
+}
+
+/* ============================================================
+   ✦  ACCENT RESTRAINT — article detail pages  ✦
+   Same rule as the cards: one gold element per block. The lead
+   badge stays gold because it genuinely ranks the item; the
+   supporting badges and the info strips go neutral, and the
+   strip earns its colour back only on hover.
+   ============================================================ */
+
+/* supporting badges → quiet metadata, lead badge keeps the gold */
+[data-theme="dark"] .badge-soft{
+  background: rgba(255,255,255,0.055);
+  border: 1px solid rgba(255,255,255,0.09);
+  color: var(--muted);
+}
+:root:not([data-theme="dark"]) .badge-soft{
+  background: rgba(23,22,48,0.045);
+  border: 1px solid var(--line);
+  color: var(--muted);
+}
+.badge-accent{
+  box-shadow: 0 6px 14px -7px rgba(var(--accent-rgb), 0.5);
+}
+
+/* info strips: neutral glass with a single gold edge marking them */
+[data-theme="dark"] .callout,
+[data-theme="dark"] .award-link,
+[data-theme="dark"] .role-note{
+  background: rgba(255,255,255,0.038);
+  border-color: rgba(255,255,255,0.085);
+  border-left: 2px solid rgba(var(--accent-rgb), 0.55);
+}
+:root:not([data-theme="dark"]) .callout,
+:root:not([data-theme="dark"]) .award-link,
+:root:not([data-theme="dark"]) .role-note{
+  background: rgba(23,22,48,0.035);
+  border-left: 2px solid rgba(var(--accent-rgb), 0.45);
+}
+.award-link:hover{
+  border-color: rgba(var(--accent-rgb), 0.32);
+  border-left-color: var(--accent);
+}
+.award-go{
+  color: var(--accent-text);
+  font-weight: 600;
+}
+.award-link:hover .award-go{ color: var(--accent); }
+
+/* ============================================================
+   ✦  PAGE HEADERS — tighter, plain-type titles  ✦
+   The gradient-filled Poppins title plus two gold rules plus a
+   sub-paragraph made the header taller than the content it
+   introduced. Now: one small kicker, one solid title.
+   ============================================================ */
+.page-hero{ padding: 34px 0 4px; }
+
+.page-hero h1,
+[data-theme="dark"] .page-hero h1{
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  font-size: clamp(2rem, 3.4vw, 2.55rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+  background: none;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-text-fill-color: currentColor;
+  color: var(--ink);
+  animation: none;
+}
+/* the second gold rule is gone — the kicker already carries one */
+.page-hero h1::after{ display: none; }
+
+.page-kicker{ margin-bottom: 12px; font-size: .73rem; letter-spacing: .2em; }
+.page-kicker::before{ width: 26px; height: 2px; }
+
+.page-sub{ display: none; }
+
+/* the section heads below inherit the same plain treatment */
+.section-subhead{
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* ============================================================
+   ✦  BADGES — outlined pills  ✦
+   ============================================================ */
+.badges{ gap: 8px; margin-bottom: 16px; }
+.badge-accent,
+.badge-soft{
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: .765rem;
+  font-weight: 600;
+  letter-spacing: .005em;
+  padding: 7px 15px;
+  border-radius: 999px;
+  line-height: 1;
+}
+.badge-accent{
+  background: rgba(var(--accent-rgb), 0.10);
+  border: 1px solid rgba(var(--accent-rgb), 0.55);
+  color: var(--accent);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .badge-soft{
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.11);
+  color: var(--muted);
+}
+:root:not([data-theme="dark"]) .badge-soft{
+  background: rgba(23,22,48,0.03);
+  border: 1px solid var(--line);
+  color: var(--muted);
+}
+
+/* ============================================================
+   ✦  GALLERIES — smaller, evener, more to look at  ✦
+   The 2x2 hero tile made the first photo dominate and pushed the
+   grid very tall. Every tile is now the same size, so the eye
+   scans the set instead of one image; the caption stays hidden
+   until hover, which keeps the wall clean.
+   ============================================================ */
+.gallery,
+.gallery.plain,
+.gallery.pages{
+  grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+  gap: 11px;
+}
+.gallery-item:first-child{
+  grid-column: auto;
+  grid-row: auto;
+}
+.gallery-item img,
+.gallery-item:first-child img,
+.gallery.plain .gallery-item:first-child img,
+.gallery.pages .gallery-item:first-child img{
+  aspect-ratio: 4 / 3;
+}
+.gallery.pages .gallery-item img{ aspect-ratio: 3 / 4; }
+
+.gallery-item{
+  border-radius: 11px;
+  border-color: rgba(255,255,255,0.07);
+  box-shadow: 0 10px 26px -18px rgba(0,0,0,0.8);
+  transition: transform .35s cubic-bezier(.2,.8,.25,1), box-shadow .35s ease;
+}
+.gallery-item:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 18px 34px -18px rgba(0,0,0,0.85);
+  z-index: 2;
+}
+.gallery-item:hover img{ transform: scale(1.08); }
+
+/* caption reveals on hover instead of sitting on every tile */
+.g-cap{
+  padding: 26px 11px 9px;
+  font-size: .7rem;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .3s ease, transform .3s ease;
+}
+.gallery-item:hover .g-cap{ opacity: 1; transform: none; }
+
+/* a soft zoom cue in the corner */
+.gallery-item::after{
+  content: "";
+  position: absolute;
+  top: 8px; right: 8px;
+  width: 24px; height: 24px;
+  border-radius: 8px;
+  background: rgba(10,10,12,0.6) center / 12px 12px no-repeat
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M20 20l-3.2-3.2M11 8.4v5.2M8.4 11h5.2'/%3E%3C/svg%3E");
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  transition: opacity .28s ease;
+  pointer-events: none;
+}
+.gallery-item:hover::after{ opacity: 1; }
+.gallery-item.video-item::after{ display: none; }
+
+@media (max-width: 760px){
+  .gallery, .gallery.plain, .gallery.pages{
+    grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
+    gap: 9px;
+  }
+}
+
+/* ============================================================
+   ✦  Card description: two lines, then "Read more" takes over
+   ============================================================ */
+.pc-desc{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+/* ============================================================
+   ✦  WhatsApp CTA in WhatsApp's own green
+   ============================================================ */
+.wa-cta, .wa-btn, .gi-submit{
+  background: linear-gradient(135deg, #34d17a 0%, #1faa55 100%);
+  box-shadow: 0 14px 30px -12px rgba(37, 211, 102, .55);
+}
+.wa-cta:hover, .wa-btn:hover, .gi-submit:hover{
+  box-shadow: 0 18px 34px -12px rgba(37, 211, 102, .62);
+}
+.gchip:hover{ color: #25d366; }
+
+/* Flex items get blockified, which turns `display:-webkit-box` into
+   `flow-root` and silently kills -webkit-line-clamp. Clamp by height
+   instead, with a fade so the cut line doesn't look chopped off. */
+.pc-desc{
+  display: block;
+  flex: 0 0 auto;
+  max-height: 3.24em;              /* 2 lines at line-height 1.62 */
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(180deg, #000 62%, transparent 100%);
+          mask-image: linear-gradient(180deg, #000 62%, transparent 100%);
+}
+.pc-foot{ margin-top: auto; padding-top: 14px; }
+
+/* ============================================================
+   ✦  Contact stage: neutral, not purple — and a darker photo
+   The stage was washed with rgba(38,26,86,.55), a leftover
+   violet that tinted the whole glass card sitting on top of it.
+   ============================================================ */
+.glass-stage{
+  background: linear-gradient(135deg, rgba(14,14,17,0.80), rgba(6,6,9,0.90)),
+              url("assets/photography/work-3.jpg") center / cover no-repeat;
+  border-color: rgba(255,255,255,0.10);
+  box-shadow: 0 30px 70px -24px rgba(0,0,0,0.72);
 }

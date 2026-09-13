@@ -572,6 +572,123 @@
   })();
 
 
+  /* ---------------- Summary cards: proximity spotlight border ----------------
+     Every card tracks the pointer in its own coordinate space, so the gradient
+     ring lights up on whichever card (or edge) the cursor is nearest. */
+  (function () {
+    const grids = document.querySelectorAll('.proj-summary-grid');
+    if (!grids.length || window.matchMedia('(hover: none)').matches) return;
+
+    grids.forEach((grid) => {
+      const cards = Array.from(grid.querySelectorAll('.proj-card'));
+      if (!cards.length) return;
+      let queued = false;
+      let lastX = 0, lastY = 0;
+
+      function paint() {
+        queued = false;
+        for (const card of cards) {
+          const r = card.getBoundingClientRect();
+          card.style.setProperty('--mx', (lastX - r.left) + 'px');
+          card.style.setProperty('--my', (lastY - r.top) + 'px');
+        }
+      }
+
+      grid.addEventListener('pointermove', (e) => {
+        lastX = e.clientX; lastY = e.clientY;
+        if (!queued) { queued = true; requestAnimationFrame(paint); }
+      }, { passive: true });
+    });
+  })();
+
+
+  /* ---------------- Line-by-line text reveal ----------------
+     Each word is wrapped, then grouped by its rendered offsetTop so every
+     visual line shares one animation delay — the paragraph unfolds a line
+     at a time the first time it scrolls into view. Used by the Bio
+     "About Me" paragraph and the hero description. */
+  (function () {
+    function lineReveal(el, stagger) {
+      if (!el) return;
+      const text = el.textContent.trim().replace(/\s+/g, ' ');
+      if (!text) return;
+
+      el.textContent = '';
+      const words = text.split(' ').map((word) => {
+        const span = document.createElement('span');
+        span.className = 'ln-w';
+        span.textContent = word;
+        el.appendChild(span);
+        el.appendChild(document.createTextNode(' '));
+        return span;
+      });
+
+      function assignLineDelays() {
+        let line = -1, lastTop = null;
+        for (const w of words) {
+          const top = Math.round(w.offsetTop);
+          if (top !== lastTop) { line++; lastTop = top; }
+          w.style.animationDelay = (line * stagger).toFixed(2) + 's';
+        }
+      }
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          assignLineDelays();          // measure once layout has settled
+          el.classList.add('lines-in');
+          io.disconnect();
+        });
+      }, { threshold: 0.25 });
+
+      io.observe(el);
+    }
+
+    lineReveal(document.querySelector('.bio-about .summary'), 0.14);
+    lineReveal(document.querySelector('.bio-hero-text .bh-desc'), 0.12);
+  })();
+
+
+  /* ---------------- Bio hero: name rises letter by letter ----------------
+     Every glyph sits inside its own overflow-hidden box and slides up out
+     of it, so the name assembles itself instead of simply fading in. */
+  (function () {
+    const name = document.querySelector('.bio-hero-text .name');
+    if (!name) return;
+
+    const text = name.textContent.trim();
+    if (!text) return;
+
+    name.setAttribute('aria-label', text);
+    name.textContent = '';
+
+    let i = 0;
+    for (const ch of text) {
+      if (ch === ' ') {
+        const gap = document.createElement('span');
+        gap.className = 'nm-space';
+        gap.setAttribute('aria-hidden', 'true');
+        name.appendChild(gap);
+        continue;
+      }
+      const clip = document.createElement('span');
+      clip.className = 'nm-l';
+      clip.setAttribute('aria-hidden', 'true');
+      const inner = document.createElement('span');
+      inner.className = 'nm-i';
+      inner.textContent = ch;
+      inner.style.animationDelay = (0.16 + i * 0.042).toFixed(3) + 's';
+      clip.appendChild(inner);
+      name.appendChild(clip);
+      i++;
+    }
+
+    const start = () => name.classList.add('letters-in');
+    requestAnimationFrame(() => requestAnimationFrame(start));
+    setTimeout(start, 400);   // fallback if rAF is throttled (hidden tab)
+  })();
+
+
   /* ---------------- Bio hero background slideshow ---------------- */
   (function () {
     const slides = document.querySelectorAll('.bio-hero-slide');
