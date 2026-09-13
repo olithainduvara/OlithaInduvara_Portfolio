@@ -32,7 +32,7 @@ portfolio-Yeshini/
 
 ## ✏️ Still to fill in (search `TODO`)
 
-1. **CV** — add `assets/Olitha_Induvara_CV.pdf` (referenced by the Download CV button on the Bio page)
+1. **CV** — add `assets/Olitha_Induvara_CV.pdf` (referenced by the Download CV button on the Bio page look)
 
 Everything else (LinkedIn, school name, club Facebook links, WhatsApp number, photography Facebook) is already wired in.
 
