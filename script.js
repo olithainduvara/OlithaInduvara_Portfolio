@@ -283,8 +283,8 @@
     function netColor(alpha) {
       const dark = document.documentElement.dataset.theme === 'dark';
       return dark
-        ? `rgba(168, 140, 250, ${alpha})`
-        : `rgba(106, 77, 246, ${alpha})`;
+        ? `rgba(240, 180, 41, ${alpha})`
+        : `rgba(194, 134, 12, ${alpha})`;
     }
 
     const LINK_DIST = 120;   // distance for particle-to-particle links

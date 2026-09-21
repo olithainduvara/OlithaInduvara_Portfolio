@@ -13,8 +13,8 @@
   --accent-2: #8b5cf6;
   --accent-soft: #f1edfe;
   --btn-grad: linear-gradient(135deg, #7c5df8 0%, #5b3df0 100%);
-  --shadow-soft: 0 18px 40px -18px rgba(88, 70, 190, 0.28);
-  --shadow-card: 0 10px 30px -12px rgba(88, 70, 190, 0.18);
+  --shadow-soft: 0 18px 40px -18px rgba(var(--accent-rgb), 0.28);
+  --shadow-card: 0 10px 30px -12px rgba(var(--accent-rgb), 0.18);
   --radius-lg: 22px;
   --radius-md: 16px;
   --bg-base: #fbfbfe;
@@ -161,7 +161,7 @@ a { color: inherit; text-decoration: none; }
 .nav-link.active {
   color: #fff;
   background: var(--btn-grad);
-  box-shadow: 0 6px 16px -6px rgba(106, 77, 246, 0.55);
+  box-shadow: 0 6px 16px -6px rgba(var(--accent-rgb), 0.55);
 }
 .nav-actions { display: flex; align-items: center; gap: 8px; }
 
@@ -203,7 +203,7 @@ a { color: inherit; text-decoration: none; }
   margin: 0 auto 26px;
   border-radius: 50%;
   padding: 6px;
-  background: conic-gradient(from 180deg, #7c5df8, #b36ce0, #63b3ff, #7c5df8);
+  background: conic-gradient(from 180deg, #f0b429, #e0a428, #b3760a, #f0b429);
   box-shadow: var(--shadow-soft);
 }
 .avatar {
@@ -241,7 +241,7 @@ a { color: inherit; text-decoration: none; }
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.15;
-  background: linear-gradient(115deg, var(--ink) 15%, #6a4df6 55%, #b356d6 90%);
+  background: linear-gradient(115deg, var(--ink) 15%, #c2860c 62%, #e0a428 95%);
   background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -337,9 +337,9 @@ a { color: inherit; text-decoration: none; }
 .btn-primary {
   background: var(--btn-grad);
   color: #fff;
-  box-shadow: 0 14px 28px -10px rgba(106, 77, 246, 0.6);
+  box-shadow: 0 14px 28px -10px rgba(var(--accent-rgb), 0.6);
 }
-.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 18px 34px -10px rgba(106, 77, 246, 0.7); }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 18px 34px -10px rgba(var(--accent-rgb), 0.7); }
 .btn-primary svg { width: 18px; height: 18px; }
 .btn-outline {
   background: var(--card);
@@ -613,7 +613,7 @@ kbd {
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.18;
-  background: linear-gradient(115deg, #6a4df6 0%, #8b5cf6 48%, #d452c6 95%);
+  background: linear-gradient(115deg, #b3760a 0%, #d99b15 48%, #f0b429 95%);
   background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -636,7 +636,7 @@ kbd {
   border-radius: 4px;
   margin-top: 16px;
   background: var(--btn-grad);
-  box-shadow: 0 4px 14px -4px rgba(106, 77, 246, 0.6);
+  box-shadow: 0 4px 14px -4px rgba(var(--accent-rgb), 0.6);
 }
 
 .page-sub { color: var(--muted); margin-top: 18px; max-width: 640px; line-height: 1.75; }
@@ -679,7 +679,7 @@ kbd {
   font-weight: 600;
   padding: 6px 14px;
   border-radius: 999px;
-  box-shadow: 0 6px 14px -6px rgba(106, 77, 246, 0.55);
+  box-shadow: 0 6px 14px -6px rgba(var(--accent-rgb), 0.55);
 }
 .project-feature h2 {
   font-size: 1.6rem;
@@ -757,7 +757,7 @@ kbd {
   background: var(--btn-grad);
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 8px 18px -8px rgba(106, 77, 246, 0.65);
+  box-shadow: 0 8px 18px -8px rgba(var(--accent-rgb), 0.65);
 }
 a.team-member { transition: all 0.2s ease; }
 a.team-member:hover {
@@ -780,7 +780,7 @@ a.team-member:hover {
   border: 1px solid var(--line);
   box-shadow: var(--shadow-card);
   cursor: zoom-in;
-  background: #101024;
+  background: #121214;
   margin: 0;
 }
 .gallery-item img {
@@ -826,7 +826,7 @@ a.team-member:hover {
 .video-play-icon svg { width: 22px; height: 22px; margin-left: 3px; }
 .gallery-item.video-item:hover .video-play-icon {
   transform: translate(-50%, -50%) scale(1.1);
-  background: rgba(106, 77, 246, 0.75);
+  background: rgba(var(--accent-rgb), 0.75);
 }
 .gallery-item:first-child img { aspect-ratio: auto; }
 .g-cap {
@@ -838,7 +838,7 @@ a.team-member:hover {
   font-size: 0.76rem;
   line-height: 1.4;
   color: #f2f0ff;
-  background: linear-gradient(transparent, rgba(8, 6, 28, 0.78));
+  background: linear-gradient(transparent, rgba(8, 8, 10, 0.78));
   pointer-events: none;
 }
 .gallery-hint { color: var(--muted); font-size: 0.82rem; margin-top: 12px; }
@@ -1489,7 +1489,7 @@ a.team-member:hover {
 .cat-panel::before {
   content: "";
   position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(var(--accent-rgb),0.12), rgba(43,63,229,0.04));
+  background: linear-gradient(135deg, rgba(var(--accent-rgb),0.12), rgba(var(--accent-rgb),0.04));
   pointer-events: none;
 }
 .cat-head { position: relative; margin-bottom: 18px; }
@@ -1518,7 +1518,7 @@ a.team-member:hover {
   background: var(--btn-grad);
   color: #fff; font-weight: 600; padding: 12px 24px; border-radius: 999px;
   text-decoration: none; border: none; cursor: pointer; font-family: inherit; font-size: .96rem;
-  box-shadow: 0 14px 30px -12px rgba(106, 77, 246, .6);
+  box-shadow: 0 14px 30px -12px rgba(var(--accent-rgb), .6);
   transition: transform .25s ease, box-shadow .25s ease;
 }
 .wa-cta:hover, .wa-btn:hover { transform: translateY(-3px); color: #fff; }
@@ -1712,7 +1712,7 @@ body.studio-page .blob { display: none; }
   line-height: 1;
   margin: 0 0 4px;
   font-family: "Arial Black", "Arial Bold", Arial, sans-serif;
-  background: linear-gradient(to bottom, rgba(106, 77, 246, 0.34) 30%, rgba(106, 77, 246, 0) 78%);
+  background: linear-gradient(to bottom, rgba(var(--accent-rgb), 0.34) 30%, rgba(var(--accent-rgb), 0) 78%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -1798,7 +1798,7 @@ body.studio-page .blob { display: none; }
 .wc-dots { display: flex; justify-content: center; gap: 10px; margin-top: 22px; }
 .wc-dot {
   width: 12px; height: 12px; border-radius: 50%; cursor: pointer; padding: 0; border: none;
-  background: rgba(106, 77, 246, 0.22);
+  background: rgba(var(--accent-rgb), 0.22);
   transition: all 0.3s ease;
 }
 .wc-dot:hover { background: var(--accent-2); }
@@ -1807,7 +1807,7 @@ body.studio-page .blob { display: none; }
 
 .wc-arrow {
   position: absolute; top: 50%; transform: translateY(-50%);
-  background: rgba(106, 77, 246, 0.62); color: #fff;
+  background: rgba(var(--accent-rgb), 0.62); color: #fff;
   width: 44px; height: 44px; border-radius: 50%; border: none; cursor: pointer;
   display: flex; align-items: center; justify-content: center;
   z-index: 20; font-size: 1.7rem; line-height: 1;
@@ -1898,7 +1898,7 @@ body.studio-page .blob { display: none; }
   background: linear-gradient(135deg, rgba(38, 26, 86, 0.55), rgba(10, 8, 28, 0.74)),
               url("assets/photography/work-3.jpg") center / cover no-repeat;
   border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 30px 70px -22px rgba(18, 12, 48, 0.6);
+  box-shadow: 0 30px 70px -22px rgba(var(--accent-rgb), 0.6);
 }
 .glass-stage > * { position: relative; z-index: 1; }
 
@@ -1968,7 +1968,7 @@ textarea.gi-field:not(:placeholder-shown) ~ .gi-label-area {
   background: var(--btn-grad); color: #fff;
   font-size: 15px; font-weight: 600; font-family: inherit;
   display: inline-flex; align-items: center; justify-content: center; gap: 9px;
-  box-shadow: 0 10px 26px -10px rgba(106, 77, 246, 0.7);
+  box-shadow: 0 10px 26px -10px rgba(var(--accent-rgb), 0.7);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .gi-submit svg { width: 19px; height: 19px; }
@@ -2229,28 +2229,28 @@ textarea.gi-field:not(:placeholder-shown) ~ .gi-label-area {
     -webkit-backdrop-filter: blur(20px) saturate(180%);
   }
   .topbar {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.85) 0%, rgba(244, 242, 255, 0.70) 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.85) 0%, rgba(252, 248, 238, 0.70) 100%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.65);
-    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.9), 0 8px 22px -12px rgba(80, 60, 180, 0.30);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.9), 0 8px 22px -12px rgba(var(--accent-rgb), 0.30);
   }
   .bottom-nav {
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.85) 0%, rgba(244, 242, 255, 0.70) 100%);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.85) 0%, rgba(252, 248, 238, 0.70) 100%);
     border-top: 1px solid rgba(255, 255, 255, 0.65);
-    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.9), 0 -8px 22px -14px rgba(80, 60, 180, 0.22);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.9), 0 -8px 22px -14px rgba(var(--accent-rgb), 0.22);
   }
   .nav-links {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(244, 242, 255, 0.82) 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(252, 248, 238, 0.82) 100%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.65);
-    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.9), 0 14px 30px -16px rgba(80, 60, 180, 0.30);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.9), 0 14px 30px -16px rgba(var(--accent-rgb), 0.30);
   }
 
   [data-theme="dark"] .topbar {
-    background: linear-gradient(180deg, rgba(48, 44, 90, 0.72) 0%, rgba(20, 18, 44, 0.60) 100%);
+    background: linear-gradient(180deg, rgba(26, 22, 16, 0.72) 0%, rgba(14, 12, 9, 0.60) 100%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.14);
     box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.16), 0 8px 22px -12px rgba(0, 0, 0, 0.55);
   }
   [data-theme="dark"] .bottom-nav {
-    background: linear-gradient(0deg, rgba(48, 44, 90, 0.72) 0%, rgba(20, 18, 44, 0.60) 100%);
+    background: linear-gradient(0deg, rgba(26, 22, 16, 0.72) 0%, rgba(14, 12, 9, 0.60) 100%);
     border-top: 1px solid rgba(255, 255, 255, 0.14);
     box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.16), 0 -8px 22px -14px rgba(0, 0, 0, 0.50);
   }
@@ -2358,7 +2358,7 @@ textarea.gi-field:not(:placeholder-shown) ~ .gi-label-area {
   --glass-bg: rgba(255,255,255,0.60);
   --glass-border: rgba(255,255,255,0.64);
   --glass-blur: blur(16px) saturate(160%);
-  --glass-shadow: 0 18px 44px -20px rgba(78,60,170,0.28);
+  --glass-shadow: 0 18px 44px -20px rgba(var(--accent-rgb),0.28);
   --glass-sheen: none;
 }
 
@@ -2391,9 +2391,9 @@ textarea.gi-field:not(:placeholder-shown) ~ .gi-label-area {
 /* ---- near-black canvas ---- */
 [data-theme="dark"] body {
   background:
-    radial-gradient(1200px 820px at 12% -12%, rgba(120,96,240,0.10), transparent 60%),
-    radial-gradient(1050px 720px at 102% -4%, rgba(84,66,182,0.09), transparent 55%),
-    radial-gradient(900px 900px at 50% 122%, rgba(60,48,130,0.08), transparent 60%),
+    radial-gradient(1200px 820px at 12% -12%, rgba(var(--accent-rgb),0.10), transparent 60%),
+    radial-gradient(1050px 720px at 102% -4%, rgba(var(--accent-rgb),0.09), transparent 55%),
+    radial-gradient(900px 900px at 50% 122%, rgba(var(--accent-rgb),0.08), transparent 60%),
     var(--bg-base);
 }
 [data-theme="dark"] body::before {
@@ -2971,7 +2971,7 @@ textarea.gi-field:not(:placeholder-shown) ~ .gi-label-area {
 :root:not([data-theme="dark"]) .proj-card{
   background: rgba(255,255,255,0.72);
   border-color: rgba(23,22,48,0.09);
-  box-shadow: 0 18px 44px -24px rgba(78,60,170,0.28);
+  box-shadow: 0 18px 44px -24px rgba(var(--accent-rgb),0.28);
 }
 .proj-card:hover{ transform: translateY(-5px); }
 [data-theme="dark"] .proj-card:hover{ background: rgba(255,255,255,0.055); }
@@ -3261,24 +3261,6 @@ textarea.gi-field:not(:placeholder-shown) ~ .gi-label-area {
 [data-theme="dark"] .blob-2{ background: #6b4a12; }
 [data-theme="dark"] .blob-3{ background: #8a5f10; }
 
-/* ---- the bio hero keeps the original violet ----
-   Re-declaring the tokens on .bio-hero means every descendant
-   (role line, buttons, dots, glow) inherits violet again. */
-.bio-hero{
-  --accent: #8f7df2;
-  --accent-2: #ab99f7;
-  --accent-rgb: 143,125,242;
-  --accent-soft: rgba(143,125,242,0.13);
-  --btn-grad: linear-gradient(135deg, #8574ef 0%, #6a55d9 100%);
-  --chip-bg: rgba(143,125,242,0.15);
-  --chip-ink: #cabefb;
-}
-:root:not([data-theme="dark"]) .bio-hero{
-  --accent: #6a4df6;
-  --accent-2: #8b5cf6;
-  --accent-rgb: 106,77,246;
-  --btn-grad: linear-gradient(135deg, #7c5df8 0%, #5b3df0 100%);
-}
 
 /* ============================================================
    ✦  ACCENT RESTRAINT  ✦
@@ -3562,4 +3544,257 @@ textarea.gi-field:not(:placeholder-shown) ~ .gi-label-area {
               url("assets/photography/work-3.jpg") center / cover no-repeat;
   border-color: rgba(255,255,255,0.10);
   box-shadow: 0 30px 70px -24px rgba(0,0,0,0.72);
+}
+
+/* ============================================================
+   ✦  LIGHT-MODE BIO HERO — dedicated artwork  ✦
+   The dark theme uses the studio portraits on a black backdrop.
+   Light mode gets its own cream/amber pair, which are composed
+   full-bleed (subject right, graphics left) — so the slide spans
+   the full width here and needs no left feather or readability
+   wash, unlike the right-anchored dark photos.
+   ============================================================ */
+:root:not([data-theme="dark"]) .bio-hero-slide{
+  width: 100%;
+  background-position: right center;
+  -webkit-mask-image: none;
+          mask-image: none;
+  filter: none;
+}
+:root:not([data-theme="dark"]) .bio-hero-slide:nth-child(1){
+  background-image: url("assets/bio-hero-light-1.webp") !important;
+}
+:root:not([data-theme="dark"]) .bio-hero-slide:nth-child(2){
+  background-image: url("assets/bio-hero-light-2.webp") !important;
+}
+
+/* the artwork is already light, so only a whisper of a wash under the text */
+:root:not([data-theme="dark"]) .bio-hero-bg::after{
+  background: linear-gradient(90deg,
+              rgba(255,253,248,0.62) 0%,
+              rgba(255,253,248,0.30) 30%,
+              rgba(255,253,248,0.00) 58%);
+}
+
+/* the hero text panel sits on cream now — drop the glass plate */
+:root:not([data-theme="dark"]) .bio-hero-text{
+  background: none;
+  -webkit-backdrop-filter: none;
+          backdrop-filter: none;
+  box-shadow: none;
+  border: 0;
+}
+
+@media (max-width: 720px){
+  :root:not([data-theme="dark"]) .bio-hero-slide{
+    background-position: 74% center;
+  }
+  :root:not([data-theme="dark"]) .bio-hero-bg{
+    box-shadow: 0 22px 50px -26px rgba(120, 90, 30, 0.35);
+  }
+}
+
+/* ---- light hero: scaled back, and the bottom melts into the page ---- */
+:root:not([data-theme="dark"]) .bio-hero-bg{
+  /* a cream ground sampled from the artwork, so the area the smaller
+     image no longer covers reads as part of the same illustration —
+     with its own bottom fade so the whole hero dissolves into the page */
+  background:
+    linear-gradient(180deg, rgba(251,251,254,0) 58%, rgba(251,251,254,0.85) 88%, rgba(251,251,254,1) 100%),
+    linear-gradient(120deg, #fdfcf8 0%, #fdf8ec 46%, #fbf0d8 100%);
+}
+:root:not([data-theme="dark"]) .bio-hero-slide{
+  background-size: auto 90%;
+  background-position: right bottom;
+  /* Two feathers: the left edge (where the scaled-down artwork stops and the
+     cream ground takes over) and the bottom (into the page). They only meet
+     at the bottom-left corner, where both are already transparent, so the
+     intersect produces no visible blend artifact. */
+  -webkit-mask-image:
+    linear-gradient(90deg, transparent 0%, rgba(0,0,0,.55) 7%, #000 16%),
+    linear-gradient(180deg, #000 0%, #000 70%, transparent 100%);
+          mask-image:
+    linear-gradient(90deg, transparent 0%, rgba(0,0,0,.55) 7%, #000 16%),
+    linear-gradient(180deg, #000 0%, #000 70%, transparent 100%);
+  -webkit-mask-composite: source-in;
+          mask-composite: intersect;
+}
+
+/* ============================================================
+   ✦  AMBIENT BACKGROUND — warm in both themes  ✦
+   The page still had the original blue / pink / lavender wash:
+   four tinted radials on <body> plus three coloured blobs. All
+   retuned to the amber family so nothing cool is left behind.
+   ============================================================ */
+body{
+  background:
+    radial-gradient(1100px 700px at 8% -5%,  rgba(255, 243, 219, 0.95), transparent 60%),
+    radial-gradient(900px 600px at 95% 12%,  rgba(255, 233, 198, 0.85), transparent 60%),
+    radial-gradient(800px 700px at 88% 82%,  rgba(252, 246, 232, 0.80), transparent 60%),
+    radial-gradient(900px 800px at -5% 95%,  rgba(255, 238, 205, 0.85), transparent 60%),
+    var(--bg-base);
+}
+[data-theme="dark"] body{
+  background:
+    radial-gradient(1200px 820px at 12% -12%, rgba(240,180,41,0.075), transparent 60%),
+    radial-gradient(1050px 720px at 102% -4%, rgba(200,130,25,0.065), transparent 55%),
+    radial-gradient(900px 900px at 50% 122%,  rgba(150,100,20,0.055), transparent 60%),
+    var(--bg-base);
+}
+.blob-1{ background: #ffe6b8; }
+.blob-2{ background: #ffd9a3; }
+.blob-3{ background: #f6e7c6; }
+
+/* ============================================================
+   ✦  Light hero: fill the frame again  ✦
+   Scaling to 90% height left cream gutters at the top and left
+   on desktop. Back to cover so the artwork fits the hero edge to
+   edge; the bottom blend is what stays.
+   ============================================================ */
+:root:not([data-theme="dark"]) .bio-hero-slide{
+  background-size: cover;
+  background-position: center right;
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 72%, transparent 100%);
+          mask-image: linear-gradient(180deg, #000 0%, #000 72%, transparent 100%);
+  -webkit-mask-composite: source-over;
+          mask-composite: add;
+}
+
+/* Nudge the light-mode artwork down.
+   background-position-Y does nothing here: at `cover` the scaled image is
+   exactly the box height (it overflows horizontally, not vertically), so
+   there is no vertical slack to shift. Moving the box itself is what works. */
+:root:not([data-theme="dark"]) .bio-hero-slide{
+  /* Taller box + `cover` instead of a scaled background: `auto 113%` sized
+     the image off its own ratio, so on wide screens it stopped short of the
+     left edge and the ground gradient showed through as a vertical seam.
+     An over-tall box that `cover` fills always spans the full width, and the
+     parent's overflow:hidden crops the extra 13% off the bottom. */
+  top: 0;
+  bottom: auto;
+  height: 113%;
+  background-size: cover;
+  background-position: right top;
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 62%, transparent 88%);
+          mask-image: linear-gradient(180deg, #000 0%, #000 62%, transparent 88%);
+}
+
+/* ---- the bio hero follows the site accent in both themes ----
+   The violet exception is gone; .bio-hero inherits :root's amber, so the
+   role line, buttons, dots and glows match the rest of the site. */
+
+/* ============================================================
+   ✦  LIGHT HERO — final, with artwork cut to the site ratio  ✦
+   The replacement images are composed for this frame, so all the
+   earlier compensation (over-tall box, 113% scale, left feather,
+   downward nudge) is reset. Straight `cover`, plus the bottom
+   blend into the page.
+   ============================================================ */
+:root:not([data-theme="dark"]) .bio-hero-slide{
+  top: 0;
+  bottom: 0;
+  height: auto;
+  width: 100%;
+  background-size: cover;
+  /* `center right` anchors the RIGHT edge, so `cover` crops the whole
+     overflow off the left and drags the subject into the text column.
+     Cropping evenly from both sides keeps him clear of the copy. */
+  background-position: center;
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 78%, transparent 100%);
+          mask-image: linear-gradient(180deg, #000 0%, #000 78%, transparent 100%);
+  -webkit-mask-composite: source-over;
+          mask-composite: add;
+}
+
+/* ---- mobile framing for the light artwork ----
+   X: a higher percentage reveals more of the image's right side, which
+   slides the subject left in frame.
+   Y: at plain `cover` the scaled image is exactly the box height, so
+   there is no vertical slack — scaling to 110% creates it, and anchoring
+   `top` spends it by pushing the content downward. */
+@media (max-width: 720px){
+  :root:not([data-theme="dark"]) .bio-hero-slide{
+    /* More zoom would push the content down but also enlarges the subject
+       until the crown clips at the card's top edge. Offsetting the slide
+       inside the card moves everything down without growing it — the cream
+       ground shows through above, which matches the artwork. */
+    background-size: auto 109%;
+    background-position: 86% top;
+    top: 42px;
+    /* no soft fade on mobile — the photo runs to the card's rounded edge */
+    -webkit-mask-image: none;
+            mask-image: none;
+  }
+  /* and no bottom wash on the card itself */
+  :root:not([data-theme="dark"]) .bio-hero-bg{
+    background: linear-gradient(120deg, #fdfcf8 0%, #fdf8ec 46%, #fbf0d8 100%);
+  }
+}
+
+/* ---- mobile framing for the dark portraits ----
+   Same two levers as the light artwork: a higher X reveals more of the
+   image's right side so the subject slides left, and a slight vertical
+   over-scale creates the slack that `top` then spends downward (at plain
+   `cover` these 1.63:1 photos fit the box height exactly, so Y is inert). */
+@media (max-width: 720px){
+  [data-theme="dark"] .bio-hero-slide{
+    /* Less zoom so the subject sits smaller; the downward shift that the
+       zoom used to provide comes from offsetting the slide instead, with
+       the card filled dark so the strip above reads as the card itself. */
+    background-size: auto 106%;
+    background-position: 94% top;
+    top: 40px;
+  }
+  [data-theme="dark"] .bio-hero-bg{
+    background: #0b0b0d;
+  }
+}
+
+/* ============================================================
+   ✦  READABILITY OF BODY COPY  ✦
+   Two things were fighting the text: the particle canvas sat at
+   0.75 opacity in light mode, so gold lines crossed the letters,
+   and --muted was a lavender grey left from the old palette that
+   sits low-contrast on a cream ground.
+   ============================================================ */
+:root{
+  --muted: #55504a;                /* warm, darker — reads on cream */
+}
+.net-canvas{ opacity: 0.30; }
+[data-theme="dark"] .net-canvas{ opacity: 0.42; }
+
+/* phones: the canvas runs edge to edge behind a full column of text,
+   so it drops back further, and the copy gets a touch more weight */
+@media (max-width: 720px){
+  .net-canvas{ opacity: 0.12; }
+  [data-theme="dark"] .net-canvas{ opacity: 0.3; }
+  .summary,
+  .bh-desc,
+  .page-sub,
+  .hire-intro{
+    font-size: 1.02rem;
+    line-height: 1.75;
+  }
+  :root:not([data-theme="dark"]) .summary{ color: #46413b; }
+}
+
+/* ============================================================
+   ✦  Calmer light ground  ✦
+   The amber wash was carried by two stacked layers — four tinted
+   radials on <body> and three 0.45-opacity blurred blobs. Both
+   are pulled back so the page reads as warm off-white rather
+   than orange, especially behind long passages of text.
+   ============================================================ */
+:root:not([data-theme="dark"]) body{
+  background:
+    radial-gradient(1100px 700px at 8% -5%,  rgba(255, 246, 230, 0.55), transparent 62%),
+    radial-gradient(900px 600px at 95% 12%,  rgba(255, 241, 222, 0.42), transparent 62%),
+    radial-gradient(800px 700px at 88% 82%,  rgba(253, 250, 244, 0.45), transparent 62%),
+    radial-gradient(900px 800px at -5% 95%,  rgba(255, 244, 226, 0.40), transparent 62%),
+    var(--bg-base);
+}
+:root:not([data-theme="dark"]) .blob{ opacity: 0.20; }
+
+@media (max-width: 720px){
+  :root:not([data-theme="dark"]) .blob{ opacity: 0.12; }
 }
