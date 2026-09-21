@@ -3798,3 +3798,17 @@ body{
 @media (max-width: 720px){
   :root:not([data-theme="dark"]) .blob{ opacity: 0.12; }
 }
+
+/* ---- light hero: give the copy a readable ground ----
+   The wash over the artwork's left third had been dialled down to a
+   whisper back when the old images were dark there. The replacement
+   artwork is strongest amber exactly where the text sits, so it needs
+   a real scrim again — still clear of the subject on the right. */
+:root:not([data-theme="dark"]) .bio-hero-bg::after{
+  background: linear-gradient(90deg,
+              rgba(255,254,251,0.93) 0%,
+              rgba(255,254,251,0.88) 22%,
+              rgba(255,254,251,0.60) 40%,
+              rgba(255,254,251,0.18) 54%,
+              rgba(255,254,251,0.00) 66%);
+}
