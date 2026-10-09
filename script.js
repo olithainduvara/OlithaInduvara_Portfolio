@@ -452,12 +452,12 @@
     const wcRight = document.querySelector('.wc-arrow.right');
     const wcStage = document.querySelector('.wc-stage');
     const slides = [
-      { title: 'Event & Portrait', sub: 'Photography' },
-      { title: 'Behind the Lens', sub: 'Photography' },
-      { title: 'Candid Moments', sub: 'Photography' },
-      { title: 'On Location', sub: 'Field Work' },
-      { title: 'Detail & Composition', sub: 'Photography' },
-      { title: 'Creative Frames', sub: 'Photography' },
+      { title: 'Graduation ceremony coverage', sub: 'Album' },
+      { title: 'Portrait session on campus',   sub: 'Album' },
+      { title: 'Bridal and portrait work',     sub: 'Album' },
+      { title: 'Graduation day, in the rain',  sub: 'Album' },
+      { title: 'Convocation portraits',        sub: 'Album' },
+      { title: 'Personality development workshop', sub: 'Album' },
     ];
     let cur = 0, animating = false;
 
