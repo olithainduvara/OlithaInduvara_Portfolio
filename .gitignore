@@ -1,0 +1,29 @@
+# ---------------------------------------------------------------
+# Original camera / source media
+#
+# Every folder below is the raw, uncompressed import for a gallery.
+# The versions the site actually loads live beside them, already
+# resized and re-encoded (assets/projects/fyp-semester1, sobel-fpga,
+# flyme, ...). Keeping the originals out of git matters: GitHub
+# refuses any single file over 100 MB, and git keeps every blob it
+# has ever seen forever, so one accidental commit bloats the clone
+# for good.
+#
+# The files stay on disk — they are simply not tracked.
+# ---------------------------------------------------------------
+
+assets/projects/FlyMe_RC plane/
+assets/projects/FYP Semester 1/
+assets/projects/Sobel Filter In FPGA board/
+assets/skills/Electrical Enthusiasit/
+assets/skills/EngEX media lead/
+assets/skills/Workshops and public speaking/
+
+# raw media anywhere else
+*.TS~*.mp4
+
+# local tooling
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

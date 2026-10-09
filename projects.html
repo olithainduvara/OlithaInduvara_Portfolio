@@ -35,6 +35,7 @@
         <a href="events.html" class="nav-link">Participations</a>
         <a href="skills.html" class="nav-link">Skills</a>
         <a href="experience.html" class="nav-link">Experience</a>
+        <a href="software.html" class="nav-link">Software</a>
         <a href="photography.html" class="nav-link">Photography</a>
       </nav>
 
@@ -87,6 +88,20 @@
               <h3 class="pc-title">sEMG-Based Prosthetic Hand Control</h3>
               <p class="pc-desc">A wearable surface-EMG system that reads forearm muscle activity to decode hand gestures — I designed the analog front-end and the acquisition software.</p>
               <span class="pc-foot">Analog front-end &middot; 3 prototypes</span>
+              <span class="pc-more">Read more
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13"/><path d="m12 5 7 7-7 7"/></svg>
+              </span>
+            </div>
+          </a>
+          <a class="proj-card" href="#project-flyme">
+            <div class="pc-media pc-grad-1">
+              <img class="pc-cover-img" src="assets/projects/flyme/plane-1.jpg" alt="FlyMe autonomous RC plane" loading="lazy">
+            </div>
+            <div class="pc-body">
+              <p class="pc-kicker">Ongoing &middot; Personal R&amp;D</p>
+              <h3 class="pc-title">FlyMe &mdash; Autonomous RC Plane</h3>
+              <p class="pc-desc">An RC plane being built towards autonomous waypoint missions for photogrammetry, with a LoRa telemetry link and a custom Android ground station.</p>
+              <span class="pc-foot">In progress &middot; ESP32-C3 &middot; LoRa</span>
               <span class="pc-more">Read more
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13"/><path d="m12 5 7 7-7 7"/></svg>
               </span>
@@ -512,6 +527,191 @@
               <figcaption class="g-cap">Celebrating a working prototype</figcaption>
             </figure>
           </div>
+          <p class="gallery-hint">Click any photo or video to view it full size.</p>
+        </article>
+        <article class="project-feature reveal" id="project-flyme" style="margin-top: 26px;">
+          <div class="badges">
+            <span class="badge-accent">Ongoing Project</span>
+            <span class="badge-soft">Personal R&amp;D</span>
+            <span class="badge-soft">ESP32-C3 &middot; LoRa &middot; Android</span>
+          </div>
+          <div class="award-link">
+            <span><strong>In progress</strong> &mdash; airframe flying, telemetry link and ground-station app working. Autonomous waypoint missions are the next stage.</span>
+            <span class="award-go">Live project &rarr;</span>
+          </div>
+          <h2>FlyMe &mdash; Autonomous RC Plane &amp; Ground Station</h2>
+          <p class="project-meta">Role: Airframe, avionics, firmware and Android app &middot; Solo project, ongoing</p>
+          <p class="lead-desc">A long-running build working towards an RC plane that can fly <strong>autonomous waypoint missions</strong> for aerial photogrammetry and survey work. The aircraft flies today under manual control, carrying a GPS and IMU payload that streams live telemetry over LoRa to <strong>FlyMe</strong>, an Android ground station I designed and built to track and instrument the flight.</p>
+          <div class="details-collapse">
+          <p class="body">
+            The goal behind FlyMe is to stop hand-flying survey patterns. A plane that can be given a set of waypoints and fly them accurately becomes a platform for <strong>photogrammetry</strong> &mdash; mapping, 3D reconstruction, site surveys &mdash; and for the aerial work I already do by drone, but over far larger areas than a multirotor can cover on one battery.
+          </p>
+          <p class="body">
+            Getting there means solving each layer in turn, and this is where the project currently stands: a <strong>flying airframe</strong>, a <strong>working long-range telemetry downlink</strong>, and a <strong>ground-station app</strong> that visualises everything the aircraft knows about itself. Control surfaces driven by the flight computer, and then waypoint navigation, come next.
+          </p>
+          <h3 class="section-subhead">Where It Stands Today</h3>
+          <div class="features-grid">
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>KT-board airframe assembled and flight-tested</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>FlySky FS-i6 radio, 1200&nbsp;mAh 3S LiPo</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>GPS + IMU payload streaming over 433&nbsp;MHz LoRa</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>ESP32-C3 plane transmitter and ground receiver</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>FlyMe Android ground station with live map HUD</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Flight recording, replay and GPX export</div>
+          </div>
+          <div class="tags">
+            <span class="tag">ESP32-C3</span>
+            <span class="tag">LoRa SX1278</span>
+            <span class="tag">MPU6500 IMU</span>
+            <span class="tag">u-blox GPS</span>
+            <span class="tag">Sensor Fusion</span>
+            <span class="tag">Android</span>
+            <span class="tag">USB-OTG Serial</span>
+            <span class="tag">KiCad PCB Design</span>
+            <span class="tag">Arduino / C++</span>
+            <span class="tag">Photogrammetry</span>
+          </div>
+          </div>
+          <button class="read-more-btn" type="button" aria-expanded="false">
+            <span class="rm-text">Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <h3 class="section-subhead">The Aircraft</h3>
+          <p class="body">
+            The airframe is a fabricated <strong>KT-board kit</strong> that I assembled myself &mdash; light, cheap to repair, and forgiving enough to carry an experimental payload without much worry about what a hard landing costs. It flies on a <strong>FlySky FS-i6</strong> transmitter and receiver with a <strong>1200&nbsp;mAh 3S LiPo</strong>, which is enough for the test flights the project needs at this stage.
+          </p>
+          <p class="body">
+            Flying it manually is not the point &mdash; but it is the prerequisite. Every automated behaviour planned for later has to be trialled against a known-good manual baseline first, and the flights so far have been about proving the airframe is stable and predictable enough to hand over to a computer.
+          </p>
+          <div class="gallery">
+            <figure class="gallery-item">
+              <img src="assets/projects/flyme/plane-1.jpg" alt="The assembled Sky Angel airframe on the runway" loading="lazy">
+              <figcaption class="g-cap">The assembled Sky Angel airframe on the runway</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/flyme/plane-2.jpg" alt="Lined up for take-off" loading="lazy">
+              <figcaption class="g-cap">Lined up for take-off</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/flyme/plane-field.jpg" alt="On the field before a test flight" loading="lazy">
+              <figcaption class="g-cap">On the field before a test flight</figcaption>
+            </figure>
+            <figure class="gallery-item video-item">
+              <video preload="metadata" playsinline muted poster="assets/projects/flyme/flight-1-poster.jpg">
+                <source src="assets/projects/flyme/flight-1.mp4" type="video/mp4">
+              </video>
+              <span class="video-play-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <figcaption class="g-cap">Test flight &mdash; the airframe in the air</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/flyme/pilot-tx.jpg" alt="Launching with the FlySky FS-i6 transmitter" loading="lazy">
+              <figcaption class="g-cap">Launching with the FlySky FS-i6 transmitter</figcaption>
+            </figure>
+            <figure class="gallery-item video-item">
+              <video preload="metadata" playsinline muted poster="assets/projects/flyme/flight-2-poster.jpg">
+                <source src="assets/projects/flyme/flight-2.mp4" type="video/mp4">
+              </video>
+              <span class="video-play-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <figcaption class="g-cap">Hand launch and circuit over the field</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/flyme/in-flight.jpg" alt="In flight over the test field" loading="lazy">
+              <figcaption class="g-cap">In flight over the test field</figcaption>
+            </figure>
+          </div>
+
+          <h3 class="section-subhead">Telemetry &mdash; LoRa from the Plane to a Phone</h3>
+          <p class="body">
+            The aircraft carries an <strong>ESP32-C3</strong> with a <strong>GPS module</strong> and an <strong>IMU</strong>. The IMU runs an attitude filter at 200&nbsp;Hz to produce roll, pitch and heading, while the GPS supplies position, altitude and ground speed. Those are packed into a compact binary frame and transmitted <strong>ten times a second over 433&nbsp;MHz LoRa</strong> &mdash; chosen over WiFi or Bluetooth because the range needed for survey flights is measured in kilometres, not metres.
+          </p>
+          <p class="body">
+            On the ground a second ESP32-C3 receives those packets, unpacks them, and re-emits them as JSON. The phone connects to that receiver over a <strong>USB-C cable</strong> (WiFi is also supported), so the whole ground station is a phone and a small board in your hand &mdash; no laptop at the field. The link is bidirectional: the app can send calibration commands back up to the plane and watch them complete.
+          </p>
+          <p class="body">
+            I built the plane and receiver electronics on perfboard first, then drew both as proper PCBs in KiCad for the next revision.
+          </p>
+          <div class="gallery">
+            <figure class="gallery-item">
+              <img src="assets/projects/flyme/board-plane.jpg" alt="The plane-side stack &mdash; ESP32-C3, LoRa radio, IMU and GPS" loading="lazy">
+              <figcaption class="g-cap">The plane-side stack &mdash; ESP32-C3, LoRa radio, IMU and GPS</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/flyme/board-1.jpg" alt="Hand-built avionics board" loading="lazy">
+              <figcaption class="g-cap">Hand-built avionics board</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/flyme/board-solder.jpg" alt="Solder side of the perfboard build" loading="lazy">
+              <figcaption class="g-cap">Solder side of the perfboard build</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/flyme/board-2.jpg" alt="The ground-station receiver board" loading="lazy">
+              <figcaption class="g-cap">The ground-station receiver board</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/flyme/bench-gps.jpg" alt="GPS and IMU bring-up on the bench" loading="lazy">
+              <figcaption class="g-cap">GPS and IMU bring-up on the bench</figcaption>
+            </figure>
+          </div>
+
+          <h3 class="section-subhead">FlyMe &mdash; The Android Ground Station</h3>
+          <p class="body">
+            This is the part I have put the most design work into. <strong>FlyMe</strong> is an Android app that turns the telemetry stream into something you can actually fly with: a full-screen HUD over a live satellite map showing the plane&rsquo;s position and trail, distance from home, altitude above the launch point, ground speed and heading, with a compass and a return-to-home arrow.
+          </p>
+          <p class="body">
+            Beyond the HUD it handles the things that matter when the aircraft is a dot in the sky &mdash; a home point taken from the phone&rsquo;s GPS or dropped on the map, range rings, an attitude instrument driven by the IMU, a telemetry page with an altitude chart and signal quality, and <strong>spoken and vibrating alerts</strong> for signal loss, low altitude, low battery or exceeding maximum distance. If the link drops, the app holds and shows the last known position. Every flight is recorded automatically from take-off to landing, can be replayed with a scrubber, and exports as GPX.
+          </p>
+          <div class="gallery wide">
+            <figure class="gallery-item">
+              <img src="assets/projects/flyme/app-home.jpg" alt="FlyMe home screen with the pre-flight checklist" loading="lazy">
+              <figcaption class="g-cap">FlyMe home screen with the pre-flight checklist</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/flyme/app-hud.jpg" alt="In-flight HUD &mdash; live map, trail, instruments and telemetry strip" loading="lazy">
+              <figcaption class="g-cap">In-flight HUD &mdash; live map, trail, instruments and telemetry strip</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/flyme/app-flightlog.jpg" alt="Recorded flight path, replayable with a scrubber" loading="lazy">
+              <figcaption class="g-cap">Recorded flight path, replayable with a scrubber</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/flyme/app-home-point.jpg" alt="Setting the home point before launch" loading="lazy">
+              <figcaption class="g-cap">Setting the home point before launch</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/flyme/app-connect.jpg" alt="Ground-station link over USB-C, showing packet rate and signal" loading="lazy">
+              <figcaption class="g-cap">Ground-station link over USB-C, showing packet rate and signal</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/flyme/app-calibrate.jpg" alt="Sending IMU calibration commands up to the plane" loading="lazy">
+              <figcaption class="g-cap">Sending IMU calibration commands up to the plane</figcaption>
+            </figure>
+          </div>
+
+          <h3 class="section-subhead">Bring-Up &mdash; When the Parts Are Not What the Label Says</h3>
+          <p class="body">
+            Two components turned out to be something other than what was sold, and both were only caught by interrogating the chips directly rather than trusting the listing.
+          </p>
+          <p class="body">
+            The module advertised as a 9-axis <strong>MPU9250</strong> returned <code>WHO_AM_I = 0x70</code> &mdash; the signature of an <strong>MPU6500</strong>, which is 6-axis and has <strong>no magnetometer</strong>. Three independent bus probes confirmed nothing was on the magnetometer address. That matters more than it sounds: gravity gives an absolute reference for roll and pitch, so those hold steady indefinitely, but without a magnetometer there is no absolute heading. Yaw can only be integrated from the gyro, so it drifts a few degrees per minute. The app is honest about this and marks the heading as relative rather than pretending it is a true compass bearing.
+          </p>
+          <p class="body">
+            Similarly, the GPS sold as a <strong>NEO-M8N</strong> answered a version poll as a relabelled <strong>NEO-6M</strong>. It gets a fix and works, but it tracks GPS satellites only. Knowing which part is actually fitted changed how the firmware is configured &mdash; it now sets an airborne dynamic model, rejects 2D fixes and low-elevation satellites, and only accepts a home point once the fix is genuinely good and the aircraft has been stationary for ten seconds.
+          </p>
+          <div class="gallery">
+            <figure class="gallery-item">
+              <img src="assets/projects/flyme/bench-gps.jpg" alt="Identifying the IMU and GPS over the serial console" loading="lazy">
+              <figcaption class="g-cap">Identifying the IMU and GPS over the serial console</figcaption>
+            </figure>
+          </div>
+
+          <h3 class="section-subhead">What Comes Next</h3>
+          <p class="body">
+            The immediate next step is a <strong>magnetometer</strong> on the same I&sup2;C bus to give a true heading rather than a drifting one &mdash; navigation is not possible without it. After that come <strong>servo and ESC outputs</strong> driven by the flight computer, so the aircraft can hold a heading and altitude on its own, and then <strong>waypoint missions</strong>: upload a route from the app, let the plane fly it, and bring it home. Once that is reliable, the camera payload and the <strong>photogrammetry</strong> work the whole project was started for can begin.
+          </p>
           <p class="gallery-hint">Click any photo or video to view it full size.</p>
         </article>
         <article class="project-feature reveal" id="project-sobel" style="margin-top: 26px;">

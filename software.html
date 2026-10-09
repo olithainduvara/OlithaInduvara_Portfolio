@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Software &amp; Tools — Olitha Induvara</title>
+  <meta name="description" content="Desktop applications, engineering tools and web dashboards built by Olitha Induvara — HydroSync Studio, EMG Recorder and the Mahaweli flood monitoring dashboard. Free to download.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237c5df8'/%3E%3Cstop offset='1' stop-color='%235b3df0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='48' fill='url(%23g)'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='54' fill='white' font-family='Verdana' font-weight='bold'%3EO%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="blob blob-1" aria-hidden="true"></div>
+  <div class="blob blob-2" aria-hidden="true"></div>
+  <div class="blob blob-3" aria-hidden="true"></div>
+  <canvas id="netCanvas" class="net-canvas" aria-hidden="true"></canvas>
+  <!-- ======================= NAVBAR ======================= -->
+  <header class="topbar">
+    <div class="g-bar-filter" aria-hidden="true"></div>
+    <div class="g-bar-overlay" aria-hidden="true"></div>
+    <div class="g-bar-spec" aria-hidden="true"></div>
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">
+        Olitha Induvara
+        <span class="brand-sub">Electrical &amp; Electronic Engineering Undergraduate</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link">Bio</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="achievements.html" class="nav-link">Achievements</a>
+        <a href="events.html" class="nav-link">Participations</a>
+        <a href="skills.html" class="nav-link">Skills</a>
+        <a href="experience.html" class="nav-link">Experience</a>
+        <a href="software.html" class="nav-link active">Software</a>
+        <a href="photography.html" class="nav-link">Photography</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="searchBtn" aria-label="Search (quick navigation)" title="Quick search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+        <button class="icon-btn theme-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.3 11.3 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <span class="theme-label">Dark</span>
+        </button>
+        <button class="icon-btn burger" id="burgerBtn" aria-label="Open menu" title="Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- ======================= PAGE HEADER ======================= -->
+    <section class="page-hero">
+      <div class="container">
+        <p class="page-kicker reveal">Things I Built to Make Work Easier</p>
+        <h1 class="reveal">Software &amp; Tools</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="tools-intro reveal">
+          Alongside hardware work I write software &mdash; desktop applications, engineering tools and
+          web dashboards &mdash; usually because a job in front of me needed one and nothing suitable
+          existed. Each of these is free, open source, and built for a real problem I had.
+          Everything here is yours to download and use.
+        </p>
+
+        <div class="tools-stats reveal">
+          <div class="tstat"><strong data-count="3">3</strong><span>Tools released</span></div>
+          <div class="tstat"><strong data-count="100">100%</strong><span>Open source</span></div>
+          <div class="tstat"><strong data-count="0">Free</strong><span>No licence, no cost</span></div>
+        </div>
+
+        <article class="app-card reveal" id="tool-hydrosync" style="--i:0">
+          <div class="app-media">
+              <figure class="shot lead">
+                <img src="assets/tools/hydrosync-dark.jpg" alt="HydroSync Studio in dark mode" loading="lazy">
+                <figcaption>HydroSync Studio in dark mode</figcaption>
+              </figure>
+              <figure class="shot">
+                <img src="assets/tools/hydrosync-light.jpg" alt="The same build in light mode" loading="lazy">
+                <figcaption>The same build in light mode</figcaption>
+              </figure>
+          </div>
+          <div class="app-body">
+            <p class="app-kicker">Windows desktop application</p>
+            <h2 class="app-title">HydroSync Studio</h2>
+            <p class="app-tagline">Consolidate overlapping river-gauge exports into one continuous hourly dataset.</p>
+            <p class="app-desc">Every download from the gauge portal is a rolling 72-hour window, so downloading on consecutive days gives you mostly the same readings twice &mdash; and the exports arrive in three different timestamp layouts, one of which is UTC while the others are local time. Concatenating them naively duplicates most rows and silently mixes timezones, which quietly ruins any model trained on the result. HydroSync does the merge properly: one row per hour per station, overlaps removed, every timestamp on one clock. Built for <strong>FloodLink 2.0</strong>, but it works for any station data with the same problem.</p>
+            <ul class="app-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>De-duplicates by hour, not by exact timestamp</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Unifies three timestamp layouts onto one timezone</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Respects recording breaks instead of inventing rows</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Interpolates short dropouts, leaves long ones empty</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Drag-and-drop import, one card per gauge station</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Runs as a single .exe &mdash; no Python needed</span></li>
+            </ul>
+            <div class="app-chips"><span class="tchip">Python</span><span class="tchip">PySide6</span><span class="tchip">pandas</span><span class="tchip">Windows</span><span class="tchip">CLI + GUI</span></div>
+            <div class="app-actions">
+              <a class="dl-btn primary" href="https://github.com/olithainduvara/HydroSync-1.0/archive/refs/heads/main.zip" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 19h16"/></svg>
+                <span>Download</span>
+              </a>
+              <a class="dl-btn ghost" href="https://github.com/olithainduvara/HydroSync-1.0" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.07.78 2.16v3.2c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
+                <span>View on GitHub</span>
+              </a>
+            </div>
+          </div>
+        </article>
+        <article class="app-card reveal flip" id="tool-emg" style="--i:1">
+          <div class="app-media">
+              <figure class="shot lead">
+                <img src="assets/tools/emg-cover.jpg" alt="EMG Recorder &mdash; surface electromyography acquisition" loading="lazy">
+                <figcaption>EMG Recorder &mdash; surface electromyography acquisition</figcaption>
+              </figure>
+              <figure class="shot">
+                <img src="assets/tools/emg-banner.jpg" alt="Three-channel acquisition for the NI USB-6009" loading="lazy">
+                <figcaption>Three-channel acquisition for the NI USB-6009</figcaption>
+              </figure>
+          </div>
+          <div class="app-body">
+            <p class="app-kicker">Windows desktop application</p>
+            <h2 class="app-title">EMG Recorder</h2>
+            <p class="app-tagline">Real-time three-channel EMG acquisition, visualisation and recording for the NI USB-6009.</p>
+            <p class="app-desc">Conventional EMG workflows mean writing MATLAB or Python for every session. I built this so the hardware is plug-and-play instead: open it, pick a device, press record. It streams three analog channels at up to 16&nbsp;kHz, draws live scrolling traces with peak decimation so a 30-second window renders as fast as a one-second one, and applies a digital notch filter for mains hum to both the display <em>and</em> the saved CSV so the two always agree. Recording runs on its own thread, so a UI hiccup can drop display frames but never recorded samples. It is the software behind my final-year project&rsquo;s signal acquisition.</p>
+            <ul class="app-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Three simultaneous channels, 10&nbsp;Hz &ndash; 16&nbsp;kHz</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Live traces with per-channel RMS monitoring</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Configurable 50/60&nbsp;Hz notch filter with harmonics</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>CSV recording on a dedicated thread</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Simulation mode &mdash; full UI with no hardware attached</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Dark and light themes, device hot-plug detection</span></li>
+            </ul>
+            <div class="app-chips"><span class="tchip">Python</span><span class="tchip">PySide6</span><span class="tchip">pyqtgraph</span><span class="tchip">NumPy</span><span class="tchip">NI-DAQmx</span></div>
+            <div class="app-actions">
+              <a class="dl-btn primary" href="https://github.com/olithainduvara/EMG-Data-Recorder-Via-NiDAQ-card/archive/refs/heads/main.zip" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 19h16"/></svg>
+                <span>Download</span>
+              </a>
+              <a class="dl-btn ghost" href="https://github.com/olithainduvara/EMG-Data-Recorder-Via-NiDAQ-card" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.07.78 2.16v3.2c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
+                <span>View on GitHub</span>
+              </a>
+            </div>
+          </div>
+        </article>
+        <article class="app-card reveal" id="tool-webmonitor" style="--i:2">
+          <div class="app-media">
+              <figure class="shot lead">
+                <img src="assets/tools/webmonitor-dash.jpg" alt="The live dashboard, charting both stations against flood thresholds" loading="lazy">
+                <figcaption>The live dashboard, charting both stations against flood thresholds</figcaption>
+              </figure>
+          </div>
+          <div class="app-body">
+            <p class="app-kicker">Live web dashboard</p>
+            <h2 class="app-title">Mahaweli Flood Monitor</h2>
+            <p class="app-tagline">Real-time water level and rainfall for two gauging stations on the Mahaweli Ganga.</p>
+            <p class="app-desc">A zero-dependency dashboard that tracks <strong>Peradeniya</strong> and <strong>Nawalapitiya</strong> live. It pulls readings from a public ArcGIS feature service, charts them against the official Alert, Minor and Major flood thresholds, and raises a banner the moment a station crosses a danger line. Timestamps are rendered in Sri Lanka time whatever the viewer&rsquo;s timezone, and any station&rsquo;s history exports to CSV in one click. The whole thing is a single <code>index.html</code> &mdash; no npm, no bundler, no backend. Open it and it works.</p>
+            <ul class="app-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Live data, auto-refreshing every five minutes</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Threshold lines for Alert, Minor and Major flood levels</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Automatic alert banner when a station crosses a line</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Combined and per-station Plotly charts</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>One-click CSV export per station or combined</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Single file, no build step, no dependencies</span></li>
+            </ul>
+            <div class="app-chips"><span class="tchip">HTML</span><span class="tchip">CSS</span><span class="tchip">JavaScript</span><span class="tchip">Plotly.js</span><span class="tchip">ArcGIS REST</span></div>
+            <div class="app-actions">
+              <a class="dl-btn primary" href="https://olithainduvara.github.io/Peradeniya-And-Nawalapitiya-Water-Level-and-Rainfall_WebMonitor-Mahaweli-River-/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4 10 14"/><path d="M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg>
+                <span>Open live dashboard</span>
+              </a>
+              <a class="dl-btn ghost" href="https://github.com/olithainduvara/Peradeniya-And-Nawalapitiya-Water-Level-and-Rainfall_WebMonitor-Mahaweli-River-" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.07.78 2.16v3.2c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
+                <span>View on GitHub</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <div class="tools-cta reveal">
+          <h3>More on the way</h3>
+          <p>I build these as the need comes up &mdash; data tools, acquisition software, small utilities.
+             Everything I publish ends up on GitHub.</p>
+          <a class="dl-btn primary" href="https://github.com/olithainduvara" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.07.78 2.16v3.2c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
+            <span>See all my repositories</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- ======================= FOOTER / CONTACT ======================= -->
+  <footer class="footer" id="contact">
+    <div class="container footer-inner reveal">
+      <div class="footer-actions">
+        <a class="btn-primary" href="mailto:olithainduvara@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          Email me
+        </a>
+        <a class="btn-outline" href="https://www.linkedin.com/in/olitha-induvara-16329733b/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+          Connect on LinkedIn
+        </a>
+      </div>
+      <p class="copyright">&copy; <span id="year">2026</span> Olitha Induvara, University of Peradeniya</p>
+    </div>
+  </footer>
+  <!-- ======================= QUICK SEARCH OVERLAY ======================= -->
+  <div class="search-overlay" id="searchOverlay" hidden>
+    <div class="search-panel">
+      <input type="text" id="searchInput" placeholder="Search this portfolio… (e.g. award)" autocomplete="off">
+      <ul class="search-results" id="searchResults"></ul>
+      <p class="search-hint">Press <kbd>Esc</kbd> to close</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

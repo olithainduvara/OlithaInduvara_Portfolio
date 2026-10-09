@@ -3882,3 +3882,323 @@ body{
   .kgrid span{ height: 36px; font-size: .82rem; }
   .formula{ font-size: .84rem; padding: 11px 14px; }
 }
+
+/* ---- wide gallery: landscape UI screenshots shown whole ----
+   Phone screenshots in landscape are about 2.2:1; a 4/3 tile would crop
+   nearly half their width away, so these tiles are wider and letterbox
+   the image instead of cropping it. */
+.gallery.wide{
+  grid-template-columns: repeat(auto-fill, minmax(248px, 1fr));
+}
+.gallery.wide .gallery-item img{
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #0b0b0d;
+}
+:root:not([data-theme="dark"]) .gallery.wide .gallery-item img{
+  background: #101014;
+}
+@media (max-width: 760px){
+  .gallery.wide{ grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); }
+}
+
+/* ============================================================
+   ✦  SOFTWARE & TOOLS PAGE  ✦
+   Alternating app cards: screenshots on one side, the story and
+   download buttons on the other. Everything animates in on
+   scroll; the hover motion is kept to lift and glow so the
+   screenshots stay readable.
+   ============================================================ */
+.tools-intro{
+  max-width: 760px;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 1.02rem;
+  margin-bottom: 30px;
+}
+
+/* ---- the three headline numbers ---- */
+.tools-stats{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 46px;
+}
+.tstat{
+  flex: 1 1 160px;
+  padding: 18px 22px;
+  border-radius: 16px;
+  background: var(--glass-bg);
+  border: 1px solid var(--line);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+          backdrop-filter: blur(16px) saturate(140%);
+}
+.tstat strong{
+  display: block;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--accent);
+  letter-spacing: -.02em;
+}
+.tstat span{
+  display: block;
+  margin-top: 7px;
+  font-size: .76rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ---- app card ---- */
+.app-card{
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 38px;
+  align-items: center;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  background: var(--glass-bg);
+  border: 1px solid var(--line);
+  box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+          backdrop-filter: blur(18px) saturate(140%);
+  transition: transform .45s cubic-bezier(.2,.8,.25,1), border-color .45s ease;
+}
+.app-card.flip .app-media{ order: 2; }
+.app-card:hover{
+  transform: translateY(-4px);
+  border-color: rgba(var(--accent-rgb), 0.30);
+}
+/* a warm wash that only appears on hover, behind the content */
+.app-card::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(620px 320px at 80% 0%, rgba(var(--accent-rgb), .10), transparent 70%);
+  opacity: 0;
+  transition: opacity .5s ease;
+  pointer-events: none;
+}
+.app-card:hover::before{ opacity: 1; }
+.app-media, .app-body{ position: relative; z-index: 1; }
+
+/* ---- screenshots ---- */
+.app-media{
+  display: grid;
+  gap: 14px;
+}
+.shot{ margin: 0; }
+.shot img{
+  width: 100%;
+  display: block;
+  border-radius: 13px;
+  border: 1px solid var(--line);
+  box-shadow: 0 20px 44px -22px rgba(0,0,0,.75);
+  transition: transform .5s cubic-bezier(.2,.8,.25,1);
+}
+.app-card:hover .shot.lead img{ transform: translateY(-5px) scale(1.012); }
+.shot figcaption{
+  margin-top: 8px;
+  font-size: .72rem;
+  color: var(--muted);
+  opacity: .8;
+}
+
+/* ---- text side ---- */
+.app-kicker{
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: .85;
+}
+.app-title{
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: clamp(1.5rem, 2.6vw, 1.95rem);
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1.18;
+  margin: 9px 0 0;
+  color: var(--ink);
+}
+.app-tagline{
+  margin: 10px 0 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent-text, var(--accent));
+  line-height: 1.5;
+}
+.app-desc{
+  margin: 14px 0 0;
+  color: var(--muted);
+  line-height: 1.78;
+  font-size: .94rem;
+}
+.app-features{
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 9px 18px;
+}
+.app-features li{
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: .855rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.app-features svg{
+  width: 15px;
+  height: 15px;
+  flex: none;
+  margin-top: 3px;
+  color: var(--accent);
+}
+.app-chips{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 20px;
+}
+.tchip{
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: var(--muted);
+}
+[data-theme="dark"] .tchip{
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.09);
+}
+:root:not([data-theme="dark"]) .tchip{
+  background: rgba(23,22,48,0.04);
+  border: 1px solid var(--line);
+}
+
+/* ---- download / link buttons ---- */
+.app-actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+  margin-top: 24px;
+}
+.dl-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 22px;
+  border-radius: 13px;
+  font-size: .92rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease;
+}
+.dl-btn svg{ width: 18px; height: 18px; flex: none; }
+/* green reads as "get this" — the same green as the WhatsApp CTA on
+   the photography page, so the site has one colour for go-actions */
+.dl-btn.primary{
+  background: linear-gradient(135deg, #34d17a 0%, #1faa55 100%);
+  color: #fff;
+  box-shadow: 0 14px 28px -12px rgba(37, 211, 102, .55);
+}
+.dl-btn.primary:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 20px 34px -12px rgba(37, 211, 102, .66);
+}
+/* the arrow nudges down, as a download should */
+.dl-btn.primary:hover svg{ animation: dlNudge .85s ease infinite; }
+@keyframes dlNudge{
+  0%, 100% { transform: translateY(0); }
+  45%      { transform: translateY(3px); }
+}
+.dl-btn.ghost{
+  border: 1px solid var(--line);
+  color: var(--ink);
+  background: transparent;
+}
+[data-theme="dark"] .dl-btn.ghost{ background: rgba(255,255,255,0.045); }
+.dl-btn.ghost:hover{
+  transform: translateY(-3px);
+  border-color: rgba(var(--accent-rgb), .45);
+}
+
+/* ---- closing call to action ---- */
+.tools-cta{
+  margin-top: 46px;
+  padding: 38px 34px;
+  border-radius: 24px;
+  text-align: center;
+  background: var(--glass-bg);
+  border: 1px solid var(--line);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+          backdrop-filter: blur(16px) saturate(140%);
+}
+.tools-cta h3{
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+.tools-cta p{
+  max-width: 540px;
+  margin: 11px auto 22px;
+  color: var(--muted);
+  line-height: 1.75;
+  font-size: .93rem;
+}
+.tools-cta .dl-btn{ margin: 0 auto; }
+
+/* ---- staggered entrance, one card after another ---- */
+.app-card.reveal{
+  transition-delay: calc(var(--i, 0) * 110ms);
+}
+.app-card.reveal .app-media,
+.app-card.reveal .app-body{
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.25,1);
+  transition-delay: calc(var(--i, 0) * 110ms + 120ms);
+}
+.app-card.reveal.visible .app-media,
+.app-card.reveal.visible .app-body{
+  opacity: 1;
+  transform: none;
+}
+.app-card.reveal.visible .app-body{ transition-delay: calc(var(--i, 0) * 110ms + 220ms); }
+
+@media (prefers-reduced-motion: reduce){
+  .app-card, .app-card .app-media, .app-card .app-body,
+  .shot img, .dl-btn{ transition: none !important; animation: none !important; }
+  .app-card.reveal .app-media, .app-card.reveal .app-body{ opacity: 1; transform: none; }
+}
+
+@media (max-width: 900px){
+  .app-card{
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 22px;
+  }
+  .app-card.flip .app-media{ order: 0; }
+  .app-features{ grid-template-columns: 1fr; }
+}
+@media (max-width: 560px){
+  .app-card{ padding: 17px; border-radius: 19px; }
+  .tools-stats{ gap: 10px; }
+  .tstat{ flex: 1 1 100%; padding: 15px 18px; }
+  .tstat strong{ font-size: 1.6rem; }
+  .app-actions .dl-btn{ flex: 1 1 100%; justify-content: center; }
+  .tools-cta{ padding: 28px 20px; }
+}
