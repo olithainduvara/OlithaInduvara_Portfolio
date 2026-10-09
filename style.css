@@ -3757,7 +3757,11 @@ body{
    and --muted was a lavender grey left from the old palette that
    sits low-contrast on a cream ground.
    ============================================================ */
-:root{
+/* light only: scoping matters here. A bare :root has the same specificity as
+   [data-theme="dark"], and this block sits later in the file, so an unscoped
+   --muted would override the dark theme's and leave dark-mode body copy as
+   dark grey on near-black. */
+:root:not([data-theme="dark"]){
   --muted: #55504a;                /* warm, darker — reads on cream */
 }
 .net-canvas{ opacity: 0.30; }

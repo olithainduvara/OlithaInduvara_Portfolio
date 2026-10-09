@@ -78,6 +78,20 @@
               </span>
             </div>
           </a>
+          <a class="proj-card" href="#project-fyp">
+            <div class="pc-media pc-grad-2">
+              <img class="pc-cover-img" src="assets/projects/fyp-semester1/cover-group.jpg" alt="sEMG-Based Prosthetic Hand Control System — Group 24" loading="lazy">
+            </div>
+            <div class="pc-body">
+              <p class="pc-kicker">Final Year Project &middot; Semester 1</p>
+              <h3 class="pc-title">sEMG-Based Prosthetic Hand Control</h3>
+              <p class="pc-desc">A wearable surface-EMG system that reads forearm muscle activity to decode hand gestures — I designed the analog front-end and the acquisition software.</p>
+              <span class="pc-foot">Analog front-end &middot; 3 prototypes</span>
+              <span class="pc-more">Read more
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13"/><path d="m12 5 7 7-7 7"/></svg>
+              </span>
+            </div>
+          </a>
           <a class="proj-card" href="#project-bottlemate">
             <div class="pc-media pc-grad-2">
               <img class="pc-cover-img" src="assets/projects/bottlemate/bottlemate-1.jpg" alt="Bottle Mate" loading="lazy">
@@ -291,6 +305,200 @@
             </figure>
           </div>
           <p class="gallery-hint">Click any photo to view it full size.</p>
+        </article>
+        <article class="project-feature reveal" id="project-fyp" style="margin-top: 26px;">
+          <div class="badges">
+            <span class="badge-accent">Final Year Project</span>
+            <span class="badge-soft">Semester 1 &middot; Group 24</span>
+            <span class="badge-soft">Biomedical Electronics</span>
+          </div>
+          <h2>sEMG-Based Prosthetic Hand Control System</h2>
+          <p class="project-meta">My role: Analog Front-End Design &amp; Acquisition Software &middot; Department of Electrical &amp; Electronic Engineering, UoP</p>
+          <p class="lead-desc">A wearable surface-electromyography (sEMG) system that reads the electrical activity of forearm muscles and decodes it into hand gestures &mdash; intended as a natural control interface for prosthetic hands, robotics and assistive devices. My responsibility in Semester 1 was the analog front-end that captures the muscle signal, together with the software used to record and visualise it.</p>
+          <div class="details-collapse">
+          <p class="body">
+            When a muscle contracts it produces a small electrical signal that can be picked up by electrodes on the skin. Those signals are only a few millivolts, they sit in a narrow frequency band, and they arrive buried in mains hum and movement artefacts. Turning that into something a computer can classify as a gesture is the core engineering problem &mdash; and it begins long before any machine learning, because the signal has to be acquired cleanly in the first place.
+          </p>
+          <p class="body">
+            That acquisition chain was my part of the project. Over the semester I designed, built and tested <strong>three successive versions of the analog front-end (AFE)</strong>, each one answering the problems the previous version exposed, and I developed the <strong>standalone recording software</strong> the team used to capture and inspect the data. The group&rsquo;s wider work covered the gesture-recognition pipeline and a reproducible electrode-placement framework, supervised by Dr. Ruwan Ranaweera, Dr. Nalin Harischandra and Prof. Vajira Weerasinghe.
+          </p>
+          <h3 class="section-subhead">What I Delivered</h3>
+          <div class="features-grid">
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Three generations of sEMG analog front-end hardware</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Custom two-channel PCB designed in KiCad</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Driven-reference (DRL) stage for mains-noise rejection</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Battery-powered dual-rail supply, no mains connection</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Standalone EMG recording &amp; visualisation application</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Validated on real muscle signals during hand gestures</div>
+          </div>
+          <h3 class="section-subhead">Team</h3>
+          <div class="team">
+            <span class="team-member me" title="That&rsquo;s me!">Olitha Induvara</span>
+            <span class="team-member">K. T. Ratnayake</span>
+            <span class="team-member">S. S. Vitharana</span>
+          </div>
+          <div class="tags">
+            <span class="tag">sEMG</span>
+            <span class="tag">Analog Front-End</span>
+            <span class="tag">Instrumentation Amplifier</span>
+            <span class="tag">Active Filtering</span>
+            <span class="tag">Driven Right Leg</span>
+            <span class="tag">KiCad PCB Design</span>
+            <span class="tag">NI DAQ</span>
+            <span class="tag">Python GUI</span>
+            <span class="tag">Biomedical Signals</span>
+          </div>
+          </div>
+          <button class="read-more-btn" type="button" aria-expanded="false">
+            <span class="rm-text">Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <h3 class="section-subhead">Acquisition &amp; Visualisation Software</h3>
+          <p class="body">
+            The first obstacle was not hardware at all. There was no suitable software for recording, visualising and filtering EMG signals from the NI DAQ cards available to us &mdash; the usual route means writing fresh MATLAB or Python code for every session. So I built my own application and packaged it as a <strong>standalone executable</strong>, which means any EMG researcher can download and run it through a proper interface without installing Python or any libraries. It records three channels in real time, shows live traces and RMS muscle-activity levels, applies a built-in 50&nbsp;Hz notch filter to strip power-line noise, and saves the captured data for later analysis.
+          </p>
+          <div class="gallery">
+            <figure class="gallery-item">
+              <img src="assets/projects/fyp-semester1/software-1.jpg" alt="The EMG recorder application &mdash; live three-channel traces, RMS monitoring and built-in digital filtering" loading="lazy">
+              <figcaption class="g-cap">The EMG recorder application &mdash; live three-channel traces, RMS monitoring and built-in digital filtering</figcaption>
+            </figure>
+            <figure class="gallery-item video-item">
+              <video preload="metadata" playsinline muted poster="assets/projects/fyp-semester1/v1-demo-poster.jpg">
+                <source src="assets/projects/fyp-semester1/v1-demo.mp4" type="video/mp4">
+              </video>
+              <span class="video-play-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <figcaption class="g-cap">Live EMG capture through the application, with the NI DAQ interface</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/fyp-semester1/bench-1.jpg" alt="The bench setup used throughout development and testing" loading="lazy">
+              <figcaption class="g-cap">The bench setup used throughout development and testing</figcaption>
+            </figure>
+          </div>
+
+          <h3 class="section-subhead">Version 1 &mdash; Learning the Signal</h3>
+          <p class="body">
+            The first prototype was deliberately simple: a hand-soldered dot board built around a basic quad op-amp, with no instrumentation amplifier, no driven-reference stage and only minimal filtering. It was never meant to be the final circuit. I built it to get familiar with what a real EMG signal looks like and, just as importantly, to find out exactly where the noise comes from. Muscle activity was visible &mdash; but the mains interference it picked up made the limits of this approach obvious, and set the agenda for the next version.
+          </p>
+          <div class="gallery">
+            <figure class="gallery-item">
+              <img src="assets/projects/fyp-semester1/v1-1.jpg" alt="Version 1 &mdash; the first hand-soldered dot-board front-end" loading="lazy">
+              <figcaption class="g-cap">Version 1 &mdash; the first hand-soldered dot-board front-end</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/fyp-semester1/v1-2.jpg" alt="A simple op-amp signal chain, built to learn the signal rather than to perform" loading="lazy">
+              <figcaption class="g-cap">A simple op-amp signal chain, built to learn the signal rather than to perform</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/fyp-semester1/v1-3.jpg" alt="Solder side of the Version 1 board" loading="lazy">
+              <figcaption class="g-cap">Solder side of the Version 1 board</figcaption>
+            </figure>
+          </div>
+
+          <h3 class="section-subhead">Version 2 &mdash; Precision and Noise Rejection</h3>
+          <p class="body">
+            Version 2 was a substantial upgrade, built directly on what Version 1 revealed. I moved to a precision <strong>AD620 instrumentation amplifier</strong> for the input stage, paired with a TL074 op-amp for the filtering and gain stages, which gave far better rejection of interference common to both electrodes. The important addition was a <strong>driven-reference (DRL) stage</strong> &mdash; in simple terms, it feeds the interference back to the body through the reference electrode, so power-line noise is cancelled at the source instead of being filtered out afterwards. The improvement in signal quality was immediate.
+          </p>
+          <div class="gallery">
+            <figure class="gallery-item">
+              <img src="assets/projects/fyp-semester1/v2-1.jpg" alt="Version 2 &mdash; instrumentation-amplifier front-end with a driven-reference stage" loading="lazy">
+              <figcaption class="g-cap">Version 2 &mdash; instrumentation-amplifier front-end with a driven-reference stage</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/fyp-semester1/v2-2.jpg" alt="A cleaner, properly staged signal chain" loading="lazy">
+              <figcaption class="g-cap">A cleaner, properly staged signal chain</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/fyp-semester1/v2-3.jpg" alt="Version 2 connected to the DAQ interface for testing" loading="lazy">
+              <figcaption class="g-cap">Version 2 connected to the DAQ interface for testing</figcaption>
+            </figure>
+            <figure class="gallery-item video-item">
+              <video preload="metadata" playsinline muted poster="assets/projects/fyp-semester1/v2-demo-poster.jpg">
+                <source src="assets/projects/fyp-semester1/v2-demo.mp4" type="video/mp4">
+              </video>
+              <span class="video-play-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <figcaption class="g-cap">Captured EMG signals from the Version 2 front-end</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/fyp-semester1/v1-v2.jpg" alt="Version 1 and Version 2 side by side" loading="lazy">
+              <figcaption class="g-cap">Version 1 and Version 2 side by side</figcaption>
+            </figure>
+          </div>
+
+          <h3 class="section-subhead">Version 3 &mdash; Two Channels on a Fabricated PCB</h3>
+          <p class="body">
+            With the Version 2 architecture proven, Version 3 took it to a <strong>two-channel design laid out properly in KiCad</strong> and manufactured as a real PCB rather than hand-wired on perfboard. This is the version that validated the whole approach: with electrodes on the forearm I was able to capture and clearly distinguish <strong>two different muscle signals during hand gestures</strong> &mdash; exactly the multi-channel behaviour the gesture-recognition side of the project depends on.
+          </p>
+          <div class="gallery">
+            <figure class="gallery-item">
+              <img src="assets/projects/fyp-semester1/v3-1.jpg" alt="Version 3 &mdash; the two-channel front-end on a fabricated PCB" loading="lazy">
+              <figcaption class="g-cap">Version 3 &mdash; the two-channel front-end on a fabricated PCB</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/fyp-semester1/v3-2.jpg" alt="Copper side of the KiCad-designed board" loading="lazy">
+              <figcaption class="g-cap">Copper side of the KiCad-designed board</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/fyp-semester1/v3-3.jpg" alt="The finished two-channel PCB" loading="lazy">
+              <figcaption class="g-cap">The finished two-channel PCB</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/fyp-semester1/v3-4.jpg" alt="Version 3 wired up for two-channel acquisition" loading="lazy">
+              <figcaption class="g-cap">Version 3 wired up for two-channel acquisition</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/fyp-semester1/v3-5.jpg" alt="Surface electrodes on the forearm during gesture testing" loading="lazy">
+              <figcaption class="g-cap">Surface electrodes on the forearm during gesture testing</figcaption>
+            </figure>
+            <figure class="gallery-item video-item">
+              <video preload="metadata" playsinline muted poster="assets/projects/fyp-semester1/v3-demo-poster.jpg">
+                <source src="assets/projects/fyp-semester1/v3-demo.mp4" type="video/mp4">
+              </video>
+              <span class="video-play-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <figcaption class="g-cap">Two-channel validation &mdash; distinguishing muscle signals during hand gestures</figcaption>
+            </figure>
+          </div>
+
+          <h3 class="section-subhead">Power Supply &mdash; A Deliberate Safety Decision</h3>
+          <p class="body">
+            The Version 3 board needs a dual supply, both a positive and a negative rail, because an EMG signal swings either side of zero. I designed a custom power module for it, and made one decision very deliberately: <strong>no AC wall supply</strong>. Mains power is a safety concern for anyone wearing electrodes on their skin, and it is also the single largest source of the 50&nbsp;Hz noise the whole front-end is fighting. Instead the module runs from a <strong>12&nbsp;V battery pack</strong> and generates both rails from it, which keeps the circuit electrically isolated from the mains and makes the system genuinely portable.
+          </p>
+          <div class="gallery">
+            <figure class="gallery-item">
+              <img src="assets/projects/fyp-semester1/psu-1.jpg" alt="The custom battery-powered dual-rail supply built for the Version 3 front-end" loading="lazy">
+              <figcaption class="g-cap">The custom battery-powered dual-rail supply built for the Version 3 front-end</figcaption>
+            </figure>
+          </div>
+
+          <h3 class="section-subhead">All Three Versions</h3>
+          <p class="body">
+            Three boards in one semester &mdash; each built to answer a question the previous one raised.
+          </p>
+          <div class="gallery">
+            <figure class="gallery-item">
+              <img src="assets/projects/fyp-semester1/all-versions.jpg" alt="The three AFE generations together &mdash; dot board, instrumentation-amplifier build, and the fabricated two-channel PCB" loading="lazy">
+              <figcaption class="g-cap">The three AFE generations together &mdash; dot board, instrumentation-amplifier build, and the fabricated two-channel PCB</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/fyp-semester1/cover-group.jpg" alt="Group 24 with the Version 3 prototype" loading="lazy">
+              <figcaption class="g-cap">Group 24 with the Version 3 prototype</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/fyp-semester1/team-1.jpg" alt="The project team at the Faculty of Engineering" loading="lazy">
+              <figcaption class="g-cap">The project team at the Faculty of Engineering</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/fyp-semester1/team-2.jpg" alt="Celebrating a working prototype" loading="lazy">
+              <figcaption class="g-cap">Celebrating a working prototype</figcaption>
+            </figure>
+          </div>
+          <p class="gallery-hint">Click any photo or video to view it full size.</p>
         </article>
         <article class="project-feature reveal" id="project-bottlemate" style="margin-top: 26px;">
           <div class="badges">
