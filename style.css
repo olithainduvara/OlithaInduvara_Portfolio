@@ -3816,3 +3816,69 @@ body{
               rgba(255,254,251,0.18) 54%,
               rgba(255,254,251,0.00) 66%);
 }
+
+/* ============================================================
+   ✦  MATHS BLOCKS — convolution kernels and formulas  ✦
+   Used by the Sobel FPGA project. Theme-aware via tokens, and
+   the kernel grids scroll rather than squash on narrow screens.
+   ============================================================ */
+.kernels{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+  margin: 20px 0 22px;
+}
+.kernel{ margin: 0; }
+.kernel figcaption{
+  font-size: .76rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 9px;
+}
+.kgrid{
+  display: grid;
+  grid-template-columns: repeat(3, 42px);
+  gap: 5px;
+}
+.kgrid span{
+  display: grid;
+  place-items: center;
+  height: 42px;
+  border-radius: 8px;
+  font-family: 'JetBrains Mono', ui-monospace, 'Cascadia Code', Consolas, monospace;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--ink);
+  background: rgba(var(--accent-rgb), 0.07);
+  border: 1px solid rgba(var(--accent-rgb), 0.22);
+}
+[data-theme="dark"] .kgrid span{
+  background: rgba(255,255,255,0.045);
+  border-color: rgba(var(--accent-rgb), 0.28);
+}
+
+.formula{
+  display: block;
+  margin: 14px 0;
+  padding: 13px 18px;
+  border-radius: 12px;
+  border-left: 2px solid rgba(var(--accent-rgb), 0.55);
+  background: rgba(var(--accent-rgb), 0.055);
+  font-family: 'JetBrains Mono', ui-monospace, 'Cascadia Code', Consolas, monospace;
+  font-size: .92rem;
+  line-height: 1.6;
+  color: var(--ink);
+  overflow-x: auto;
+}
+[data-theme="dark"] .formula{
+  background: rgba(255,255,255,0.038);
+}
+
+@media (max-width: 560px){
+  .kernels{ gap: 18px; }
+  .kgrid{ grid-template-columns: repeat(3, 36px); }
+  .kgrid span{ height: 36px; font-size: .82rem; }
+  .formula{ font-size: .84rem; padding: 11px 14px; }
+}

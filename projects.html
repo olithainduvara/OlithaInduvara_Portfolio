@@ -92,6 +92,20 @@
               </span>
             </div>
           </a>
+          <a class="proj-card" href="#project-sobel">
+            <div class="pc-media pc-grad-3">
+              <img class="pc-cover-img" src="assets/projects/sobel-fpga/m2-output-1.jpg" alt="Real-Time Sobel Edge Detection on an FPGA" loading="lazy">
+            </div>
+            <div class="pc-body">
+              <p class="pc-kicker">Digital Design &amp; Synthesis</p>
+              <h3 class="pc-title">Sobel Edge Detection on FPGA</h3>
+              <p class="pc-desc">A Verilog edge-detection engine verified against OpenCV, then synthesised onto a Basys3 board driving a VGA monitor in real time.</p>
+              <span class="pc-foot">Individual project &middot; Basys3 Artix-7</span>
+              <span class="pc-more">Read more
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13"/><path d="m12 5 7 7-7 7"/></svg>
+              </span>
+            </div>
+          </a>
           <a class="proj-card" href="#project-bottlemate">
             <div class="pc-media pc-grad-2">
               <img class="pc-cover-img" src="assets/projects/bottlemate/bottlemate-1.jpg" alt="Bottle Mate" loading="lazy">
@@ -498,6 +512,149 @@
               <figcaption class="g-cap">Celebrating a working prototype</figcaption>
             </figure>
           </div>
+          <p class="gallery-hint">Click any photo or video to view it full size.</p>
+        </article>
+        <article class="project-feature reveal" id="project-sobel" style="margin-top: 26px;">
+          <div class="badges">
+            <span class="badge-accent">Individual Project</span>
+            <span class="badge-soft">Digital Design &amp; Synthesis &middot; EE 587</span>
+            <span class="badge-soft">Verilog &middot; Basys3 Artix-7</span>
+          </div>
+          <h2>Real-Time Sobel Edge Detection on an FPGA</h2>
+          <p class="project-meta">Role: Sole developer &middot; Semester 6 individual project &middot; Department of Electrical &amp; Electronic Engineering, UoP</p>
+          <p class="lead-desc">An edge-detection engine built as digital hardware rather than software &mdash; a Sobel filter written in Verilog, verified pixel-by-pixel against a Python/OpenCV reference, then synthesised onto a Basys3 FPGA where it filters an image and drives a VGA monitor live, with no processor running anywhere in the system.</p>
+          <div class="details-collapse">
+
+          <h3 class="section-subhead">What a Sobel Filter Actually Does</h3>
+          <p class="body">
+            An edge in a photograph is simply a place where brightness changes sharply &mdash; the boundary between a car&rsquo;s bodywork and the road behind it, for example. The <strong>Sobel filter</strong>, developed by Irwin Sobel and Gary Feldman in 1968, finds those places by estimating how fast the image intensity is changing at every pixel. Where that rate of change is large, there is an edge; where the image is flat, there is not. It remains one of the most widely used edge detectors precisely because it is cheap to compute and maps very naturally onto hardware.
+          </p>
+
+          <h3 class="section-subhead">A Little Mathematics</h3>
+          <p class="body">
+            Treat the grayscale image as a function <em>I(x,&nbsp;y)</em> giving the brightness at each pixel. The filter slides two small 3&times;3 kernels across the image &mdash; one sensitive to horizontal change, one to vertical:
+          </p>
+          <div class="kernels">
+              <figure class="kernel">
+                <figcaption>G<sub>x</sub> &middot; vertical edges</figcaption>
+                <div class="kgrid"><span>&minus;1</span><span>0</span><span>+1</span><span>&minus;2</span><span>0</span><span>+2</span><span>&minus;1</span><span>0</span><span>+1</span></div>
+              </figure>
+              <figure class="kernel">
+                <figcaption>G<sub>y</sub> &middot; horizontal edges</figcaption>
+                <div class="kgrid"><span>&minus;1</span><span>&minus;2</span><span>&minus;1</span><span>0</span><span>0</span><span>0</span><span>+1</span><span>+2</span><span>+1</span></div>
+              </figure>
+          </div>
+          <p class="body">
+            Label the nine pixels of the neighbourhood <em>a</em> to <em>i</em>, reading left to right and top to bottom. The convolution then collapses into nothing more than a handful of additions and subtractions:
+          </p>
+          <p class="formula">G<sub>x</sub> = (c + 2f + i) &minus; (a + 2d + g)</p>
+          <p class="formula">G<sub>y</sub> = (g + 2h + i) &minus; (a + 2b + c)</p>
+          <p class="body">
+            So G<sub>x</sub> is a weighted difference between the right and left columns, which grows large across a vertical edge, and G<sub>y</sub> does the same between the bottom and top rows. What makes the kernel well behaved is that it is <strong>separable</strong> &mdash; the outer product of a smoothing vector and a differencing vector:
+          </p>
+          <p class="formula">[1, 2, 1]<sup>T</sup> &times; [&minus;1, 0, +1]</p>
+          <p class="body">
+            The <em>[1,&nbsp;2,&nbsp;1]</em> half is a crude Gaussian blur that suppresses noise, and the <em>[&minus;1,&nbsp;0,&nbsp;+1]</em> half is a central-difference derivative. Blurring slightly <em>perpendicular</em> to the direction being differentiated is what makes Sobel noticeably more noise-tolerant than a naive two-point gradient.
+          </p>
+          <p class="body">
+            The two gradients combine into a single edge strength. The textbook answer is the Euclidean magnitude, but a square root is expensive in FPGA logic &mdash; so this design uses the standard <strong>L1 approximation</strong> instead:
+          </p>
+          <p class="formula">|G| = sqrt(G<sub>x</sub><sup>2</sup> + G<sub>y</sub><sup>2</sup>) &nbsp;&asymp;&nbsp; |G<sub>x</sub>| + |G<sub>y</sub>|</p>
+          <p class="body">
+            It overestimates the true magnitude slightly, but it preserves <em>relative</em> edge strength perfectly well for detection &mdash; and it costs only adders, a two&rsquo;s-complement negation and a multiplexer, instead of a square-root unit. That single substitution is the difference between a design that fits comfortably in a small FPGA and one that does not. A final stage then clamps the result back into the 8-bit range 0&ndash;255, and border pixels, which have no complete 3&times;3 neighbourhood, are forced to black to match the OpenCV reference behaviour.
+          </p>
+
+          <h3 class="section-subhead">What I Built</h3>
+          <div class="features-grid">
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Parameterised streaming Sobel engine in Verilog</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Row-buffer architecture for 3&times;3 neighbourhood extraction</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Pixel-exact verification against a Python/OpenCV reference</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Tkinter GUI automating the whole simulate-and-verify pipeline</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Hardware VGA controller at 640&times;480 @ 60&nbsp;Hz</div>
+            <div class="feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Complete system synthesised onto a Basys3 Artix-7</div>
+          </div>
+          <div class="tags">
+            <span class="tag">Verilog</span>
+            <span class="tag">FPGA</span>
+            <span class="tag">Basys3 &middot; Artix-7</span>
+            <span class="tag">Vivado</span>
+            <span class="tag">Icarus Verilog</span>
+            <span class="tag">VGA Controller</span>
+            <span class="tag">Block RAM</span>
+            <span class="tag">Image Processing</span>
+            <span class="tag">OpenCV</span>
+            <span class="tag">Python</span>
+          </div>
+          </div>
+          <button class="read-more-btn" type="button" aria-expanded="false">
+            <span class="rm-text">Read more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <h3 class="section-subhead">Milestone 1 &mdash; Proving the Algorithm in Simulation</h3>
+          <p class="body">
+            Before any of this could run on a board, the arithmetic had to be demonstrably correct. I wrote the Sobel engine as a parameterised Verilog module that accepts pixels as a continuous stream, holding the three most recent image rows in internal shift registers so that a full 3&times;3 neighbourhood is always available &mdash; much like keeping the last three lines of text in view while reading. A self-checking testbench feeds it a real photograph and captures the result.
+          </p>
+          <p class="body">
+            The verification is the part I am most pleased with. Python converts the source image into a plain hex file, the Verilog simulation filters it, and Python then reads the result back and compares it <strong>pixel by pixel against OpenCV&rsquo;s own Sobel output</strong>, reporting a match percentage and a visual difference map. That turns &ldquo;it looks about right&rdquo; into an objective, repeatable number. I also wrapped the entire flow &mdash; preprocess, compile, simulate, verify &mdash; into a Tkinter GUI that shows the input, the hardware output and the golden reference side by side, which made iterating far quicker than retyping command lines.
+          </p>
+          <div class="gallery">
+            <figure class="gallery-item">
+              <img src="assets/projects/sobel-fpga/m1-gui.jpg" alt="The verification GUI &mdash; grayscale input alongside the Verilog hardware output" loading="lazy">
+              <figcaption class="g-cap">The verification GUI &mdash; grayscale input alongside the Verilog hardware output</figcaption>
+            </figure>
+            <figure class="gallery-item video-item">
+              <video preload="metadata" playsinline muted poster="assets/projects/sobel-fpga/m1-demo-poster.jpg">
+                <source src="assets/projects/sobel-fpga/m1-demo.mp4" type="video/mp4">
+              </video>
+              <span class="video-play-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+              <figcaption class="g-cap">Full walkthrough of the pipeline: Vivado simulation, the command-line flow, and the automated GUI</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/sobel-fpga/source-image.jpg" alt="A source photograph before processing" loading="lazy">
+              <figcaption class="g-cap">A source photograph before processing</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/sobel-fpga/test-image-2.jpg" alt="Another test image used to check the engine against the reference" loading="lazy">
+              <figcaption class="g-cap">Another test image used to check the engine against the reference</figcaption>
+            </figure>
+          </div>
+
+          <h3 class="section-subhead">Milestone 2 &mdash; Real Hardware, Real Monitor</h3>
+          <p class="body">
+            The second milestone turned the verified module into a complete self-contained system on a <strong>Basys3 Artix-7</strong> board. Only one step still happens on a PC: a short Python script converts a photograph to grayscale, resizes it to 320&times;240 and writes it out as a memory-initialisation file. Everything after that is physical circuitry.
+          </p>
+          <p class="body">
+            The design runs in two stages. On power-up, a controller streams the stored image out of on-chip block RAM, through the Sobel engine, and writes the filtered result into a second block RAM &mdash; the whole pass finishing in about <strong>3 milliseconds</strong>. From then on, a hardware VGA controller generates standard 640&times;480 @ 60&nbsp;Hz timing and continuously scans that result out to a monitor, duplicating each pixel into a 2&times;2 block so the smaller image fills the screen. A clock-management block derives the required 25&nbsp;MHz pixel clock from the board&rsquo;s 100&nbsp;MHz oscillator. No software executes during either stage; the entire system is logic responding to a clock.
+          </p>
+          <div class="gallery">
+            <figure class="gallery-item">
+              <img src="assets/projects/sobel-fpga/m2-output-1.jpg" alt="Edge-detected output driven to a VGA monitor directly from the FPGA" loading="lazy">
+              <figcaption class="g-cap">Edge-detected output driven to a VGA monitor directly from the FPGA</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/sobel-fpga/m2-output-2.jpg" alt="The Basys3 board generating the display with no processor involved" loading="lazy">
+              <figcaption class="g-cap">The Basys3 board generating the display with no processor involved</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/sobel-fpga/m2-output-3.jpg" alt="Hardware output compared against the reference result on the laptop" loading="lazy">
+              <figcaption class="g-cap">Hardware output compared against the reference result on the laptop</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="assets/projects/sobel-fpga/source-image.jpg" alt="The original photograph, for comparison with the edge map above" loading="lazy">
+              <figcaption class="g-cap">The original photograph, for comparison with the edge map above</figcaption>
+            </figure>
+          </div>
+
+          <h3 class="section-subhead">Three Bugs Only Real Hardware Would Show</h3>
+          <p class="body">
+            Simulation passed cleanly, and the design still misbehaved on the bench. Three defects surfaced only once the output reached a physical monitor, and diagnosing each one against the known-good Milestone 1 reference image was the most instructive part of the project.
+          </p>
+          <p class="body">
+            The first was a <strong>race against the clock</strong>: the clock-management block produces a LOCKED signal saying its 25&nbsp;MHz output has stabilised, and I had generated that signal but never used it &mdash; so the design could start running on an unstable clock. The second showed up as part of the picture <strong>wrapping onto the opposite edge of the screen</strong>: during VGA blanking intervals the display logic was still computing a &ldquo;next pixel&rdquo; address, reading past the end of the image and fetching stale data. The third was the subtlest &mdash; a <strong>diagonal shear</strong> across the image, each row offset one pixel further than the one above it. The controller was performing one extra, uncounted memory read at the start of every row, and because block RAM returns data a full cycle after the address is presented, that offset accumulated row by row. Moving the extra read so it happens once at the very start, rather than repeatedly, straightened the image out.
+          </p>
           <p class="gallery-hint">Click any photo or video to view it full size.</p>
         </article>
         <article class="project-feature reveal" id="project-bottlemate" style="margin-top: 26px;">
