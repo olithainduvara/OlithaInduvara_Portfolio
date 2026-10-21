@@ -549,6 +549,74 @@
     update(0);
   })();
 
+
+  /* ---------------- Studio site: live preview + pointer tilt ----------------
+     The poster carries the section until the frame is actually scrolled to,
+     then the real site is swapped in behind it. The iframe stays
+     pointer-inert so it can never swallow the page scroll — the overlay
+     link opens the site properly instead. */
+  (function () {
+    const frame = document.querySelector('.ws-frame');
+    if (!frame) return;
+
+    const url = frame.dataset.site;
+    const view = frame.querySelector('.ws-view');
+    const sheen = frame.querySelector('.ws-sheen');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const wide = window.matchMedia('(min-width: 900px)').matches;
+
+    // --- live embed, once, and only where it is worth the bytes ---
+    if (url && view && wide && !reduce) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          io.disconnect();
+          const iframe = document.createElement('iframe');
+          iframe.src = url;
+          iframe.loading = 'lazy';
+          iframe.title = 'Olitha Induvara Photography — live site preview';
+          iframe.setAttribute('scrolling', 'no');
+          iframe.setAttribute('tabindex', '-1');
+          iframe.setAttribute('aria-hidden', 'true');
+          iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin');
+          iframe.addEventListener('load', () => frame.classList.add('is-live'));
+          // if the site refuses to frame, the poster simply stays
+          setTimeout(() => { if (!frame.classList.contains('is-live')) iframe.remove(); }, 9000);
+          view.insertBefore(iframe, view.firstChild);
+        });
+      }, { rootMargin: '280px' });
+      io.observe(frame);
+    }
+
+    // --- pointer tilt + specular sweep ---
+    if (reduce || window.matchMedia('(hover: none)').matches) return;
+    let queued = false, px = 0.5, py = 0.5;
+
+    function paint() {
+      queued = false;
+      frame.style.setProperty('--ty', ((px - 0.5) * 9).toFixed(2) + 'deg');
+      frame.style.setProperty('--tx', ((0.5 - py) * 6).toFixed(2) + 'deg');
+      if (sheen) {
+        sheen.style.setProperty('--sx', (px * 100).toFixed(1) + '%');
+        sheen.style.setProperty('--sy', (py * 100).toFixed(1) + '%');
+      }
+    }
+
+    frame.addEventListener('pointermove', (e) => {
+      const r = frame.getBoundingClientRect();
+      px = (e.clientX - r.left) / r.width;
+      py = (e.clientY - r.top) / r.height;
+      frame.classList.add('is-tilting');
+      if (!queued) { queued = true; requestAnimationFrame(paint); }
+    }, { passive: true });
+
+    frame.addEventListener('pointerleave', () => {
+      frame.classList.remove('is-tilting');
+      frame.style.setProperty('--tx', '0deg');
+      frame.style.setProperty('--ty', '0deg');
+    });
+  })();
+
   /* ---------------- Mobile bottom navigation (glass) ---------------- */
   (function () {
     const items = [

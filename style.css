@@ -4591,3 +4591,253 @@ body{
   .tj-year{ width: 60px; height: 27px; font-size: .71rem; }
   .tj-body p{ font-size: .87rem; }
 }
+
+/* ============================================================
+   ✦  THE STUDIO SITE — live website preview  ✦
+   A browser-chrome mockup that tilts toward the pointer and
+   swaps its poster for the real site once scrolled into view.
+   The embed is pointer-inert; the overlay opens it properly in
+   a new tab rather than trapping scroll inside an iframe.
+   ============================================================ */
+.ws-wrap{
+  display: grid;
+  grid-template-columns: 0.86fr 1.14fr;
+  gap: 42px;
+  align-items: center;
+}
+
+/* ---- copy side ---- */
+.ws-kicker{
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: .85;
+}
+.ws-title{
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: clamp(1.45rem, 2.6vw, 1.95rem);
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1.2;
+  color: var(--ink);
+  margin: 10px 0 0;
+}
+.ws-desc{
+  margin: 14px 0 0;
+  color: var(--muted);
+  line-height: 1.78;
+  font-size: .94rem;
+}
+.ws-points{
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 9px;
+}
+.ws-points li{
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: .875rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.ws-points svg{
+  width: 15px; height: 15px; flex: none; margin-top: 3px;
+  color: var(--accent);
+}
+.ws-cta{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+  padding: 13px 24px;
+  border-radius: 13px;
+  font-size: .92rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  background: var(--btn-grad);
+  box-shadow: 0 14px 28px -12px rgba(var(--accent-rgb), .6);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.ws-cta svg{ width: 17px; height: 17px; transition: transform .3s ease; }
+.ws-cta:hover{ transform: translateY(-3px); box-shadow: 0 20px 34px -12px rgba(var(--accent-rgb), .7); }
+.ws-cta:hover svg{ transform: translateX(5px); }
+
+/* ---- the browser mockup ---- */
+.ws-stage{ perspective: 1400px; }
+.ws-frame{
+  --tx: 0deg; --ty: 0deg;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #0b0b0d;
+  border: 1px solid var(--line);
+  box-shadow: 0 38px 70px -32px rgba(0,0,0,.85);
+  transform: rotateX(var(--tx)) rotateY(var(--ty));
+  transform-style: preserve-3d;
+  transition: transform .5s cubic-bezier(.2,.8,.25,1), box-shadow .5s ease;
+  will-change: transform;
+}
+.ws-frame.is-tilting{ transition: transform .12s linear, box-shadow .5s ease; }
+.ws-frame:hover{ box-shadow: 0 46px 86px -30px rgba(0,0,0,.9); }
+
+.ws-bar{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.045);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+:root:not([data-theme="dark"]) .ws-bar{
+  background: rgba(23,22,48,0.05);
+  border-bottom-color: rgba(23,22,48,0.08);
+}
+.ws-dots{ display: flex; gap: 6px; flex: none; }
+.ws-dots i{
+  width: 9px; height: 9px; border-radius: 50%;
+  background: rgba(255,255,255,0.18);
+}
+:root:not([data-theme="dark"]) .ws-dots i{ background: rgba(23,22,48,0.16); }
+.ws-url{
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: .72rem;
+  color: var(--muted);
+}
+.ws-live{
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.ws-live::before{
+  content: "";
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent);
+  animation: wsPulse 2s ease-in-out infinite;
+}
+@keyframes wsPulse{
+  0%, 100% { opacity: 1;   box-shadow: 0 0 0 0 rgba(var(--accent-rgb), .45); }
+  50%      { opacity: .55; box-shadow: 0 0 0 5px rgba(var(--accent-rgb), 0); }
+}
+
+/* ---- the viewport ---- */
+.ws-view{
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #0a0a0c;
+}
+.ws-poster{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: object-position 9s linear, opacity .9s ease;
+}
+/* with no live embed, the poster scrolls itself on hover */
+.ws-frame:hover .ws-poster{ object-position: center bottom; }
+.ws-frame.is-live .ws-poster{ opacity: 0; }
+.ws-frame.is-live:hover .ws-poster{ object-position: center top; }
+
+.ws-view iframe{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+  pointer-events: none;      /* never trap the page scroll */
+}
+.ws-frame.is-live .ws-view iframe{ opacity: 1; }
+
+/* click target over the whole viewport */
+.ws-open{
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  background: linear-gradient(180deg, rgba(6,6,9,0) 40%, rgba(6,6,9,.55) 100%);
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+.ws-frame:hover .ws-open{ opacity: 1; }
+.ws-open-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: .88rem;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(10,10,12,.62);
+  border: 1px solid rgba(255,255,255,.26);
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+  transform: translateY(8px);
+  transition: transform .35s cubic-bezier(.2,.8,.25,1);
+}
+.ws-open-btn svg{ width: 16px; height: 16px; }
+.ws-frame:hover .ws-open-btn{ transform: none; }
+
+/* a specular sweep that follows the pointer across the glass */
+.ws-sheen{
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: radial-gradient(420px circle at var(--sx, 50%) var(--sy, 0%),
+              rgba(255,255,255,.10), transparent 62%);
+  opacity: 0;
+  transition: opacity .4s ease;
+}
+.ws-frame:hover .ws-sheen{ opacity: 1; }
+
+/* entrance */
+.ws-wrap.reveal .ws-stage{
+  opacity: 0;
+  transform: translateY(22px) scale(.97);
+  transition: opacity .8s ease, transform .9s cubic-bezier(.2,.8,.25,1);
+  transition-delay: .12s;
+}
+.ws-wrap.reveal.visible .ws-stage{ opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce){
+  .ws-frame, .ws-poster, .ws-open, .ws-open-btn, .ws-sheen,
+  .ws-wrap.reveal .ws-stage{ transition: none !important; transform: none !important; opacity: 1; }
+  .ws-live::before{ animation: none; }
+  .ws-frame:hover .ws-poster{ object-position: center top; }
+}
+
+@media (max-width: 980px){
+  .ws-wrap{ grid-template-columns: 1fr; gap: 28px; }
+  .ws-stage{ perspective: none; }
+  .ws-frame{ transform: none !important; }
+}
+@media (max-width: 560px){
+  .ws-url{ font-size: .64rem; }
+  .ws-view{ aspect-ratio: 4 / 3; }
+  .ws-open{ opacity: 1; }
+  .ws-open-btn{ transform: none; padding: 10px 17px; font-size: .82rem; }
+}
