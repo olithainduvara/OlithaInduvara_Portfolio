@@ -4468,3 +4468,126 @@ body{
 @media (max-width: 1100px){ .ph-grid{ columns: 3; } }
 @media (max-width: 820px){  .ph-grid{ columns: 2; } }
 @media (max-width: 520px){  .ph-grid{ columns: 2; column-gap: 9px; } .ph-tile{ margin-bottom: 9px; } }
+
+/* ============================================================
+   ✦  JOURNEY TIMELINE — five years at TECHNO  ✦
+   A vertical rail with a year marker per step. The rail draws
+   itself downward as the list scrolls in, and the final step is
+   marked as the one being lived now.
+   ============================================================ */
+.tj-list{
+  list-style: none;
+  margin: 20px 0 6px;
+  padding: 0 0 0 4px;
+  position: relative;
+}
+/* the rail */
+.tj-list::before{
+  content: "";
+  position: absolute;
+  left: 33px;
+  top: 10px;
+  bottom: 18px;
+  width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(180deg,
+              rgba(var(--accent-rgb), .55) 0%,
+              rgba(var(--accent-rgb), .25) 70%,
+              transparent 100%);
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: transform 1.3s cubic-bezier(.3,.8,.3,1);
+}
+.tj-list.visible::before{ transform: scaleY(1); }
+
+.tj-step{
+  position: relative;
+  display: grid;
+  grid-template-columns: 68px 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 0 0 24px;
+}
+.tj-step:last-child{ padding-bottom: 4px; }
+
+.tj-year{
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 68px;
+  height: 30px;
+  border-radius: 999px;
+  font-size: .76rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: var(--muted);
+  background: var(--glass-bg);
+  border: 1px solid var(--line);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+.tj-body h4{
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: .99rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 3px 0 0;
+  letter-spacing: -.01em;
+}
+.tj-body p{
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.72;
+}
+
+/* the year the stall placed 2nd, and the year he is exhibiting */
+.tj-step.tj-win .tj-year,
+.tj-step.tj-now .tj-year{
+  color: var(--accent);
+  border-color: rgba(var(--accent-rgb), .5);
+  background: rgba(var(--accent-rgb), .10);
+}
+.tj-step.tj-now .tj-year{
+  box-shadow: 0 0 0 4px rgba(var(--accent-rgb), .10);
+}
+.tj-step.tj-now .tj-body h4::after{
+  content: "now";
+  margin-left: 9px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-family: 'Inter', sans-serif;
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  color: var(--accent);
+  background: rgba(var(--accent-rgb), .13);
+  border: 1px solid rgba(var(--accent-rgb), .34);
+}
+
+/* each step arrives after the rail passes it */
+.tj-list.reveal .tj-step{
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .55s ease, transform .55s cubic-bezier(.2,.8,.25,1);
+}
+.tj-list.reveal.visible .tj-step{ opacity: 1; transform: none; }
+.tj-list.reveal.visible .tj-step:nth-child(1){ transition-delay: .10s; }
+.tj-list.reveal.visible .tj-step:nth-child(2){ transition-delay: .28s; }
+.tj-list.reveal.visible .tj-step:nth-child(3){ transition-delay: .46s; }
+.tj-list.reveal.visible .tj-step:nth-child(4){ transition-delay: .64s; }
+.tj-list.reveal.visible .tj-step:nth-child(5){ transition-delay: .82s; }
+
+@media (prefers-reduced-motion: reduce){
+  .tj-list::before{ transform: scaleY(1); transition: none; }
+  .tj-list.reveal .tj-step{ opacity: 1; transform: none; transition: none; }
+}
+@media (max-width: 560px){
+  .tj-list::before{ left: 29px; }
+  .tj-step{ grid-template-columns: 60px 1fr; gap: 12px; }
+  .tj-year{ width: 60px; height: 27px; font-size: .71rem; }
+  .tj-body p{ font-size: .87rem; }
+}
