@@ -638,6 +638,22 @@
       return '<a class="bn-item' + (it.href === path ? ' active' : '') + '" href="' + it.href + '">' + it.svg + '<span>' + it.label + '</span></a>';
     }).join('');
     document.body.appendChild(bn);
+
+    /* Desktop: the same destinations again as a slim icon rail on the left
+       edge (hidden on phones by CSS, where the bar above takes over). The
+       short tab labels are spelled out for the hover tips. */
+    const fullName = { Awards: 'Achievements', Events: 'Participations', Exp: 'Experience', Tools: 'Software &amp; Tools', Photos: 'Photography' };
+    const mailSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>';
+    const rail = document.createElement('nav');
+    rail.className = 'rail';
+    rail.setAttribute('aria-label', 'Pages');
+    rail.innerHTML = items.map(function (it) {
+      const name = fullName[it.label] || it.label;
+      const on = it.href === path;
+      return '<a href="' + it.href + '" data-label="' + name + '" aria-label="' + name + '"' +
+        (on ? ' class="active" aria-current="page"' : '') + '>' + it.svg + '</a>';
+    }).join('') + '<hr><a href="#contact" data-label="Contact" aria-label="Contact">' + mailSvg + '</a>';
+    document.body.appendChild(rail);
   })();
 
 
